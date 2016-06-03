@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/equipment_Id"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="EquipmentID"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="26dp" />
+
+
+        <TextView
+            android:id="@+id/Booking_Date"
+
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="BookingDate"
+            android:singleLine="true"
+
+            android:textColor="@android:color/black"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/Booking_Time"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="BookingTime"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="26dp" />
+
+
+        <TextView
+            android:id="@+id/Reference_Id"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:text="Reference No"
+            android:textColor="@android:color/black"
+            android:singleLine="true"
+
+            android:textSize="26dp" />
+
+
+        <TextView
+            android:id="@+id/checkin_Date"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:text="CheckIN Date"
+            android:textColor="@android:color/black"
+            android:singleLine="true"
+
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/checkin_Time"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:text="CheckIN Time"
+            android:textColor="@android:color/black"
+            android:textSize="26dp" />
+
+
+        <TextView
+            android:id="@+id/checkOut_date"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="CheckOut Date"
+            android:textColor="@android:color/black"
+            android:singleLine="true"
+
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/checkOut_time"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="CheckOut Time"
+            android:textColor="@android:color/black"
+            android:singleLine="true"
+
+            android:textSize="26dp" />
+
+
+    </LinearLayout>
+</LinearLayout>

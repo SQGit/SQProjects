@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_all"
+    android:orientation="vertical">
+
+    <!--
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#e8e8e8"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/back_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:drawableLeft="@drawable/bck_arrow"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="REGISTER"
+                android:textColor="#333333"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="REGISTER"
+                android:textColor="#333333"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </LinearLayout>-->
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="6">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/Hospital_name"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:drawableLeft="@drawable/hosptlname_icon"
+                android:drawablePadding="20dp"
+                android:hint="Hospital Name"
+                android:nextFocusDown="@+id/UserId"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/UserId"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:drawableLeft="@drawable/user_icon"
+                android:drawablePadding="20dp"
+                android:hint="User Name"
+                android:nextFocusDown="@+id/password"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:drawableLeft="@drawable/pwd_icon"
+                android:drawablePadding="20dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:maxLength="8"
+                android:nextFocusDown="@+id/ConformPassword"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+            <EditText
+
+                android:id="@+id/ConformPassword"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:drawableLeft="@drawable/pwd_icon"
+                android:drawablePadding="20dp"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:maxLength="8"
+                android:nextFocusDown="@+id/Email_Id"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/Email_Id"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:drawableLeft="@drawable/email_icon"
+                android:drawablePadding="20dp"
+                android:hint="Email ID"
+                android:inputType="textEmailAddress"
+                android:nextFocusDown="@+id/Phone_Number"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+
+            <EditText
+                android:id="@+id/Phone_Number"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:drawableLeft="@drawable/phone_icon"
+                android:drawablePadding="20dp"
+                android:hint="Phone No"
+                android:inputType="number|phone"
+                android:maxLength="12"
+                android:nextFocusDown="@+id/Street_Address"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/Street_Address"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:drawableLeft="@drawable/street_icon"
+                android:drawablePadding="20dp"
+                android:hint="Street"
+                android:nextFocusDown="@+id/city"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+
+            <EditText
+                android:id="@+id/city"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:drawableLeft="@drawable/city_icon"
+                android:drawablePadding="20dp"
+                android:hint="City"
+                android:nextFocusDown="@+id/state"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/state"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:drawableLeft="@drawable/state_icon"
+                android:drawablePadding="20dp"
+                android:hint="State"
+                android:nextFocusDown="@+id/postal_code"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="20sp" />
+
+
+            <EditText
+                android:id="@+id/postal_code"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:drawableLeft="@drawable/postal_icon"
+                android:drawablePadding="20dp"
+                android:hint="Zip Code"
+                android:inputType="number"
+                android:maxLength="7"
+                android:nextFocusDown="@+id/Register"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textSize="20sp"
+
+
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_weight="2"
+            android:gravity="center|top">
+
+            <Button
+                android:id="@+id/Register"
+                android:layout_width="300dp"
+                android:layout_height="70dp"
+                android:background="@drawable/new_button"
+                android:drawableLeft="@drawable/submit_icon"
+                android:drawablePadding="2dip"
+                android:paddingLeft="70dip"
+                android:paddingRight="70dip"
+                android:text="Submit"
+                android:textColor="@android:color/background_dark"
+                android:textSize="23sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,1 @@
+include ':app', ':zbar', ':core', ':apache-httpcomponents-httpclient', ':apache-httpcomponents-httpcore', ':httpclient-4.0.3', ':httpmime-4.1', ':caldroid-2.3.1'

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_all">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+
+            android:orientation="vertical">
+
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="false">
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+
+                    android:weightSum="6">
+
+                    <LinearLayout
+                        android:id="@+id/main"
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="80dp">
+
+                            <TextView
+                                android:id="@+id/lable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="60dp"
+                                android:layout_gravity="start|center"
+                                android:layout_marginLeft="25dp"
+                                android:background="#f6f6f6"
+                                android:cursorVisible="false"
+                                android:drawableLeft="@drawable/make"
+                                android:gravity="center"
+
+                                android:singleLine="true"
+                                android:textSize="20sp" />
+
+                            <fr.ganfra.materialspinner.MaterialSpinner
+                                android:id="@+id/getallequipment"
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="60dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="#f6f6f6"
+                                android:nextFocusDown="@+id/editText2"
+                                android:textColor="#000000"
+                                android:textSize="20sp"
+                                app:ms_arrowColor="@android:color/holo_orange_dark"
+                                app:ms_arrowSize="20dp"
+                                app:ms_hint="Choose equipment name"
+                                app:ms_multiline="false"
+                                app:ms_thickness="0.1dp">
+
+                            </fr.ganfra.materialspinner.MaterialSpinner>
+                        </FrameLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector"
+                            android:gravity="center"
+                            android:paddingTop="10dp"
+                            app:hintTextAppearance="@style/TextLabel">
+
+                            <EditText
+                                android:id="@+id/eq_id"
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="start|center"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginTop="10dp"
+                                android:background="#00000000"
+                                android:drawableLeft="@drawable/hosptlname_icon"
+                                android:drawablePadding="20dp"
+                                android:hint="@string/device_name"
+                                android:inputType="textCapSentences"
+                                android:nextFocusDown="@+id/ll2"
+                                android:paddingLeft="25dp"
+                                android:paddingRight="10dp"
+
+                                android:singleLine="true"
+                                android:textColor="#000000"
+                                android:textSize="18sp" />
+
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll2"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+
+                            android:background="@drawable/selector"
+                            android:paddingRight="10dp">
+
+                            <FrameLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="80dp">
+
+
+                                <fr.ganfra.materialspinner.MaterialSpinner
+                                    android:id="@+id/my_spinner2"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="80dp"
+                                    android:layout_gravity="center|start"
+                                    android:layout_marginLeft="70dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="#f6f6f6"
+                                    android:nextFocusDown="@+id/editText2"
+
+                                    android:paddingTop="5dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp"
+                                    app:ms_arrowColor="@android:color/holo_orange_dark"
+                                    app:ms_arrowSize="20dp"
+                                    app:ms_hint="@string/Select_Make"
+                                    app:ms_multiline="false"
+                                    app:ms_thickness="0.1dp">
+
+
+                                </fr.ganfra.materialspinner.MaterialSpinner>
+
+                                <TextView
+                                    android:id="@+id/editText12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="#f6f6f6"
+                                    android:cursorVisible="false"
+                                    android:drawableLeft="@drawable/make"
+                                    android:drawablePadding="20dp"
+                                    android:gravity="start|center"
+                                    android:hint="Make"
+                                    android:paddingLeft="15dp"
+
+                                    android:paddingRight="20dp"
+                                    android:singleLine="true"
+                                    android:textSize="18sp" />
+                            </FrameLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector"
+                            android:orientation="horizontal">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="80dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_weight="1"
+                                android:paddingTop="10dp"
+                                app:hintTextAppearance="@style/TextLabel">
+
+
+                                <EditText
+                                    android:id="@+id/price_id"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="start|center"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_weight="1"
+                                    android:background="#00000000"
+                                    android:drawableLeft="@drawable/dollar_icon"
+                                    android:drawablePadding="25dp"
+                                    android:hint="@string/price"
+                                    android:inputType="number"
+                                    android:nextFocusDown="@+id/my_spinner1"
+                                    android:paddingLeft="25dp"
+                                    android:paddingRight="10dp"
+                                    android:singleLine="true"
+                                    android:textColor="#000000"
+
+                                    android:textSize="18sp">
+
+                                </EditText>
+
+                            </android.support.design.widget.TextInputLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/l1l"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector"
+
+                            android:paddingRight="5dp">
+
+                            <FrameLayout
+                                android:id="@+id/fm1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="80dp">
+
+
+                                <fr.ganfra.materialspinner.MaterialSpinner
+                                    android:id="@+id/my_spinner1"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="70dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="#f6f6f6"
+                                    android:nextFocusDown="@+id/editText2"
+                                    android:paddingTop="5dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp"
+                                    app:ms_arrowColor="@android:color/holo_orange_dark"
+                                    app:ms_arrowSize="20dp"
+                                    app:ms_hint="@string/Select_Category"
+                                    app:ms_multiline="false"
+                                    app:ms_thickness="0.1dp">
+
+                                </fr.ganfra.materialspinner.MaterialSpinner>
+
+                                <TextView
+                                    android:id="@+id/editText11"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="#f6f6f6"
+                                    android:cursorVisible="false"
+
+                                    android:drawableLeft="@drawable/caticon"
+                                    android:drawablePadding="10dp"
+                                    android:gravity="start|center"
+                                    android:hint="Category"
+                                    android:paddingLeft="10dp"
+                                    android:paddingRight="20dp"
+                                    android:singleLine="true"
+                                    android:textSize="18sp" />
+                            </FrameLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+
+                            android:background="@drawable/selector">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                app:hintTextAppearance="@style/TextLabel">
+
+
+                                <EditText
+                                    android:id="@+id/date_of_purcheses"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start|center"
+                                    android:background="#00000000"
+                                    android:drawableLeft="@drawable/dateicon"
+                                    android:drawablePadding="10dp"
+                                    android:focusable="false"
+                                    android:hint="@string/Date_Of_Purchase"
+                                    android:inputType="number"
+                                    android:nextFocusDown="@+id/my_spinner1"
+                                    android:paddingLeft="13dp"
+                                    android:paddingRight="10dp"
+                                    android:singleLine="true"
+
+                                    android:textColor="#000000"
+                                    android:textSize="18sp">
+
+                                </EditText>
+
+                            </android.support.design.widget.TextInputLayout>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/l11l"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/selector"
+                            android:orientation="horizontal"
+                            android:paddingRight="5dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+
+                                <fr.ganfra.materialspinner.MaterialSpinner
+                                    android:id="@+id/my_spinner"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="70dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="#f6f6f6"
+                                    android:nextFocusDown="@+id/editText2"
+                                    android:paddingTop="5dp"
+                                    android:textColor="#000000"
+                                    android:textSize="18sp"
+                                    app:ms_arrowColor="@android:color/holo_orange_dark"
+                                    app:ms_arrowSize="20dp"
+                                    app:ms_hint="@string/Select_Brand"
+                                    app:ms_multiline="false"
+                                    app:ms_thickness="0.1dp">
+
+                                </fr.ganfra.materialspinner.MaterialSpinner>
+
+
+                                <TextView
+                                    android:id="@+id/editText"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="#f6f6f6"
+                                    android:cursorVisible="false"
+                                    android:drawableLeft="@drawable/brand_icon"
+                                    android:drawablePadding="15dp"
+                                    android:gravity="start|center"
+                                    android:hint="Brand"
+                                    android:paddingLeft="10dp"
+                                    android:paddingRight="20dp"
+                                    android:singleLine="true"
+
+                                    android:textSize="18sp" />
+                                />
+
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector"
+                        android:weightSum="1">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+
+                            app:hintTextAppearance="@style/TextLabel">
+
+
+                            <EditText
+                                android:id="@+id/decription"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:background="#f6f6f6"
+                                android:drawableLeft="@drawable/descicon"
+                                android:drawablePadding="10dp"
+                                android:gravity="start|center"
+                                android:hint="@string/description"
+                                android:inputType="textCapSentences"
+                                android:nextFocusDown="@+id/my_spinner1"
+                                android:paddingLeft="7dp"
+                                android:paddingRight="10dp"
+                                android:singleLine="true"
+                                android:textColor="#000000"
+
+                                android:textSize="18sp">
+
+                            </EditText>
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:weightSum="2">
+
+                        <EditText
+                            android:id="@+id/image_browse"
+                            android:layout_width="280dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/uploadedit_back"
+                            android:cursorVisible="false"
+                            android:drawableLeft="@drawable/upload"
+                            android:drawablePadding="10dp"
+                            android:focusable="false"
+                            android:inputType="number"
+                            android:paddingLeft="50dp"
+                            android:singleLine="true"
+                            android:text="Upload image"
+
+                            android:textColor="@android:color/background_light"
+                            android:textColorHint="@android:color/background_light"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:gravity="center|top">
+
+                <Button
+                    android:id="@+id/sub_id"
+                    android:layout_width="300dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/new_button"
+                    android:drawableLeft="@drawable/submit_icon"
+                    android:drawablePadding="2dip"
+                    android:paddingLeft="70dip"
+                    android:paddingRight="70dip"
+                    android:text="Submit"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="23sp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

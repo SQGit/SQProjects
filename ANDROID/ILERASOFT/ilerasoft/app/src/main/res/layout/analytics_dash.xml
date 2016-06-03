@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_all"
+
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#e8e8e8"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/back_iv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="4"
+            android:drawableLeft="@drawable/bck_arrow"
+            android:drawablePadding="10dp"
+            android:gravity="start|center"
+            android:text="STATISTICS"
+            android:textColor="#333333"
+            android:textSize="25sp"
+
+            android:textStyle="bold" />
+
+        <EditText
+
+            android:id="@+id/From_Date"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/btn_negative_selector"
+            android:drawableLeft="@drawable/c1"
+            android:drawablePadding="10dp"
+            android:focusable="false"
+            android:hint="@string/from_date"
+            android:nextFocusDown="@+id/To_Date"
+            android:paddingLeft="15dp"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/To_Date"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/btn_negative_selector"
+            android:drawableLeft="@drawable/c1"
+            android:drawablePadding="10dp"
+            android:focusable="false"
+            android:hint="@string/to_date"
+            android:paddingLeft="15dp"
+
+            android:singleLine="true" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="25dp" />
+
+</LinearLayout>

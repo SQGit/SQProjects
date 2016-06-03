@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_all"
+    android:orientation="vertical">
+
+
+    <!-- <LinearLayout
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:background="#e8e8e8"
+         android:orientation="horizontal"
+         android:padding="15dp">
+
+         <TextView
+             android:id="@+id/back_iv"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_marginLeft="20dp"
+             android:drawableLeft="@drawable/bck_arrow"
+             android:drawablePadding="10dp"
+             android:gravity="center"
+             android:text="LOGIN"
+             android:textColor="#333333"
+             android:textSize="25sp"
+             android:textStyle="bold" />
+
+         <TextView
+
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:gravity="center"
+             android:text="LOGIN"
+             android:textColor="#333333"
+             android:textSize="25sp"
+             android:textStyle="bold"
+             android:visibility="gone" />
+
+
+     </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/userid"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="350dp"
+            android:layout_marginRight="350dp"
+            android:background="@drawable/selector"
+            android:drawableLeft="@drawable/user_icon"
+            android:drawablePadding="20dp"
+            android:hint="User Name"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="350dp"
+            android:layout_marginRight="350dp"
+            android:background="@drawable/selector"
+            android:drawableLeft="@drawable/pwd_icon"
+            android:drawablePadding="20dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:maxLength="8"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="15dp">
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:paddingRight="330dp"
+            android:text="Forgot Password?"
+            android:textColor="#EF7115"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_weight="2"
+        android:gravity="center|top">
+
+        <Button
+            android:id="@+id/submited"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:background="@drawable/new_button"
+            android:drawableLeft="@drawable/submit_icon"
+            android:drawablePadding="2dip"
+            android:paddingLeft="70dip"
+            android:paddingRight="70dip"
+            android:text="Submit"
+            android:textColor="@android:color/background_dark"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

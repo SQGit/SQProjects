@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.app.FragmentTabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="305dp"
+                android:layout_height="51dp"
+                android:gravity="center"
+                android:src="@drawable/btn_negative_selector" />
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/l1l"
+                    android:layout_width="280dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_negative_selector">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:drawableLeft="@drawable/ic_search_black_24dp"
+                        android:paddingLeft="10dp" />
+
+
+                    <Spinner
+                        android:id="@+id/my_spinner1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="#00000000"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:nextFocusDown="@+id/editText2"
+                        android:padding="5dp"
+                        android:textColor="#000000">
+
+                    </Spinner>
+
+
+                </LinearLayout>
+
+                <EditText
+
+                    android:id="@+id/From_Date"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_negative_selector"
+                    android:drawableLeft="@drawable/calendar_icon"
+                    android:drawablePadding="10dp"
+                    android:focusable="false"
+                    android:hint="@string/from_date"
+                    android:nextFocusDown="@+id/To_Date"
+                    android:paddingLeft="15dp"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/To_Date"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_negative_selector"
+                    android:drawableLeft="@drawable/calendar_icon"
+                    android:drawablePadding="10dp"
+                    android:focusable="false"
+                    android:hint="@string/to_date"
+                    android:paddingLeft="15dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/my_transparent_linear_layout_border"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <RadioGroup
+                    android:id="@+id/radioGroup1"
+                    style="@style/Searchtype"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:weightSum="3">
+
+                    <RadioButton
+                        android:id="@+id/radio0"
+                        style="@style/SearchtypeRADIO"
+                        android:layout_width="0dp"
+                        android:layout_height="51dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/tab_calender_icon"
+                        android:text="TODAY"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        style="@style/SearchtypeRADIO"
+                        android:layout_width="0dp"
+                        android:layout_height="51dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableLeft="@drawable/tab_calender_icon"
+                        android:text="3 DAY"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radio2"
+                        style="@style/SearchtypeRADIO"
+                        android:layout_width="0dp"
+                        android:layout_height="51dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawableLeft="@drawable/tab_calender_icon"
+                        android:text="WEEK"
+
+                        android:textStyle="bold" />
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@android:id/tabcontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp">
+
+        <FrameLayout
+            android:id="@+id/realtabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+    </FrameLayout>
+
+
+</android.support.v4.app.FragmentTabHost>
+
+
+
+
+

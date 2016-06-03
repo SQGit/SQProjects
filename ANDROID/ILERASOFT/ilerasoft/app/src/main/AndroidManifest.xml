@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="www.sqindia.net.ilerasoftadmin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ilerasoft"
+        android:label="@string/app_name"
+        android:screenOrientation="sensorLandscape"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <activity
+            android:name=".TestPage"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape">
+
+        </activity>
+
+
+        <activity
+            android:name=".Analytics_Dash"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustPan">
+
+            <!--  <intent-filter>
+                  <action android:name="android.intent.action.SEARCH" />
+              </intent-filter>
+
+              <meta-data
+                  android:name="android.app.searchable"
+
+                  android:resource="@xml/searchable" />
+  -->
+
+
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".CaldroidSampleActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"></activity>
+
+
+        <activity
+            android:name=".Registeration"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SplashActivity" />
+
+        </activity>
+        <activity
+            android:name=".Login"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SplashActivity" />
+        </activity>
+
+        <activity
+            android:name=".Dashboard"
+            android:icon="@drawable/bck_arrow"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+
+
+        </activity>
+        <activity
+            android:name=".ScanEquipment"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Dashboard" />
+        </activity>
+        <activity
+            android:name=".Tagout"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+
+        </activity>
+        <activity
+            android:name=".AddEvent"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"></activity>
+
+        <activity
+            android:name=".TrackingDevice"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Dashboard" />
+
+        </activity>
+
+        <activity
+            android:name=".TrackingStatus"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Dashboard" />
+
+
+        </activity>
+        <activity
+            android:name=".TrackingCancel"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Dashboard" />
+
+
+        </activity>
+
+        <activity
+            android:name=".Schedule_Test"
+            android:icon="@drawable/white_arrow"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/MyCustomTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Dashboard" />
+        </activity>
+        <activity
+            android:name=".InventoryControl"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Dashboard" />
+
+        </activity>
+        <activity
+            android:name=".Utilization"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".InventoryControl" />
+        </activity>
+
+        <activity
+            android:name=".Statistics"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".InventoryControl" />
+
+        </activity>
+        <activity
+            android:name=".AddEquipmentForm"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustPan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".InventoryControl" />
+
+        </activity>
+        <activity
+            android:name=".Update_Equipment"
+            android:label="@string/app_name"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustPan">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AddEquipmentForm" />
+
+        </activity>
+
+        <activity
+            android:name=".ScannerActivity"
+            android:icon="@drawable/bck_arrow"
+            android:label="@string/simple_scanner_activity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme">
+
+        </activity>
+
+
+        <activity
+            android:name=".SimpleScannerActivity"
+            android:label="@string/simple_scanner_activity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppOverlayTheme">
+
+        </activity>
+
+
+        <activity
+            android:name=".TestActivity"
+            android:label="@string/simple_scanner_activity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppOverlayTheme">
+
+        </activity>
+        <activity
+            android:name=".Webview"
+            android:label="@string/simple_scanner_activity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppOverlayTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".InventoryControl">
+
+            </meta-data>
+
+        </activity>
+
+
+        <activity android:name="org.achartengine.GraphicalActivity" />
+    </application>
+
+</manifest>

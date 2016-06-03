@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#e8e8e8"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:drawableLeft="@drawable/bck_arrow"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="TRACKING STATUS"
+            android:textColor="#333333"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="TRACKING STATUS"
+            android:textColor="#333333"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="#0eade8"
+
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="45dp"
+            android:text="EquipmentsId"
+            android:textColor="@android:color/white"
+            android:textSize="26dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/calendar_icon"
+            android:drawablePadding="13dp"
+            android:paddingLeft="10dp"
+            android:text="Booking Date"
+            android:textColor="@android:color/white"
+            android:textSize="26dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/Booking_Time"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/timer_icon"
+            android:drawablePadding="13dp"
+            android:text="Booking_Time"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/state_icon"
+            android:drawablePadding="13dp"
+            android:text="Reference No"
+            android:textColor="@android:color/white"
+            android:textSize="26dp"
+
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/checkin"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/chkin_icon"
+            android:drawablePadding="13dp"
+            android:text="Check In"
+            android:textColor="@android:color/white"
+            android:textSize="26dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/checkout"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/chkout_icon"
+            android:text="Check Out"
+            android:textColor="@android:color/white"
+            android:textSize="26dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="25dp">
+
+    </ListView>
+
+
+</LinearLayout>

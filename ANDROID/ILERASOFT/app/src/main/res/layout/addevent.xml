@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:calendar="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_dark"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="260dp"
+        android:layout_marginRight="260dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/black"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_event_screen">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFF"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:textColorHint="#808080">
+
+                    <EditText
+                        android:id="@+id/HospitalName"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:clickable="false"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:hint="HospitalName"
+                        android:paddingLeft="15dp"
+                        android:singleLine="true">
+
+                    </EditText>
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/add_event_screen"
+                android:src="#FFFF"
+                android:textColorHint="#808080">
+
+                <EditText
+                    android:id="@+id/equipment_Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="#00000000"
+                    android:drawableLeft="@drawable/postal_icon"
+                    android:drawablePadding="15dip"
+                    android:hint="Equipment Name"
+                    android:nextFocusDown="@+id/From_Date"
+                    android:paddingLeft="15dp"
+                    android:singleLine="true"
+                    android:textColor="#FFFF"
+                    android:textColorHint="#D3D3D3">
+
+                </EditText>
+            </android.support.design.widget.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/add_event_screen"
+                        android:nextFocusDown="@+id/From_Time"
+                        android:src="#000000"
+                        android:textColorHint="#808080">
+
+                        <EditText
+                            android:id="@+id/From_Date"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:background="#00000000"
+                            android:drawableLeft="@drawable/calendar_icon"
+                            android:drawablePadding="15dip"
+                            android:hint="From Date"
+                            android:nextFocusDown="@+id/From_Time"
+                            android:paddingLeft="15dp"
+                            android:singleLine="true"
+                            android:textColor="#FFFF"
+                            android:textColorHint="#D3D3D3" />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/add_event_screen"
+                        android:nextFocusDown="@+id/From_Time"
+                        android:src="#FFFF"
+                        android:textColorHint="#808080">
+
+                        <EditText
+                            android:id="@+id/From_Time"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:background="#00000000"
+                            android:drawableLeft="@drawable/timer_icon"
+                            android:drawablePadding="15dip"
+                            android:hint="From Time"
+                            android:nextFocusDown="@+id/End_Date"
+                            android:paddingLeft="15dp"
+                            android:singleLine="true"
+                            android:textColor="#FFFF"
+                            android:textColorHint="#D3D3D3">
+
+                        </EditText>
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/add_event_screen"
+                        android:src="#FFFF"
+
+                        android:textColorHint="#808080">
+
+                        <EditText
+                            android:id="@+id/End_Date"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:background="#00000000"
+                            android:drawableLeft="@drawable/calendar_icon"
+                            android:drawablePadding="15dip"
+                            android:hint="To Date"
+                            android:nextFocusDown="@+id/End_Time"
+                            android:paddingLeft="15dp"
+                            android:singleLine="true"
+                            android:textColor="#FFFF"
+                            android:textColorHint="#D3D3D3" />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/add_event_screen"
+                        android:src="#FFFF"
+                        android:textColorHint="#808080">
+
+                        <EditText
+                            android:id="@+id/End_Time"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:background="#00000000"
+                            android:drawableLeft="@drawable/timer_icon"
+                            android:drawablePadding="15dip"
+                            android:hint="To Time"
+                            android:nextFocusDown="@+id/submited"
+                            android:paddingLeft="15dp"
+                            android:singleLine="true"
+                            android:textColor="#FFFF"
+                            android:textColorHint="#D3D3D3"></EditText>
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_weight="2"
+                android:gravity="center|top"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/submited"
+                    android:layout_width="300dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/new_button"
+                    android:drawableLeft="@drawable/submit_icon"
+                    android:drawablePadding="2dip"
+                    android:paddingLeft="70dip"
+                    android:paddingRight="70dip"
+                    android:text="Submit"
+                    android:textColor="@android:color/white"
+                    android:textSize="23sp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
