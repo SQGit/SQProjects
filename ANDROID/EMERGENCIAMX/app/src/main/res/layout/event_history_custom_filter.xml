@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme.PopupOverlay">
+
+
+    <ScrollView
+        android:id="@+id/bottomvalue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="10sp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <TextView
+                        android:id="@+id/txt_call911"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:paddingLeft="20dp"
+                        android:nextFocusDown="@+id/edt_alias_name"
+                        android:text="Call 911"
+                        android:textColor="@android:color/background_light" />
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/switch_call911"
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:checked="true"
+                        android:text="call 911"
+                        android:nextFocusDown="@+id/edt_height"
+                        android:paddingLeft="100dp"
+                        app:kswTintColor="#75BB38">
+
+                    </com.kyleduo.switchbutton.SwitchButton>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <TextView
+                        android:id="@+id/txt_need_help"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+                         android:layout_weight="1.0"
+
+                        android:paddingLeft="20dp"
+                        android:nextFocusDown="@+id/edt_alias_name"
+                        android:text="Need help"
+                        android:textColor="@android:color/background_light" />
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/switch_need_help"
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:checked="true"
+                        android:nextFocusDown="@+id/edt_height"
+                        android:paddingLeft="100dp"
+                        app:kswTintColor="#75BB38">
+
+                    </com.kyleduo.switchbutton.SwitchButton>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <TextView
+                        android:id="@+id/txt_active_shooter"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+
+                        android:layout_weight="1.0"
+                        android:paddingLeft="20dp"
+                        android:nextFocusDown="@+id/edt_alias_name"
+                        android:text="Active shooter"
+                        android:textColor="@android:color/background_light" />
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/switch_active_shooter"
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:checked="true"
+                        android:nextFocusDown="@+id/edt_height"
+                        android:paddingLeft="100dp"
+                        app:kswTintColor="#75BB38">
+
+                    </com.kyleduo.switchbutton.SwitchButton>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <TextView
+                        android:id="@+id/txt_iam_ok"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+
+                        android:layout_weight="1.0"
+                        android:paddingLeft="20dp"
+                        android:nextFocusDown="@+id/edt_alias_name"
+                        android:text="I am ok"
+                        android:textColor="@android:color/background_light" />
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/switch_iam_ok"
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:checked="true"
+                        android:nextFocusDown="@+id/edt_height"
+                        android:paddingLeft="100dp"
+                        app:kswTintColor="#75BB38">
+
+                    </com.kyleduo.switchbutton.SwitchButton>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <TextView
+                        android:id="@+id/txt_alarm"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+
+                        android:layout_weight="1.0"
+                        android:paddingLeft="20dp"
+                        android:nextFocusDown="@+id/edt_alias_name"
+                        android:text="Alarm"
+                        android:textColor="@android:color/background_light" />
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/switch_alarm"
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:checked="true"
+                        android:nextFocusDown="@+id/edt_height"
+                        android:paddingLeft="100dp"
+                        app:kswTintColor="#75BB38">
+
+                    </com.kyleduo.switchbutton.SwitchButton>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <TextView
+                        android:id="@+id/txt_diaster"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center"
+
+                        android:layout_weight="1.0"
+                        android:paddingLeft="20dp"
+                        android:nextFocusDown="@+id/edt_alias_name"
+                        android:text="Diaster"
+                        android:textColor="@android:color/background_light" />
+
+                    <com.kyleduo.switchbutton.SwitchButton
+                        android:id="@+id/switch_diaster"
+                        style="@style/SwitchButtonStyle"
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:checked="true"
+                        android:nextFocusDown="@+id/edt_height"
+                        android:paddingLeft="100dp"
+                        app:kswTintColor="#75BB38">
+
+                    </com.kyleduo.switchbutton.SwitchButton>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <com.andexert.library.RippleView
+            android:id="@+id/more"
+            rv_centered="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_submit"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bluebutton"
+                android:drawableLeft="@drawable/submit"
+                android:drawablePadding="5sp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="Submit"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+        </com.andexert.library.RippleView>
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5sp"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

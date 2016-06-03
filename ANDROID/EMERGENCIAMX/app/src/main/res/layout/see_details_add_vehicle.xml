@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/bottomvalue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/lineralayout2"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/lineralayout2"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <Spinner
+                            android:id="@+id/spr_vehicle__type"
+                            style="@style/Widget.AppCompat.Spinner.Underlined"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1.0"
+                            android:hint="Vehicle Type"
+                            android:nextFocusDown="@+id/edt_vehicle__Make"
+                            android:paddingTop="13sp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/text_hint_color"
+                            android:textSize="14sp" />
+
+                        <Spinner
+                            android:id="@+id/spr_vehicle__Make"
+                            style="@style/Widget.AppCompat.Spinner.Underlined"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1.0"
+                            android:drawableRight="@drawable/phone"
+                            android:hint="Make"
+                            android:nextFocusDown="@+id/edt_vehicle___model"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/text_hint_color"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <EditText
+                            android:id="@+id/edt_vehicle___model"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="1.0"
+                            android:gravity="start|center"
+                            android:hint="Model"
+                            android:nextFocusDown="@+id/edt_vehicle___color"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+
+                        <EditText
+                            android:id="@+id/edt_vehicle___color"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0"
+                            android:gravity="start|center"
+                            android:hint="Color"
+                            android:nextFocusDown="@+id/edt_vehicle___no_of_doors"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <EditText
+                            android:id="@+id/edt_vehicle___no_of_doors"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="1.0"
+                            android:gravity="start|center"
+                            android:hint="No.of Doors "
+                            android:inputType="number"
+                            android:nextFocusDown="@+id/edt_vehicle___year"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+
+                        <EditText
+                            android:id="@+id/edt_vehicle___year"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0"
+                            android:gravity="start|center"
+                            android:hint="Year"
+                            android:inputType="date"
+                            android:nextFocusDown="@+id/edt_vehicle___licensed_plate"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <EditText
+                            android:id="@+id/edt_vehicle___licensed_plate"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="1.0"
+                            android:gravity="start|center"
+                            android:hint="License Plate No."
+                            android:inputType="textCapSentences|number"
+                            android:nextFocusDown="@+id/edt_vehicle___additionalcomment"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="start|center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <EditText
+                            android:id="@+id/edt_vehicle___additionalcomment"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="2.1"
+                            android:gravity="start|center"
+                            android:hint="Additional Vehicle Comments"
+                            android:imeOptions="actionDone"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/additional_information"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="38dp"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@drawable/add"
+                    android:gravity="right"
+                    android:paddingLeft="150dp"
+                    android:text="Add Another Vehicle"
+                    android:textColor="@color/text_color_heading"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:id="@+id/additional_information_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/linearloaut_additional"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <Spinner
+                            android:id="@+id/spr_vehicle_additional_type"
+                            style="@style/Widget.AppCompat.Spinner.Underlined"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1.0"
+                            android:hint="Vehicle Type"
+                            android:nextFocusDown="@+id/edt_vehicle_additional_Make"
+                            android:paddingTop="13sp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/text_hint_color"
+                            android:textSize="14sp" />
+
+                        <Spinner
+                            android:id="@+id/spr_vehicle_additional_Make"
+                            style="@style/Widget.AppCompat.Spinner.Underlined"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1.0"
+                            android:drawableRight="@drawable/phone"
+                            android:hint="Make"
+                            android:nextFocusDown="@+id/edt_vehicle_additional__model"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/text_hint_color"
+                            android:textSize="15sp" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <EditText
+                            android:id="@+id/edt_vehicle_additional__model"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="1.0"
+                            android:gravity="start|center"
+                            android:hint="Model"
+                            android:nextFocusDown="@+id/edt_vehicle_additional__color"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+
+                        <EditText
+                            android:id="@+id/edt_vehicle_additional__color"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0"
+                            android:gravity="start|center"
+                            android:hint="Color"
+                            android:nextFocusDown="@+id/edt_vehicle_additional__no_of_doors"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <EditText
+                            android:id="@+id/edt_vehicle_additional__no_of_doors"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="1.0"
+                            android:gravity="start|center"
+                            android:hint="No.of Doors "
+                            android:inputType="number"
+                            android:nextFocusDown="@+id/edt_vehicle_additional__year"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+
+                        <EditText
+                            android:id="@+id/edt_vehicle_additional__year"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0"
+                            android:gravity="start|center"
+                            android:hint="Year"
+                            android:inputType="date"
+                            android:nextFocusDown="@+id/edt_vehicle_additional__licensed_plate"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <EditText
+                            android:id="@+id/edt_vehicle_additional__licensed_plate"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="1.0"
+                            android:gravity="start|center"
+                            android:hint="License Plate No."
+                            android:inputType="textCapSentences|number"
+                            android:nextFocusDown="@+id/edt_vehicle_additional__additionalcomment"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="start|center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <EditText
+                            android:id="@+id/edt_vehicle_additional__additionalcomment"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="2.1"
+                            android:gravity="start|center"
+                            android:hint="Additional Vehicle Comments"
+                            android:imeOptions="actionDone"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/foc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <com.andexert.library.RippleView
+
+            rv_centered="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btn_previous"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/orrangebutton"
+                android:drawableLeft="@drawable/btn_back"
+                android:drawablePadding="5dp"
+                android:ems="7"
+                android:gravity="start|center"
+                android:paddingLeft="20dp"
+                android:text="Back"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+        </com.andexert.library.RippleView>
+
+        <com.andexert.library.RippleView
+            rv_centered="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btn_next"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/orrangebutton"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/btn_next"
+                android:ems="7"
+                android:gravity="center|end"
+                android:paddingRight="20dp"
+                android:text="Next"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+        </com.andexert.library.RippleView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <include
+            android:id="@+id/container_header_lyt"
+            layout="@layout/poweredby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </include>
+
+    </LinearLayout>
+
+
+</LinearLayout>

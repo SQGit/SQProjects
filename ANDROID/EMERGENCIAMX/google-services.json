@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "476995023679",
+    "project_id": "emxsavior"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476995023679:android:2f2a305a47fb3dbf",
+        "android_client_info": {
+          "package_name": "www.sqindia.net.emergenciamx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "476995023679-3q68tt15m91nldvnlc9cl2747p4kk86m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "www.sqindia.net.emergenciamx",
+            "certificate_hash": "EA39B79101896A3E3C528673AE875224A347C0BC"
+          }
+        },
+        {
+          "client_id": "476995023679-8899rbmlf5gm8k8or96fhko99srbdl5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrkj4CHN0FmK8yL_M8hoNB7yMC_kUHLsc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

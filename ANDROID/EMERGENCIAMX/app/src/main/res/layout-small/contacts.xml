@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+
+                <ListView
+                    android:id="@+id/listView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="600dp"
+                    android:layout_gravity="center_horizontal"
+                    android:dividerHeight="3dp"
+                    android:scrollbars="none">
+
+                </ListView>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/menu1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:padding="20sp"
+            android:paddingRight="50dp"
+            fab:menu_colorNormal="#3c5899"
+            fab:menu_colorPressed="#3c5899"
+            fab:menu_fab_label="Cancel"
+            fab:menu_labels_ellipsize="end"
+            fab:menu_labels_singleLine="true"></com.github.clans.fab.FloatingActionMenu>
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center">
+
+        <include
+            android:id="@+id/container_header_lyt"
+            layout="@layout/poweredby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </include>
+
+    </LinearLayout>
+
+
+</LinearLayout>

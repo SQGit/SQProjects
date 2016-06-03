@@ -1,0 +1,104 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/text_color_heading</item>
+        <item name="android:titleTextStyle">@style/ActionBar.TitleTextStyle</item>
+
+        <item name="android:textSize">11sp</item>
+
+        <item name="android:alertDialogStyle">@style/AlertDialog.HoloStyle</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="ActionBar.TitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/text_color_heading</item>
+    </style>
+
+
+
+    <style name="Widget.MyApp.Toolbar.Solid" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:elevation" tools:ignore="NewApi">5dp</item>
+        <!--  <item name="titleTextAppearance">...</item>-->
+    </style>
+
+    <style name="ThemeOverlay.MyApp.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Parent theme sets colorControlNormal to textColorPrimary. -->
+        <item name="android:textColorPrimary">@color/text_color_heading</item>
+    </style>
+
+    <style name="AppTheme.Widget.TextView" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">fonts/ques.otf</item>
+    </style>
+
+    <style name="MenuButtonsStyle">
+        <item name="fab_size">mini</item>
+        <item name="fab_showAnimation">@anim/jump_from_down</item>
+        <item name="fab_hideAnimation">@anim/jump_to_down</item>
+        <item name="fab_shadowColor">#444</item>
+        <item name="fab_colorNormal">#FFB805</item>
+        <item name="fab_colorPressed">#F2AB00</item>
+        <item name="fab_colorRipple">#D99200</item>
+    </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+
+        <item name="android:titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+        <item name="android:subtitleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+        <item name="titleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+        <item name="subtitleTextStyle">@style/MyTheme.ActionBar.TitleTextStyle</item>
+    </style>
+    <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/text_color_heading</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="SwitchButtonStyle">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+
+    <style name="AlertDialog.HoloStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:bottomBright">@color/white</item>
+        <item name="android:bottomDark">@color/white</item>
+        <item name="android:bottomMedium">@color/white</item>
+        <item name="android:centerBright">@color/white</item>
+        <item name="android:centerDark">@color/white</item>
+        <item name="android:centerMedium">@color/white</item>
+        <item name="android:fullBright">@color/orange</item>
+        <item name="android:fullDark">@color/orange</item>
+        <item name="android:topBright">@color/blue</item>
+        <item name="android:topDark">@color/blue</item>
+    </style>
+
+
+    <style name="MenuLabelsStyle">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+
+
+     
+
+</resources>

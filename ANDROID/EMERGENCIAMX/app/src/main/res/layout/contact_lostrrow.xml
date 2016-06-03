@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10sp"
+        android:background="@drawable/linearborder"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10sp">
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:text="Name"
+            android:textColor="@color/text_color_heading"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/Phone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:text="Phone number"
+            android:textColor="@color/text_color_heading"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Email"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:text="Email"
+            android:textColor="@color/text_color_heading"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

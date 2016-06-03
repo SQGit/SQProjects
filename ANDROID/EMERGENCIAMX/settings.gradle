@@ -1,0 +1,1 @@
+include ':apache-httpcomponents-httpclient', ':apache-httpcomponents-httpcore', ':httpclient-4.0.3', ':httpmime-4.1', ':app',':library'

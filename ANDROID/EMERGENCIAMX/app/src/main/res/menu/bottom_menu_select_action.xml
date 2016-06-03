@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/takephoto"
+        android:icon="@drawable/phone"
+        android:title="@string/take_photo" />
+    <item
+        android:id="@+id/pickfromgallery"
+        android:icon="@drawable/phone"
+        android:title="@string/Pick_From_Gallery" />
+
+    <group android:id="@+id/helpgroup">
+        <item
+            android:id="@+id/Cancel"
+            android:icon="@drawable/phone"
+            android:title="@string/Cancel" />
+    </group>
+</menu>

@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="BY SIGNING UP YOU AGREE TO THE TERMS &amp; CONDITIONS AND PRIVACY OF EMERGENCY SAVIOR "
+        android:id="@+id/textView"
+        android:textSize="8sp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/text_color_heading"
+
+
+        />
+
+
+</RelativeLayout>

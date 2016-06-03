@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:gravity="right"
+        android:paddingRight="10sp"
+        android:visibility="gone">
+
+        <com.andexert.library.RippleView
+            android:id="@+id/more"
+            rv_centered="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/orrangebutton"
+                android:drawableLeft="@drawable/filter"
+                android:paddingLeft="10dp"
+                android:text="Filter"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+        </com.andexert.library.RippleView>
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:layoutAnimation="@anim/layout_bottom_to_top_slide"
+        android:padding="10sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp">
+
+        <include
+            android:id="@+id/container_header_lyt"
+            layout="@layout/poweredby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+        </include>
+
+    </LinearLayout>
+
+</LinearLayout>

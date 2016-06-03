@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5sp"
+    android:background="#FFFF"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        card_view:cardCornerRadius="7dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <TextView
+                android:id="@+id/transction_type"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:layout_weight="1"
+                android:drawablePadding="5sp"
+                android:padding="5sp"
+                android:text="Type"
+                android:textColor="@color/text_color_heading"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        card_view:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <TextView
+                    android:id="@+id/call"
+                    android:layout_width="0.0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/call_details"
+                    android:drawablePadding="5sp"
+                    android:padding="5sp"
+                    android:text="Call"
+                    android:textColor="@color/text_color_heading"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/sms"
+                    android:layout_width="0.0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/sms"
+                    android:drawablePadding="5sp"
+                    android:padding="5sp"
+                    android:text="Sms"
+                    android:textColor="@color/text_color_heading"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="0.0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawablePadding="5sp"
+                    android:padding="5sp"
+                    android:text="Email"
+                    android:textColor="@color/text_color_heading"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="3">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/card_view_call"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#E8E8E8"
+                        card_view:cardCornerRadius="7dp">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:id="@+id/Transaction_id"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5sp"
+                                android:background="#A7A7A7"
+                                android:padding="5sp"
+                                android:text="Call Details"
+                                android:textColor="#FFFF"
+                                android:textSize="18sp" />
+
+                            <ListView
+                                android:id="@+id/listView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:divider="@android:color/background_light" />
+
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/card_view_sms"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#E8E8E8"
+                        card_view:cardCornerRadius="7dp">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:id="@+id/Transaction_sms"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5sp"
+                                android:background="#A7A7A7"
+                                android:padding="5sp"
+                                android:text="Sms Details"
+                                android:textColor="#FFFF"
+                                android:textSize="18sp" />
+
+                            <ListView
+                                android:id="@+id/listView_sms"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:divider="@android:color/background_light" />
+
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/card_view_email"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#E8E8E8"
+                        card_view:cardCornerRadius="7dp">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:id="@+id/Transaction_email"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5sp"
+                                android:background="#A7A7A7"
+                                android:padding="5sp"
+                                android:text="Email Details"
+                                android:textColor="#FFFF"
+                                android:textSize="18sp" />
+
+                            <ListView
+                                android:id="@+id/listView_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:divider="@android:color/background_light" />
+
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

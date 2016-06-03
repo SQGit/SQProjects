@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <!-- <item
+        android:id="@+id/action_speech_record"
+        android:icon="@drawable/ic_mic"
+        android:title="record"
+        app:showAsAction="ifRoom"/>-->
+
+    <item
+        android:id="@+id/safe_walking"
+        android:orderInCategory="100"
+        android:title="@string/safe_walking" />
+    <item
+        android:id="@+id/walk_timer"
+        android:orderInCategory="100"
+        android:title="@string/walk_timer" />
+    <item
+        android:id="@+id/real_time_tracking"
+        android:orderInCategory="100"
+        android:title="@string/real_time_tracking" />
+    <item
+        android:id="@+id/crime_reporting"
+        android:orderInCategory="100"
+        android:title="@string/crime_reporting" />
+    <item
+        android:id="@+id/crime_Tracking"
+        android:orderInCategory="100"
+        android:title="@string/crime_Tracking" />
+    <item
+        android:id="@+id/settings"
+        android:orderInCategory="100"
+        android:title="@string/settings" />
+
+</menu>

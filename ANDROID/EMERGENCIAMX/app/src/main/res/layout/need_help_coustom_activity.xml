@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme.PopupOverlay"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_margin="10dp">
+
+            <at.markushi.ui.CircleButton
+                android:layout_width="100dip"
+                android:layout_height="100dip"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:id="@+id/call"
+                android:src="@drawable/call"
+                app:cb_color="@android:color/holo_red_dark"
+                app:cb_pressedRingWidth="8dip" />
+
+            <TextView
+                android:id="@+id/call_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginTop="20dp"
+                android:text="Call 911"
+                android:textStyle="bold"
+
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/background_light"
+                android:textSize="15sp" />
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_margin="10dp">
+
+            <at.markushi.ui.CircleButton
+                android:id="@+id/emergency_message_text"
+                android:layout_width="100dip"
+                android:layout_height="100dip"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/alarm"
+                app:cb_color="@android:color/holo_purple"
+                app:cb_pressedRingWidth="8dip" />
+
+            <TextView
+                android:id="@+id/message_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginTop="10dp"
+                android:text="Message"
+                android:textColor="@android:color/background_light"
+                android:layout_marginBottom="5dp"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

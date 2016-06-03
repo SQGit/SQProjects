@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/bottomvalue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/lineralayout2"
+                android:orientation="vertical"
+
+                android:padding="15dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/update_image"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="5dp"
+                    android:paddingTop="@dimen/nav_header_vertical_spacing"
+                    android:src="@drawable/ic_no_user">
+
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/lineralayout2"
+                    android:orientation="vertical"
+
+                    android:padding="15dp">
+
+                <EditText
+                    android:id="@+id/First_Name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="#00000000"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/user"
+                    android:hint="First Name"
+                    android:inputType="textCapSentences"
+                    android:nextFocusDown="@+id/ll2"
+
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#000000" />
+
+                <EditText
+                    android:id="@+id/Last_Name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="#00000000"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/user"
+                    android:hint="Last Name"
+                    android:inputType="textCapSentences"
+                    android:nextFocusDown="@+id/ll2"
+
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#000000" />
+
+                <EditText
+                    android:id="@+id/residential_landline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="#00000000"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/map"
+                    android:hint="Residential Phone"
+                    android:inputType="phone"
+                    android:nextFocusDown="@+id/ll2"
+
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#000000" />
+
+                <EditText
+                    android:id="@+id/email_address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="#00000000"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/mail"
+                    android:hint="Email address"
+                    android:inputType="textEmailAddress"
+                    android:nextFocusDown="@+id/ll2"
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#000000" />
+
+                <EditText
+                    android:id="@+id/confirm_email_address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="#00000000"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/mail"
+                    android:hint="confirm Email Address"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@+id/ll2"
+                android:visibility="gone"
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#000000" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="#00000000"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/phone"
+                    android:hint="Phone"
+                    android:inputType="phone"
+                    android:nextFocusDown="@+id/ll2"
+
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#000000" />
+
+                <EditText
+                    android:id="@+id/Password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="#00000000"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/pass"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@+id/ll2"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#000000" />
+
+                <EditText
+                    android:id="@+id/Confirm_Password"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="#00000000"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/pass"
+                    android:hint="Confirm Password"
+                    android:visibility="gone"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@+id/ll2"
+                    android:singleLine="true"
+                    android:textColor="#000000" />
+                    </LinearLayout>
+
+                <TextView
+                    android:id="@+id/additional_information"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="38dp"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@drawable/add"
+                    android:gravity="right"
+                    android:layout_gravity="center"
+                    android:paddingLeft="190dp"
+                    android:text="Additional Information"
+                    android:textColor="@color/text_color_heading"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:id="@+id/additional_information_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/linearloaut_additional"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/date_of_birth"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:background="#00000000"
+                        android:drawablePadding="20dp"
+                        android:drawableRight="@drawable/user"
+                        android:hint="Date of birth"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:nextFocusDown="@+id/ll2"
+                        android:singleLine="true"
+                        android:textColor="#000000" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#000000" />
+
+                    <EditText
+                        android:id="@+id/gender"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:background="#00000000"
+                        android:drawablePadding="20dp"
+                        android:drawableRight="@drawable/user"
+                        android:hint="Gender"
+                        android:focusable="false"
+                        android:inputType="textCapSentences"
+                        android:nextFocusDown="@+id/ll2"
+
+                        android:singleLine="true"
+                        android:textColor="#000000" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#000000" />
+
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:background="#00000000"
+                        android:drawablePadding="20dp"
+                        android:drawableRight="@drawable/map"
+                        android:hint="Address"
+                        android:inputType="textEmailAddress"
+                        android:nextFocusDown="@+id/ll2"
+
+                        android:singleLine="true"
+                        android:textColor="#000000" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#000000" />
+
+                    <EditText
+                        android:id="@+id/city"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:background="#00000000"
+                        android:drawablePadding="20dp"
+                        android:drawableRight="@drawable/map"
+                        android:hint="City"
+                        android:inputType="textCapSentences"
+                        android:nextFocusDown="@+id/ll2"
+
+                        android:singleLine="true"
+                        android:textColor="#000000" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#000000" />
+
+                    <EditText
+                        android:id="@+id/state"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:background="#00000000"
+                        android:drawablePadding="20dp"
+                        android:drawableRight="@drawable/map"
+                        android:hint="State"
+                        android:inputType="textCapSentences"
+                        android:nextFocusDown="@+id/ll2"
+                        android:singleLine="true"
+                        android:textColor="#000000" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#000000" />
+
+                    <EditText
+                        android:id="@+id/zipcode"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40dp"
+                        android:background="#00000000"
+                        android:drawablePadding="20dp"
+                        android:drawableRight="@drawable/map"
+                        android:hint="Zipcode"
+                        android:inputType="numberDecimal|textPostalAddress"
+                        android:imeOptions="actionDone"
+                        android:cursorVisible="false"
+                            android:singleLine="true"
+                        android:textColor="#000000" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/foc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:focusableInTouchMode="true">
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+       >
+
+        <com.andexert.library.RippleView
+            android:id="@+id/more"
+            rv_centered="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+             android:gravity="center_horizontal|bottom">
+
+            <Button
+                android:id="@+id/btn_update"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/orrangebutton"
+                android:drawableLeft="@drawable/update"
+                android:drawablePadding="5dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="50dp"
+                android:text="update"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+        </com.andexert.library.RippleView>
+
+
+
+        <include
+            android:id="@+id/container_header_lyt"
+            layout="@layout/poweredby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_below="@+id/container_header_lyt"></include>
+
+    </LinearLayout>
+
+
+</LinearLayout>

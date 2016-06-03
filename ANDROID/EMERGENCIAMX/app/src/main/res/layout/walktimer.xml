@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                card_view:cardCornerRadius="2dp"
+                card_view:contentPadding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+
+                    <EditText
+                        android:id="@+id/edtTimerValue"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Time"
+                        android:inputType="phone"
+                        android:textColor="@color/text_hint_color"
+                        android:textColorHint="@color/text_hint_color" />
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/orrangebutton"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="Start Timer"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/btnStopTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/orrangebutton"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="Stop Timer"
+                    android:textColor="#fff"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="280dp">
+
+                <www.sqindia.net.emergencysavior.CircularProgressBar
+                    android:id="@+id/circularprogress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/tvTimeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="00:00"
+                    android:textColor="@color/text_hint_color"
+                    android:textSize="60dip" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:gravity="center">
+
+        <include
+            android:id="@+id/container_header_lyt"
+            layout="@layout/poweredby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></include>
+
+
+    </LinearLayout>
+
+</LinearLayout>

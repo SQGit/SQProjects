@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/bottomvalue"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/lineralayout2"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/lineralayout2"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <TextView
+                            android:id="@+id/txt_anonymous"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="1.0"
+                            android:layout_gravity="left"
+                            android:gravity="center|start"
+                            android:text="Anonymous"
+                            android:nextFocusDown="@+id/edt_alias_name"
+                            android:textColor="@color/text_hint_color" />
+
+                        <com.kyleduo.switchbutton.SwitchButton
+                            android:id="@+id/sb_use_listener"
+                            style="@style/SwitchButtonStyle"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0"
+                            android:layout_gravity="right"
+                            android:gravity="center|end"
+                            android:nextFocusDown="@+id/edt_height"
+                            android:paddingLeft="70dp"
+                            app:kswTintColor="#75BB38">
+
+                        </com.kyleduo.switchbutton.SwitchButton>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#000000" />
+
+                    <LinearLayout
+                        android:id="@+id/additional_information_view"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        >
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <EditText
+                            android:id="@+id/edt_name"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="1.0"
+                            android:gravity="center|start"
+                            android:hint="Name"
+                            android:nextFocusDown="@+id/edt_phone"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+
+                        <EditText
+                            android:id="@+id/edt_phone"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0"
+                            android:gravity="center|start"
+                            android:hint="Phone"
+                            android:inputType="phone"
+                            android:nextFocusDown="@+id/edt_race"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <EditText
+                            android:id="@+id/edt_Email"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0"
+                            android:gravity="center|start"
+                            android:hint="Email"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <EditText
+                            android:id="@+id/edt_address"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="1.0"
+                            android:gravity="center|start"
+                            android:hint="Address"
+                            android:nextFocusDown="@+id/edt_Email"
+                            android:singleLine="true"
+                            android:textColor="@color/dark_black"
+                            android:textColorHint="@color/text_hint_color" />
+
+                    </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <com.andexert.library.RippleView
+            android:id="@+id/more"
+            rv_centered="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/bluebutton"
+                android:drawableLeft="@drawable/submit"
+                android:drawablePadding="5sp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="Submit Report"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+        </com.andexert.library.RippleView>
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center">
+
+        <include
+            android:id="@+id/container_header_lyt"
+            layout="@layout/poweredby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_header_lyt"
+            android:layout_gravity="center"></include>
+
+    </LinearLayout>
+
+
+</LinearLayout>

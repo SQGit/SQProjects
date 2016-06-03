@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/Emergency_Event"
+            android:icon="@drawable/emer_event"
+            android:title="@string/Emergency_Event" />
+        <item
+            android:id="@+id/Profile"
+            android:icon="@drawable/profile"
+            android:title="@string/Profile" />
+        <item
+            android:id="@+id/Contacts"
+            android:icon="@drawable/contact"
+            android:title="@string/Contacts" />
+        <item
+            android:id="@+id/User_Guide"
+            android:icon="@drawable/userguide"
+            android:title="@string/User_Guide" />
+        <item
+            android:id="@+id/Emergency_event_History"
+            android:icon="@drawable/emerevnt_his"
+            android:title="@string/Emergency_event_History" />
+
+        <item
+            android:id="@+id/flashlight"
+            android:icon="@drawable/arrow"
+            android:title="@string/flashlight" />
+        <item
+            android:id="@+id/Privacy_policy"
+            android:icon="@drawable/arrow"
+            android:title="@string/Privacy_policy"
+            />
+        <item
+            android:id="@+id/Term_and_Conditions"
+            android:icon="@drawable/arrow"
+            android:title="@string/Term_and_Conditions" />
+
+        <item
+            android:id="@+id/Exit"
+            android:icon="@drawable/arrow"
+            android:title="@string/Exit" />
+
+
+    </group>
+
+   <!-- <item android:title="@string/Other">
+        <bottom_menu>
+
+        </bottom_menu>
+    </item>-->
+
+</menu>

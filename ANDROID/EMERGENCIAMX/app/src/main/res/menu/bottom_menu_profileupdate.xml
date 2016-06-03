@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/change_photo"
+        android:icon="@drawable/phone"
+        android:title="@string/Change_photo" />
+        <group android:id="@+id/helpgroup">
+        <item
+            android:id="@+id/Cancel"
+            android:icon="@drawable/phone"
+            android:title="@string/Cancel" />
+    </group>
+</menu>
