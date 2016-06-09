@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/emergency_earthquake"
+                    android:layout_width="110dip"
+                    android:layout_height="110dip"
+                    android:src="@mipmap/earthqu"
+                    app:cb_color="#D44848"
+                    app:cb_pressedRingWidth="8dip" />
+
+                <TextView
+                    android:id="@+id/txt_earthquake"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:text="Earthquake"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/emergency_flood"
+                    android:layout_width="110dip"
+                    android:layout_height="110dip"
+                    android:src="@mipmap/flood"
+                    app:cb_color="#7A59ED"
+                    app:cb_pressedRingWidth="8dip" />
+
+                <TextView
+                    android:id="@+id/txt_flood"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start"
+                    android:text="Flood"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/emergency_storms"
+                    android:layout_width="110dip"
+                    android:layout_height="110dip"
+                    android:src="@mipmap/storms"
+                    app:cb_color="#3277DD"
+                    app:cb_pressedRingWidth="8dip" />
+
+                <TextView
+                    android:id="@+id/txt_storms"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start"
+                    android:text="Storms"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/emergency_tsunami"
+                    android:layout_width="110dip"
+                    android:layout_height="110dip"
+                    android:src="@mipmap/tsunami"
+                    app:cb_color="#D49B48"
+                    app:cb_pressedRingWidth="8dip" />
+
+                <TextView
+                    android:id="@+id/tx_tsunami"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start"
+                    android:text="Tsunami"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/emergency_volcanoe"
+                    android:layout_width="110dip"
+                    android:layout_height="110dip"
+                    android:src="@mipmap/volcano"
+                    app:cb_color="#AB2BCF"
+                    app:cb_pressedRingWidth="8dip" />
+
+                <TextView
+                    android:id="@+id/txt_volcanoes"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start"
+                    android:text="Volcano "
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <at.markushi.ui.CircleButton
+                    android:id="@+id/emergency_iam_ok"
+                    android:layout_width="110dip"
+                    android:layout_height="110dip"
+                    android:src="@mipmap/iamok"
+                    app:cb_color="@android:color/holo_green_light"
+                    app:cb_pressedRingWidth="8dip" />
+
+                <TextView
+                    android:id="@+id/txt_iamok"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="start"
+                    android:text="I am ok "
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

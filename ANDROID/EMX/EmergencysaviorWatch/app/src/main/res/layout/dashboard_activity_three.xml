@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/cell"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/stroke_border">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp">
+
+                        <at.markushi.ui.CircleButton
+                            android:id="@+id/alarm"
+                            android:layout_width="100dip"
+                            android:layout_height="100dip"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:onClick="onClick"
+                            android:src="@mipmap/alarm"
+                            app:cb_color="@android:color/holo_purple"
+                            app:cb_pressedRingWidth="8dip" />
+
+                        <TextView
+                            android:id="@+id/txt_alarm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Alarm"
+                            android:textColor="@color/text_color"
+                            android:textSize="13sp" />
+
+                    </FrameLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/stroke_border">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp">
+
+                        <at.markushi.ui.CircleButton
+                            android:id="@+id/btn_rescue_Me"
+                            android:layout_width="100dip"
+                            android:layout_height="100dip"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:onClick="onClick"
+                            android:src="@mipmap/rescue"
+                            app:cb_color="#DCB712"
+                            app:cb_pressedRingWidth="8dip" />
+
+                        <TextView
+                            android:id="@+id/txt_rescue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Rescue Me"
+                            android:textColor="@color/text_color"
+                            android:textSize="13sp" />
+
+                    </FrameLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cell1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+
+
+                >
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/stroke_border">
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="120dp">
+
+                        <at.markushi.ui.CircleButton
+                            android:id="@+id/see_something"
+                            android:layout_width="100dip"
+                            android:layout_height="100dip"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center"
+                            android:onClick="onClick"
+                            android:src="@mipmap/sds"
+                            app:cb_color="#ff5805B8"
+                            app:cb_pressedRingWidth="8dip" />
+
+                        <TextView
+                            android:id="@+id/txt_sos"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Do Something"
+                            android:textColor="@color/text_color"
+                            android:textSize="13sp" />
+                    </FrameLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/stroke_border">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp">
+
+                        <at.markushi.ui.CircleButton
+                            android:id="@+id/btn_iamok"
+                            android:layout_width="100dip"
+                            android:layout_height="100dip"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:onClick="onClick"
+                            android:src="@mipmap/iamok"
+                            app:cb_color="@android:color/holo_green_light"
+                            app:cb_pressedRingWidth="8dip" />
+
+                        <TextView
+                            android:id="@+id/txt_iamok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="10dp"
+                            android:text="I'm OK"
+                            android:textColor="@color/text_color"
+                            android:textSize="13sp" />
+
+                    </FrameLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:gravity="center">
+
+        <include
+            android:id="@+id/container_header_lyt"
+            layout="@layout/poweredby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </include>
+
+    </LinearLayout>
+</LinearLayout>
