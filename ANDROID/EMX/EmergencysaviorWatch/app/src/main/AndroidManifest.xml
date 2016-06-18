@@ -10,6 +10,7 @@
 
     <uses-permission android:name="com.emergencysavior.emergencysaviorwatch.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -43,6 +44,24 @@
             android:icon="@mipmap/ic_launcher">
 
         </activity>
+        <activity
+            android:name=".Locationview"
+            android:icon="@mipmap/ic_launcher">
+
+        </activity>
+        <activity
+            android:name=".Right_Menu_Real_time_tracking"
+            android:icon="@mipmap/ic_launcher">
+
+        </activity>
+        <receiver android:name=".GpsTrackerBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".GpsTrackerAlarmReceiver" />
+
+        <service android:name=".LocationService" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

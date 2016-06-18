@@ -1,5 +1,6 @@
 package com.emergencysavior.emergencysaviorwatch;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
@@ -17,6 +18,8 @@ import com.pixelcan.inkpageindicator.InkPageIndicator;
 public class Dashboard extends FragmentActivity {
     InkPageIndicator mIndicator;
     static final int NUM_ITEMS = 3;
+    double latitude, longitude;
+    public static Location loc;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class Dashboard extends FragmentActivity {
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         mIndicator = (InkPageIndicator) findViewById(R.id.indicator);
         mIndicator.setViewPager(pager);
+
 
     }
 
@@ -41,10 +45,10 @@ public class Dashboard extends FragmentActivity {
             switch (pos) {
                 case 0:
                     return Dasboard_Activity_two.newInstance("FirstFragment, Instance 1");
-
                 case 1:
                     return Dashboard_actvity_three.newInstance("SecondFragment, Instance 1");
-
+                case 2:
+                    return Preference.newInstance("thirdFragment, Instance 1");
                 default:
                     return null;
 

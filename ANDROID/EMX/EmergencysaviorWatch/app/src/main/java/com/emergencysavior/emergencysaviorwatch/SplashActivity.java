@@ -74,7 +74,7 @@ public class SplashActivity extends Activity {
 
 
                 json = jsonObject.toString();
-                return jsonStr = HttpUtils.makeRequest("http://emergencysavior.com/webapi/emx/qrwear/watch", json);
+                return jsonStr = HttpUtils.makeRequest("http://api.emergencysavior.com/webapi/emx/qrwear/watch", json);
             } catch (Exception e) {
                 Log.d("InputStream", e.getLocalizedMessage());
             }
@@ -127,7 +127,7 @@ public class SplashActivity extends Activity {
                         edit.putString("session_token", session_token);
                         edit.putString("email", email);
                         edit.apply();
-                        Intent intent = new Intent(getApplicationContext(), Dashboard.class);
+                        Intent intent = new Intent(getApplicationContext(), Locationview.class);
                         startActivity(intent);
                         finish();
 

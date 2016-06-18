@@ -165,14 +165,14 @@
                         android:layout_height="120dp">
 
                         <at.markushi.ui.CircleButton
-                            android:id="@+id/map_location"
+                            android:id="@+id/btn_iamok"
                             android:layout_width="100dip"
                             android:layout_height="100dip"
                             android:layout_gravity="center"
                             android:layout_marginBottom="10dp"
                             android:gravity="center"
                             android:onClick="onClick"
-                            android:src="@mipmap/ic_mapview"
+                            android:src="@mipmap/iamok"
                             app:cb_color="@android:color/holo_green_light"
                             app:cb_pressedRingWidth="8dip" />
 
@@ -183,7 +183,7 @@
                             android:layout_gravity="bottom|center"
                             android:layout_marginBottom="5dp"
                             android:layout_marginTop="10dp"
-                            android:text="My location"
+                            android:text="I am ok"
                             android:textColor="@color/text_color"
                             android:textSize="15sp" />
 

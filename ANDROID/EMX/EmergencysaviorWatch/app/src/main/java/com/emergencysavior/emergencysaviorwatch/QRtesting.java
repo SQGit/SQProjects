@@ -165,7 +165,7 @@ public class QRtesting extends Activity {
 
 
                 json = jsonObject.toString();
-                return jsonStr = HttpUtils.makeRequest("http://emergencysavior.com/webapi/emx/qrwear/watch", json);
+                return jsonStr = HttpUtils.makeRequest("http://api.emergencysavior.com/webapi/emx/qrwear/watch", json);
             } catch (Exception e) {
                 Log.d("InputStream", e.getLocalizedMessage());
             }
@@ -218,7 +218,7 @@ public class QRtesting extends Activity {
                         Log.d("tag", "first_name" + first_name);
                         Log.d("tag", "email" + email);
                         Log.d("tag", "message" + message);
-                        Intent intent = new Intent(getApplicationContext(), Dashboard.class);
+                        Intent intent = new Intent(getApplicationContext(),Locationview.class);
                         startActivity(intent);
 
                     } else if (status.equals("notfound")) {
@@ -266,7 +266,7 @@ public class QRtesting extends Activity {
 
 
                 json = jsonObject.toString();
-                return jsonStr = HttpUtils.makeRequest("http://emergencysavior.com/webapi/emx/qrwear/watch", json);
+                return jsonStr = HttpUtils.makeRequest("http://api.emergencysavior.com/webapi/emx/qrwear/watch", json);
             } catch (Exception e) {
                 Log.d("InputStream", e.getLocalizedMessage());
             }
@@ -307,8 +307,10 @@ public class QRtesting extends Activity {
                         Log.d("tag", "first_name" + first_name);
                         Log.d("tag", "email" + email);
                         Log.d("tag", "message" + message);
+
                         Intent intent = new Intent(getApplicationContext(), Dashboard.class);
                         startActivity(intent);
+                        return;
 
                     } else if (status.equals("notfound")) {
                         Log.d("tag", "User id" + uid);

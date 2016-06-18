@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <at.markushi.ui.CircleButton
+                        android:id="@+id/emergency_call"
+                        android:layout_width="90dip"
+                        android:layout_height="90dip"
+                        android:src="@mipmap/call_911"
+                        app:cb_color="@android:color/holo_red_dark"
+                        app:cb_pressedRingWidth="8dip" />
+
+                    <TextView
+                        android:id="@+id/txt_call_911"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:text="Call 911"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <at.markushi.ui.CircleButton
+                        android:id="@+id/emergency_siren"
+                        android:layout_width="90dip"
+                        android:layout_height="90dip"
+                        android:src="@mipmap/flood"
+                        app:cb_color="#7A59ED"
+                        app:cb_pressedRingWidth="8dip" />
+
+                    <TextView
+                        android:id="@+id/txt_siren"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+
+
+                        android:text="Siren"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+                    android:gravity="right|center"
+                    android:orientation="vertical">
+
+                    <at.markushi.ui.CircleButton
+                        android:id="@+id/emergency_policeman"
+                        android:layout_width="90dip"
+                        android:layout_height="90dip"
+                        android:src="@mipmap/ic_police"
+                        app:cb_color="#3277DD"
+                        app:cb_pressedRingWidth="8dip" />
+                    />
+
+                    <TextView
+                        android:id="@+id/txt_policeman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:text="Policeman"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
