@@ -56,8 +56,6 @@ public class LocationService extends Service implements
     private String addressline;
 
 
-
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -194,7 +192,6 @@ public class LocationService extends Service implements
             editor.putString("latitude", "" + location.getLatitude());
             editor.putString("longitude", "" + location.getLongitude());
 
-
             Geocoder geocoder;
             List<Address> addresses;
             geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
@@ -218,24 +215,27 @@ public class LocationService extends Service implements
                 editor.remove("addressLine");
                 editor.putString("addressLine", "Canont get Address!");
                 editor.apply();
-                editor.commit();
+
             }
 
 
+            Log.d("tag", "final lat,long excess  = " + latitude + "," + longitude + ",  " + addressline);
 
 
-            new Real_time_tracking_async_update(latitude, longitude, addressline).execute();
+            // new Real_time_tracking_async_update(latitude, longitude, addressline).execute();
             if (location.getAccuracy() < 500.0f) {
                 stopLocationUpdates();
                 sendLocationDataToWebsite(location);
             }
         }
     }
+
     private void stopLocationUpdates() {
         if (googleApiClient != null && googleApiClient.isConnected()) {
             googleApiClient.disconnect();
         }
     }
+
     @Override
     public void onConnected(Bundle bundle) {
         Log.d(TAG, "onConnected");
@@ -300,14 +300,6 @@ public class LocationService extends Service implements
                 jsonObject.accumulate("Longitude", longitude);
                 jsonObject.accumulate("transaction_id", transaction_id);
                 jsonObject.accumulate("location", addressline);
-
-                Log.d("tag", "Session_token =" + token);
-                Log.d("tag", "transaction_id =" + transaction_id);
-                Log.d("tag", "latitude =" + latitude);
-                Log.d("tag", "longitude =" + longitude);
-                Log.d("tag", "addressline =" + addressline);
-
-
                 json = jsonObject.toString();
                 JSONObject data = new JSONObject();
                 data.accumulate("data", jsonObject);
@@ -324,10 +316,6 @@ public class LocationService extends Service implements
             super.onPostExecute(jsonStr);
             Log.d("tag", "Longitude =" + jsonStr);
             if (jsonStr == "") {
-
-
-                Intent act_back = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(act_back);
 
             }
         }

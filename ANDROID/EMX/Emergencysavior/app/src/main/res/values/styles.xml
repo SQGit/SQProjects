@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/text_color_heading</item>
         <item name="android:titleTextStyle">@style/ActionBar.TitleTextStyle</item>
 
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">14sp</item>
 
         <item name="android:alertDialogStyle">@style/AlertDialog.HoloStyle</item>
 

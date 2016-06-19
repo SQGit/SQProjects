@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.TextView;
 
 import com.jaeger.library.StatusBarUtil;
 import com.kyleduo.switchbutton.SwitchButton;
@@ -24,7 +23,6 @@ import com.sloop.fonts.FontsManager;
  */
 public class Emergency_Event_Preference extends AppCompatActivity {
     SwitchButton switchButton_audio, switchButton_gps, switchButton_message, switchButton_email, switchButton_call_911, switch_safe_walk_duration, switch_real_time_duration;
-    TextView txt_audio, txt_gps, txt_message, txt_email, txt_sign, txt_call_911;
     Button submit;
     String str_audio, str_gps, str_message, str_email, str_call_911;
     public static final String MyPREFERENCES = "MyPrefs";
@@ -60,12 +58,13 @@ public class Emergency_Event_Preference extends AppCompatActivity {
         submit = (Button) findViewById(R.id.btn_submit);
         SharedPreferences settings = getSharedPreferences(MyPREFERENCES, 0);
         if (settings.getBoolean("my_first_time", true)) {
+            switchButton_call_911.setChecked(true);
             switchButton_audio.setChecked(true);
             switchButton_gps.setChecked(true);
             switchButton_message.setChecked(true);
             switchButton_email.setChecked(true);
-            switchButton_call_911.setChecked(true);
-            settings.edit().putBoolean("my_first_time", false).commit();
+            settings.edit().putBoolean("my_first_time", false).apply();
+
         } else {
             onchecked();
         }

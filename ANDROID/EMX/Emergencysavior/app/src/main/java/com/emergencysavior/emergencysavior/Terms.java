@@ -32,7 +32,7 @@ public class Terms extends AppCompatActivity {
         getSupportActionBar().setIcon(R.drawable.navicon);
         //  getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'><small><b>Contacts</b></small> </font>"));
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/ques.otf");
-        SpannableStringBuilder SS = new SpannableStringBuilder(Html.fromHtml("<font color='#3c5899'><small><b>TERM AND CONDITION </b></small> </font>"));
+        SpannableStringBuilder SS = new SpannableStringBuilder(Html.fromHtml("<font color='#3c5899'><small><b>TERMS AND CONDITIONS</b></small> </font>"));
         SS.setSpan(new CustomTypefaceSpan("#3c5899", tf), 0, SS.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
         getSupportActionBar().setTitle(SS);
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> A C T I O N B A R >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

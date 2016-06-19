@@ -167,6 +167,14 @@ public class Emergency_event_history extends AppCompatActivity implements IListD
                 new SweetAlertDialog(Emergency_event_history.this, SweetAlertDialog.ERROR_TYPE)
                         .setTitleText("Oops...")
                         .setContentText("Internet Connectivity very slow? try again")
+                        .setConfirmText("ok")
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                            }
+                        })
                         .show();
             } else {
 

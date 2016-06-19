@@ -24,7 +24,6 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
  */
 public class SplashActivity extends Activity {
     TextView tv;
-    private static int SPLASH_TIME_OUT = 4000;
     Typeface tf;
     String uid;
 

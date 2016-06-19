@@ -55,13 +55,12 @@ public class Contacts extends AppCompatActivity {
     static String email = "email";
 
 
-
     private List<FloatingActionMenu> menus = new ArrayList<>();
     FloatingActionMenu menu1;
     private Handler mUiHandler = new Handler();
     TextView sign;
     SweetAlertDialog pDialog;
-    String token,phone,Display_Name;
+    String token, phone, Display_Name;
 
 
     @Override
@@ -85,7 +84,7 @@ public class Contacts extends AppCompatActivity {
         getSupportActionBar().setTitle(SS);
         sign = (TextView) findViewById(R.id.dss);
         sign.setTypeface(tf);
-         ////// / / / / / / / / / / / / Floating button /////////////////////////////////////////////
+        ////// / / / / / / / / / / / / Floating button /////////////////////////////////////////////
 
         final FloatingActionMenu menu1 = (FloatingActionMenu) findViewById(R.id.menu1);
         final FloatingActionButton programFab1 = new FloatingActionButton(this);
@@ -184,6 +183,7 @@ public class Contacts extends AppCompatActivity {
         }
         setStatusBar();
     }
+
     protected void setStatusBar() {
         if (isTransparent) {
             StatusBarUtil.setTransparent(this);
@@ -216,7 +216,7 @@ public class Contacts extends AppCompatActivity {
                 json = jsonObject.toString();
                 JSONObject data = new JSONObject();
                 data.accumulate("data", jsonObject);
-                return jsonStr = HttpUtils.makeRequest1(CONFIG.URL+"/contactsget", json, token);
+                return jsonStr = HttpUtils.makeRequest1(CONFIG.URL + "/contactsget", json, token);
             } catch (Exception e) {
                 Log.d("InputStream", e.getLocalizedMessage());
             }
@@ -253,7 +253,7 @@ public class Contacts extends AppCompatActivity {
                             JSONObject data = ja.getJSONObject(i1);
                             map.put("name", data.getString("name"));
                             map.put("mobile", data.getString("mobile"));
-                            map.put("email", data.getString("email").equals("null")?"Email not found":data.getString("email"));
+                            map.put("email", data.getString("email").equals("null") ? "Email not found" : data.getString("email"));
                             Log.d("tag", "<-----Listview----->" + data.getString("email") + " " + data.getString("mobile") + " " + data.getString("name"));
                             contactList.add(map);
 
@@ -288,16 +288,16 @@ public class Contacts extends AppCompatActivity {
                         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                String data=list.getItemAtPosition(position).toString();
+                                String data = list.getItemAtPosition(position).toString();
                                 phone = ((TextView) view.findViewById(R.id.Phone)).getText().toString();
-                               Display_Name = ((TextView) view.findViewById(R.id.Name)).getText().toString();
+                                Display_Name = ((TextView) view.findViewById(R.id.Name)).getText().toString();
                                 Log.d("tag", phone);
 
-                                AlertDialog.Builder alert=new AlertDialog.Builder(Contacts.this);
+                                AlertDialog.Builder alert = new AlertDialog.Builder(Contacts.this);
                                 alert.setTitle("Delete");
-                                alert.setMessage(Display_Name + "\n"+phone);
+                                alert.setMessage(Display_Name + "\n" + phone);
                                 alert.setCancelable(false);
-                                alert.setIcon(R.drawable.navicon);
+                                alert.setIcon(R.mipmap.ic_launcher);
 
                                 alert.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
 
@@ -315,10 +315,10 @@ public class Contacts extends AppCompatActivity {
                                     }
                                 });
 
-                                AlertDialog ale=alert.create();
+                                AlertDialog ale = alert.create();
                                 ale.show();
 
-                               // Toast.makeText(getApplicationContext(), data,Toast.LENGTH_LONG).show();
+                                // Toast.makeText(getApplicationContext(), data,Toast.LENGTH_LONG).show();
 
                             }
                         });
@@ -346,10 +346,12 @@ public class Contacts extends AppCompatActivity {
 
     private class Contacts_DeleteAsync extends AsyncTask<String, Void, String> {
         String phone;
+
         public Contacts_DeleteAsync(String phone) {
-            this.phone=phone;
+            this.phone = phone;
 
         }
+
         protected void onPreExecute() {
 
 
@@ -373,7 +375,7 @@ public class Contacts extends AppCompatActivity {
                 JSONObject data = new JSONObject();
 
                 data.accumulate("data", jsonObject);
-                return jsonStr = HttpUtils.makeRequest1(CONFIG.URL+"/contactdelete", json, token);
+                return jsonStr = HttpUtils.makeRequest1(CONFIG.URL + "/contactdelete", json, token);
             } catch (Exception e) {
                 Log.d("InputStream", e.getLocalizedMessage());
             }

@@ -50,10 +50,11 @@
 
         </activity>
         <activity
-            android:name=".Right_Menu_Real_time_tracking"
+            android:name=".MapActivity"
             android:icon="@mipmap/ic_launcher">
 
         </activity>
+
         <receiver android:name=".GpsTrackerBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -62,6 +63,7 @@
         <receiver android:name=".GpsTrackerAlarmReceiver" />
 
         <service android:name=".LocationService" />
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

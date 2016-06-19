@@ -175,7 +175,7 @@ public class ScannerActivity extends AppCompatActivity implements ZBarScannerVie
 
 
                 json = jsonObject.toString();
-                return jsonStr = HttpUtils.makeRequest("http://emergencysavior.com/webapi/emx/qrwear/mobile", json, token);
+                return jsonStr = HttpUtils.makeRequest("http://api.emergencysavior.com/webapi/emx/qrwear/mobile", json, token);
             } catch (Exception e) {
                 Log.d("InputStream", e.getLocalizedMessage());
             }
