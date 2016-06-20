@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#339CC4"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Laboutus">
+            <ImageView
+                android:id="@+id/imageView51"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:id="@+id/title_aboutus"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="2.06"
+                android:gravity="center|left"
+                android:layout_gravity="center"
+                android:paddingLeft="2dp"
+                android:text="About Us"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:orientation="vertical"
+            android:background="#000000">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/banner"/>
+        <TextView
+            android:id="@+id/about_us1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ABOUT US"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="5dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+        <TextView
+            android:id="@+id/about_us2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BDZ SHIPPING is one of the most reliable and efficient shipping service in London UK."
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="4dp"
+            android:paddingLeft="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <TextView
+            android:id="@+id/about_us3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="With over 15 years of experience in the shipping business we set the highest standards in shipping service, reliability, safety and cost containment in our company."
+            android:textColor="#FFFFFF"
+            android:paddingLeft="5dp"
+            android:layout_marginBottom="4dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <TextView
+            android:id="@+id/about_us4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="We ship various types of goods from London to kingston and Montego Bay Jamaica and also the eastern Caribbean."
+            android:paddingLeft="5dp"
+            android:layout_marginBottom="4dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <TextView
+            android:id="@+id/about_us5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="We ship goods such as barrels, boxes, crates, cars, motorbikes and containers. BDZ SHIPPING also provides an efficient and reliable home delivery service in Jamaica only."
+            android:paddingLeft="5dp"
+            android:layout_marginBottom="4dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <TextView
+            android:id="@+id/about_us6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="5dp"
+            android:layout_marginBottom="4dp"
+            android:text="We can offer advice and can also assist you in export related matters such as vehicle permit and returnee resident permit . We endeavour to be valued as a leader in the shipping industry and in client satisfaction by providing services that consistently meet our customers expectations."
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <TextView
+            android:id="@+id/about_us7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:paddingLeft="5dp"
+            android:text="BDZ SHIPPING shipping with a difference taking the hassling out of shipping for everyone."
+            android:layout_marginBottom="8dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/van_about"
+            android:layout_marginBottom="25dp"/>
+
+
+    </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/about_us8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="COVERAGE"
+                    android:textColor="#FFFFFF"
+                    android:paddingLeft="5dp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+
+                <TextView
+                    android:id="@+id/about_us9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="#FFFFFF"
+                    android:text="We export to Jamaica and other eastern Caribbean islands such as St. Lucia, Barbados, and more."
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+</ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

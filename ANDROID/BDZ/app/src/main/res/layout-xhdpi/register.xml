@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@mipmap/reg_bg"
+android:paddingBottom="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear1"
+        android:layout_centerHorizontal="true"
+        >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:background="@mipmap/logo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/linear1"
+        android:id="@+id/scroll">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear2"
+        android:orientation="vertical">
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:hint="Name"
+        android:paddingRight="11dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:id="@+id/Rname"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:drawableRight="@mipmap/usrnme"
+        android:singleLine="true"
+        android:nextFocusDown="@+id/Rusername"
+        />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:inputType="textPersonName"
+        android:hint="Username"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:id="@+id/Rusername"
+        android:layout_below="@+id/Rname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:drawableRight="@mipmap/usrnme"
+        />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:id="@+id/Rpassword"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/Rusername"
+        android:layout_alignRight="@+id/Rusername"
+        android:layout_alignEnd="@+id/Rusername"
+        android:drawableRight="@mipmap/pswd"
+        />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:inputType="textPassword"
+        android:hint="Confirm Password"
+        android:id="@+id/RCpassword"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/Rpassword"
+        android:layout_alignRight="@+id/Rusername"
+        android:layout_alignEnd="@+id/Rusername"
+        android:drawableRight="@mipmap/pswd"
+        />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:id="@+id/Remail"
+        android:layout_below="@+id/RCpassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:drawableRight="@mipmap/mail_bg"
+        />
+
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:inputType="phone"
+        android:ems="10"
+        android:hint="Phone No."
+        android:id="@+id/Rphone"
+        android:paddingLeft="10dp"
+        android:drawableRight="@mipmap/phone"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/Remail"
+        android:paddingRight="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    </LinearLayout>
+
+    </ScrollView>
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:gravity="center"
+    android:id="@+id/ll"
+
+    android:layout_below="@+id/scroll"
+    android:layout_marginTop="40dp"
+    android:layout_marginBottom="0dp"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="Sign Up"
+        android:id="@+id/Bsignup"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:background="@drawable/log"
+        android:paddingLeft="20dp"
+        android:paddingRight="22dp"
+        android:drawableLeft="@mipmap/sign"/>
+</LinearLayout>
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/ll"
+       android:layout_marginTop="10dp"
+       android:layout_centerHorizontal="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Already a member,Login here."
+        android:id="@+id/Blogin"
+        android:textColor="#FFFFFF"
+
+
+        android:layout_centerHorizontal="true" />
+
+
+   </LinearLayout>
+
+</RelativeLayout>

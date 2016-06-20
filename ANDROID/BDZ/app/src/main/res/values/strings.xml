@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BDZ \n Shipping</string>
+    <string name="namea">BDZ \n Shipping</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+
+    <string name="action_settings">Settings</string>
+
+    <string-array name="destination">
+
+
+        <item>ROUTE 1-KINGSTON WHARF</item>
+        <item>ROUTE 2-MONTEGO BAY WHARF</item>
+        <item>ROUTE 3-HOME DELIVERY(*certain areas and items excluded)</item>
+        <item>Jamaica(Kingston)</item>
+        <item>Jamaica(Montego Bay)</item>
+        <item>Trinidad(Port-Of-Spain)</item>
+        <item>Guyana(Georgetown)</item>
+        <item>Grenada(St Georges)</item>
+        <item >Dominica(Roseau)</item>
+        <item>Barbados(Bridgetown)</item>
+        <item >St Kitts(Basseterre)</item>
+        <item>St Lucia</item>
+        <item>St Vincent</item>
+    </string-array>
+</resources>

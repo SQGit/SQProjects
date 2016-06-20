@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:id="@+id/Linear1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#339CC4"
+        android:gravity="start"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Lcontact_us">
+        <ImageView
+            android:id="@+id/imageView51"
+            android:layout_width="25dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="3dp"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:id="@+id/quote"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="left|center"
+            android:layout_gravity="center"
+            android:text="Quote"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+</LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical"
+        >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:orientation="vertical" >
+
+
+            <LinearLayout
+                android:id="@+id/LinearLayout111"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+                <TextView
+                    android:id="@+id/quote9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="QUOTE FORM"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <ScrollView
+                    android:id="@+id/scrollView123"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                   >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_margin="10dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/quote10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="Shipping From"
+
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <EditText
+                            android:id="@+id/et_quote1"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:singleLine="true"
+                            android:paddingLeft="5dp"
+                            android:background="@drawable/background_round_corner_edittext"
+                            android:ems="10" />
+
+
+                        <TextView
+                            android:id="@+id/quote11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Destination"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+                        <Spinner
+                            android:id="@+id/spn"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/quote12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your Name(required)*"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <EditText
+                            android:id="@+id/et_quote2"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:paddingLeft="5dp"
+
+                            android:background="@drawable/background_round_corner_edittext"
+                            android:ems="10" />
+
+                        <TextView
+                            android:id="@+id/quote13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your Email(required)*"
+                            android:layout_marginTop="5dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <EditText
+                            android:id="@+id/et_quote3"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:paddingLeft="5dp"
+                            android:inputType="textEmailAddress"
+                            android:background="@drawable/background_round_corner_edittext"
+                            android:ems="10" />
+
+                        <TextView
+                            android:id="@+id/quote14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Your Contact No(required)*"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <EditText
+                            android:id="@+id/et_quote4"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:paddingLeft="5dp"
+                            android:inputType="number"
+                            android:background="@drawable/background_round_corner_edittext"
+                            android:ems="10" />
+
+                        <TextView
+                            android:id="@+id/quote15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address"
+                            android:layout_marginTop="5dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <EditText
+                            android:id="@+id/et_quote5"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/background_round_corner_edittext"
+                            android:ems="10"
+                            android:singleLine="true"
+                            android:inputType="textPostalAddress" />
+
+                        <TextView
+                            android:id="@+id/quote16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ZIP/POSTAL code"
+                            android:layout_marginTop="5dp"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <EditText
+                            android:id="@+id/et_quote6"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:paddingLeft="5dp"
+                            android:inputType="number"
+                            android:background="@drawable/background_round_corner_edittext"
+                            android:ems="10" />
+
+                        <TextView
+                            android:id="@+id/quote17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Subject"
+                            android:layout_marginTop="5dp"
+
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <EditText
+                            android:id="@+id/et_quote7"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:paddingLeft="5dp"
+
+                            android:background="@drawable/background_round_corner_edittext"
+                            android:ems="10" />
+
+                        <TextView
+                            android:id="@+id/quote18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Describe the goods being shipped including size and quantity."
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <EditText
+                            android:id="@+id/et_quote8"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp"
+                            android:singleLine="true"
+                            android:paddingLeft="5dp"
+
+                            android:background="@drawable/background_round_corner_edittext"
+                            android:ems="10" />
+                        <Button
+                            android:id="@+id/B_quote"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center"
+                            android:text="Get Quote"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/sign_in"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="20dp"
+                           />
+
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+            </LinearLayout>
+<!--
+        <LinearLayout
+            android:id="@+id/footer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            >
+
+
+            <include layout="@layout/copyright">
+
+            </include>
+
+        </LinearLayout>
+-->
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
