@@ -19,12 +19,16 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.jaeger.library.StatusBarUtil;
+
 import java.util.Arrays;
 
 /**
  * Created by RSA on 23-03-2016.
  */
 public class See_Details_add_subject extends AppCompatActivity {
+    public static final String EXTRA_IS_TRANSPARENT = "is_transparent";
+    private boolean isTransparent;
     ScrollView scroll_bottomvalue;
     TextView aditionalinformation, sign;
     LinearLayout additional;
@@ -43,6 +47,7 @@ public class See_Details_add_subject extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        isTransparent = getIntent().getBooleanExtra(EXTRA_IS_TRANSPARENT, true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.see_details_add_subject);
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> F O N T S I N T I A L Z A T I O N >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -426,6 +431,13 @@ public class See_Details_add_subject extends AppCompatActivity {
 
             }
         });
-
+        setStatusBar();
+    }
+    protected void setStatusBar() {
+        if (isTransparent) {
+            StatusBarUtil.setTransparent(this);
+        } else {
+            StatusBarUtil.setTranslucent(this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
+        }
     }
 }

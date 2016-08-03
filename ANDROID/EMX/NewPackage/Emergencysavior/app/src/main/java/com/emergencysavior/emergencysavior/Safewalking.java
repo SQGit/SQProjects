@@ -83,7 +83,6 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class Safewalking extends AppCompatActivity implements RoutingListener, GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks {
     public static final String EXTRA_IS_TRANSPARENT = "is_transparent";
-    private static String minute;
     private boolean isTransparent;
     public static GoogleMap map;
     protected LatLng start;
@@ -103,20 +102,14 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
     private ProgressDialog progressDialog;
     private List<Polyline> polylines;
     private static final int[] COLORS = new int[]{R.color.primary_dark, R.color.primary, R.color.primary_light, R.color.accent, R.color.primary_dark_material_light};
-
-
     private static final LatLngBounds BOUNDS_JAMAICA = new LatLngBounds(new LatLng(-57.965341647205726, 144.9987719580531),
             new LatLng(72.77492067739843, -9.998857788741589));
-
-    /**
-     * This activity loads a map and then displays the route and pushpins on it.
-     */
 
     SharedPreferences sharedPreferences;
     PendingIntent pendingIntent;
     public static LocationManager locationManager;
     Location mCurrentLocation;
-    String mLastUpdateTime, duration, token, firstname, current_address, transaction_id, str_reason,str_duration;
+    String mLastUpdateTime, token, firstname, current_address, transaction_id, str_reason, str_duration;
     double source_lat, source_long, desination_lat, desination_long;
 
     // mixing
@@ -126,6 +119,9 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
 
     boolean toggleflag = false;
     // mixing
+
+    private static final int GPS_TIME_INTERVAL = 1000 * 60 * 5; // get gps location every 1 min
+    private static final int GPS_DISTANCE = 1000; // set the distance value in meter
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -140,14 +136,12 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
 
         toogleflag = (CircleButton) findViewById(R.id.play);
         current_address = MainActivity.addrees.getText().toString();
-        Log.d("tag", "tag" + token);
-        Log.d("tag", "tag" + current_address);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         toogleflag.setVisibility(View.GONE);
         tf = Typeface.createFromAsset(getAssets(), "fonts/ques.otf");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.back);
-        SpannableStringBuilder SS = new SpannableStringBuilder(Html.fromHtml("<font color='#3c5899'><small><b>SAFE WALKING</b></small> </font>"));
+        SpannableStringBuilder SS = new SpannableStringBuilder(Html.fromHtml("<font color='#3c5899'><small><b>SAFE WALKING<b></small> </font>"));
         SS.setSpan(new CustomTypefaceSpan("#3c5899", tf), 0, SS.length(), Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
         getSupportActionBar().setTitle(SS);
         polylines = new ArrayList<>();
@@ -158,15 +152,15 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
                 .build();
         MapsInitializer.initialize(this);
         mGoogleApiClient.connect();
-        map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(
-                R.id.map)).getMap();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         if (mapFragment == null) {
             mapFragment = SupportMapFragment.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.map, mapFragment).commit();
-        }
-        // map = mapFragment.getMap();
 
+            return;
+        }
+        map = mapFragment.getMap();
+        map.clear();
         mAdapter = new PlaceAutoCompleteAdapter(this, android.R.layout.simple_list_item_1, mGoogleApiClient, BOUNDS_JAMAICA, null);
         sharedPreferences = getSharedPreferences("location", 0);
         String lat = sharedPreferences.getString("lat", "0");
@@ -194,17 +188,15 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
             return;
         }
         locationManager.requestLocationUpdates(
-                LocationManager.NETWORK_PROVIDER, 5000, 0,
+                LocationManager.NETWORK_PROVIDER, 1000 * 60 * 4, 0,
                 new LocationListener() {
                     @Override
                     public void onLocationChanged(Location location) {
-
                         double latitude = location.getLatitude();
                         double longitude = location.getLongitude();
                         curent_location = new LatLng(latitude, longitude);
                         mCurrentLocation = location;
                         mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
-
                         if (curent_location == end) {
                             Intent proximityIntent = new Intent("com.emergencysavior.emergencysavior.activity.proximity");
                             pendingIntent = PendingIntent.getActivity(getBaseContext(), 0, proximityIntent, Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -233,11 +225,6 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
 
                             switch (trackstatus) {
                                 case "0":
-                                    Log.d("tag", "===" + source_lable);
-                                    Log.d("tag", "===" + source_lat);
-                                    Log.d("tag", "===" + source_long);
-                                    Log.d("tag", "===" + transaction_id);
-
                                     new SafewalkingupdateAsync1(source_lable, source_lat, source_long, transaction_id).execute();
 
                                     break;
@@ -249,30 +236,27 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
 
                     @Override
                     public void onStatusChanged(String provider, int status, Bundle extras) {
-
                     }
 
                     @Override
                     public void onProviderEnabled(String provider) {
 
+
                     }
 
                     @Override
                     public void onProviderDisabled(String provider) {
-
                     }
                 });
-
-
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-                3000, 0, new LocationListener() {
+                5000, 0, new LocationListener() {
                     @Override
                     public void onLocationChanged(Location location) {
-                        CameraUpdate center = CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude()));
+                        /*CameraUpdate center = CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude()));
                         CameraUpdate zoom = CameraUpdateFactory.zoomTo(17);
-
-                      /*  map.moveCamera(center);*/
                         map.animateCamera(zoom);
+*/
+
 
                     }
 
@@ -291,49 +275,26 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
 
                     }
                 });
-
-
-
-        /*
-        * Adds auto complete adapter to both auto complete
-        * text views.
-        * */
         starting.setAdapter(mAdapter);
         destination.setAdapter(mAdapter);
-
-
-        /*
-        * Sets the start and destination points based on the values selected
-        * from the autocomplete text views.
-        * */
-
         starting.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 final PlaceAutoCompleteAdapter.PlaceAutocomplete item = mAdapter.getItem(position);
                 final String placeId = String.valueOf(item.placeId);
                 source_lable = item.description;
                 Log.i(LOG_TAG, "Autocomplete item selected: " + source_lable);
-
-            /*
-             Issue a request to the Places Geo Data API to retrieve a Place object with additional
-              details about the place.
-              */
                 PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi
                         .getPlaceById(mGoogleApiClient, placeId);
                 placeResult.setResultCallback(new ResultCallback<PlaceBuffer>() {
                     @Override
                     public void onResult(PlaceBuffer places) {
                         if (!places.getStatus().isSuccess()) {
-                            // Request did not complete successfully
                             Log.e(LOG_TAG, "Place query did not complete. Error: " + places.getStatus().toString());
                             places.release();
                             return;
                         }
-                        // Get the Place object from the buffer.
                         final Place place = places.get(0);
-
                         start = place.getLatLng();
                     }
                 });
@@ -343,17 +304,11 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
         destination.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 final PlaceAutoCompleteAdapter.PlaceAutocomplete item = mAdapter.getItem(position);
                 final String placeId = String.valueOf(item.placeId);
-
                 desination_lable = item.description;
                 Log.i("tag", "Autocomplete item selected: " + desination_lable);
 
-            /*
-             Issue a request to the Places Geo Data API to retrieve a Place object with additional
-              details about the place.
-              */
                 PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi
                         .getPlaceById(mGoogleApiClient, placeId);
                 placeResult.setResultCallback(new ResultCallback<PlaceBuffer>() {
@@ -365,10 +320,9 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
                             places.release();
                             return;
                         }
-                        // Get the Place object from the buffer.
                         final Place place = places.get(0);
-
                         end = place.getLatLng();
+
                     }
                 });
 
@@ -377,7 +331,6 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
         starting.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
@@ -389,10 +342,8 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
-
         destination.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -401,7 +352,6 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
 
                 if (end != null) {
                     end = null;
@@ -424,13 +374,6 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
                     source_long = curent_location.longitude;
                     desination_lat = end.latitude;
                     desination_long = end.longitude;
-                    Log.d("tag", "source_lable " + current_address);
-                    Log.d("tag", "source_lat " + source_lat);
-                    Log.d("tag", "source_long " + source_long);
-                    Log.d("tag", "desination_lat " + desination_lat);
-                    Log.d("tag", "desination_long " + desination_long);
-                    Log.d("tag", "desination_lable " + desination_lable);
-                    Log.d("tag", "duriation " + str_duration);
 
                     new SafewalkingAsync(source_lable, source_lat, source_long, desination_lable, desination_lat, desination_long, str_duration).execute();
                 } else {
@@ -452,45 +395,30 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.clear();
                     editor.apply();
-
                     // DIALOG
                     final Dialog dialog1 = new Dialog(Safewalking.this);
                     dialog1.setContentView(R.layout.stop_safe_walking);
                     dialog1.setTitle("SEND REASON");
-
                     final EditText et_user = (EditText) dialog1.findViewById(R.id.et_user_name);
-
                     Button btn_save = (Button) dialog1.findViewById(R.id.btn_submit);
-
                     btn_save.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             str_reason = et_user.getText().toString();
-
-
-                            if (str_reason.isEmpty() ) {
+                            if (str_reason.isEmpty()) {
                                 et_user.setError("REACHED or CANCELLED");
 
                             } else {
-                                new Safewwalking_end_Async(transaction_id, str_reason).execute();
-                               dialog1.dismiss();
+                                new Safewalking_end_Async(transaction_id, str_reason).execute();
+                                dialog1.dismiss();
                             }
                         }
                     });
                     dialog1.show();
-
-
-                    //DIALOG
-
                 }
-
-
             }
         });
-
-
         setStatusBar();
-
     }
 
     protected void setStatusBar() {
@@ -502,39 +430,18 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
     }
 
     private void drawMarker(LatLng point) {
-        // Creating an instance of MarkerOptions
         MarkerOptions markerOptions = new MarkerOptions();
-
-        // Setting latitude and longitude for the marker
         markerOptions.position(point);
-
-        // Adding marker on the Google Map
         map.addMarker(markerOptions);
-
     }
 
-
     private void drawCircle(LatLng point) {
-
-        // Instantiating CircleOptions to draw a circle around the marker
         CircleOptions circleOptions = new CircleOptions();
-
-        // Specifying the center of the circle
         circleOptions.center(point);
-
-        // Radius of the circle
         circleOptions.radius(20);
-
-        // Border color of the circle
         circleOptions.strokeColor(Color.BLACK);
-
-        // Fill color of the circle
         circleOptions.fillColor(0x30ff0000);
-
-        // Border width of the circle
         circleOptions.strokeWidth(2);
-
-        // Adding the circle to the GoogleMap
         map.addCircle(circleOptions);
 
     }
@@ -581,7 +488,7 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
                 marker.remove();
 
             }
-           // start Activity //
+            // start Activity //
             Intent proximityIntent = new Intent("com.emergencysavior.emergencysavior.activity.proximity");
             pendingIntent = PendingIntent.getActivity(getBaseContext(), 0, proximityIntent, Intent.FLAG_ACTIVITY_NEW_TASK);
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -632,29 +539,23 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
         LatLngBounds bounds = builder.build();
 
         map.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 100));
-
-
         if (polylines.size() > 0) {
             for (Polyline poly : polylines) {
                 poly.remove();
             }
         }
-
-
         polylines = new ArrayList<>();
         //add route(s) to the map.
         for (int i = 0; i < route.size(); i++) {
-
             //In case of more than 5 alternative routes
             int colorIndex = i % COLORS.length;
-
             PolylineOptions polyOptions = new PolylineOptions();
             polyOptions.color(getResources().getColor(COLORS[colorIndex]));
             polyOptions.width(10 + i * 3);
             polyOptions.addAll(route.get(i).getPoints());
             Polyline polyline = map.addPolyline(polyOptions);
             polylines.add(polyline);
-            str_duration= String.valueOf(route.get(i).getDurationValue());
+            str_duration = String.valueOf(route.get(i).getDurationValue());
 
         }
 
@@ -693,7 +594,7 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
     }
 
 
- //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% C U R R E N T L O C A T I O N %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% C U R R E N T L O C A T I O N %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     class ProximityActivity extends Activity {
 
         String notificationTitle;
@@ -738,8 +639,6 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
                     .setContentIntent(pendingIntent);
             Notification notification = notificationBuilder.build();
             nManager.notify((int) System.currentTimeMillis(), notification);
-
-            /** Finishes the execution of this activity */
             finish();
 
 
@@ -752,7 +651,6 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
         double source_lat, source_long, desination_lat, desination_long;
 
         public SafewalkingAsync(CharSequence source_lable, double source_lat, double source_long, CharSequence desination_lable, double desination_lat, double desination_long, String str_duration) {
-
             this.source_lable = source_lable;
             this.source_lat = source_lat;
             this.source_long = source_long;
@@ -766,22 +664,17 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
         protected void onPreExecute() {
 
             super.onPreExecute();
-
             mProgressDialog = new ProgressDialog(Safewalking.this);
             mProgressDialog.setTitle("Searched Location..");
             mProgressDialog.setMessage("Please wait");
             mProgressDialog.setIndeterminate(false);
             mProgressDialog.setCancelable(false);
             mProgressDialog.show();
-
-
         }
 
         @Override
         protected String doInBackground(String... params) {
             String json = "", s = "";
-
-
             JSONObject jsonObject = new JSONObject();
             try {
                 jsonObject.accumulate("from_location", current_address);
@@ -791,8 +684,6 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
                 jsonObject.accumulate("to_lat", desination_lat);
                 jsonObject.accumulate("to_long", desination_long);
                 jsonObject.accumulate("duriation", str_duration);
-
-
                 json = jsonObject.toString();
                 JSONObject data = new JSONObject();
                 data.accumulate("data", jsonObject);
@@ -801,8 +692,6 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
 
                 e.printStackTrace();
             }
-
-
             return null;
         }
 
@@ -850,21 +739,16 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
     }
 
     // END
-    private class Safewwalking_end_Async extends AsyncTask<String, Void, String> {
+    private class Safewalking_end_Async extends AsyncTask<String, Void, String> {
 
         String transaction_id, str_reason;
 
-        public Safewwalking_end_Async(String transaction_id, String str_reason) {
-
-
+        public Safewalking_end_Async(String transaction_id, String str_reason) {
             this.transaction_id = transaction_id;
             this.str_reason = str_reason;
-
-
         }
 
         protected void onPreExecute() {
-
             super.onPreExecute();
             mProgressDialog = new ProgressDialog(Safewalking.this);
             mProgressDialog.setTitle("Stop location track..");
@@ -872,8 +756,6 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
             mProgressDialog.setIndeterminate(false);
             mProgressDialog.setCancelable(false);
             mProgressDialog.show();
-
-
         }
 
         @Override
@@ -891,19 +773,14 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
 
                 e.printStackTrace();
             }
-
-
             return null;
         }
-
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             Log.d("json result", s);
             mProgressDialog.dismiss();
-
-
             if (s == "") {
 
                 new SweetAlertDialog(Safewalking.this, SweetAlertDialog.ERROR_TYPE)
@@ -923,14 +800,11 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
                         edit.remove("trackstatus");
                         edit.putString("trackstatus", "");
                         edit.apply();
-
                         Toast.makeText(getApplicationContext(), "" + msg, Toast.LENGTH_LONG).show();
 
                     } else {
                         Log.d("tag", "Something went wrong");
                     }
-
-
                 } catch (JSONException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -960,7 +834,7 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
             String json = "", s = "";
             JSONObject jsonObject = new JSONObject();
             try {
-                jsonObject.put("transaction_id",transaction_id);
+                jsonObject.put("transaction_id", transaction_id);
                 jsonObject.put("location", source_lable);
                 jsonObject.put("latitude", source_lat);
                 jsonObject.put("longitude", source_long);
@@ -979,7 +853,6 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             Log.d("json result", s);
-
 
 
             if (s == "") {
@@ -1003,10 +876,10 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
                         edit.apply();
                         Log.d("tag", " " + msg);
 
-                       // Toast.makeText(getApplicationContext(), "" + msg, Toast.LENGTH_LONG).show();
+                        // Toast.makeText(getApplicationContext(), "" + msg, Toast.LENGTH_LONG).show();
 
                     } else {
-                        Log.d("tag", "Something went wrong");
+                        Log.d("tag", "Something went wrong" + msg);
                     }
 
 
@@ -1017,5 +890,20 @@ public class Safewalking extends AppCompatActivity implements RoutingListener, G
                 }
             }
         }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+
+        Log.d("lifecycle", "onRestart invoked");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Log.d("lifecycle", "onDestroy invoked");
     }
 }

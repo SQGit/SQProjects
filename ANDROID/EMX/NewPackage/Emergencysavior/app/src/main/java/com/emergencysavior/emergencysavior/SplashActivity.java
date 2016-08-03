@@ -1,6 +1,5 @@
 package com.emergencysavior.emergencysavior;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -17,7 +16,7 @@ import tr.xip.errorview.ErrorView;
 /**
  * Created by RSA on 28-02-2016.
  */
-public class SplashActivity extends Activity {
+public class SplashActivity extends DetailActivity {
 
     TextView tv;
     private static int SPLASH_TIME_OUT = 4000;

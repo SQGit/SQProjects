@@ -10,7 +10,9 @@ import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,12 +21,17 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.jaeger.library.StatusBarUtil;
+
 import java.util.Arrays;
 
 /**
  * Created by RSA on 23-03-2016.
  */
 public class See_Details_add_Vehicle extends AppCompatActivity {
+
+    public static final String EXTRA_IS_TRANSPARENT = "is_transparent";
+    private boolean isTransparent;
     ScrollView scroll_bottomvalue;
     TextView aditionalinformation, txt_sign;
     LinearLayout additional;
@@ -42,6 +49,7 @@ public class See_Details_add_Vehicle extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        isTransparent = getIntent().getBooleanExtra(EXTRA_IS_TRANSPARENT, true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.see_details_add_vehicle);
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> F O N T S I N T I A L Z A T I O N >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -257,7 +265,6 @@ public class See_Details_add_Vehicle extends AppCompatActivity {
                 string_additional__no_of_doors = editText_additional__no_of_doors.getText().toString().trim();
                 string_additional__year = editText_additional__year.getText().toString().trim();
                 string_additional__licensed_plate = editText_additional__licensed_plate.getText().toString().trim();
-
                 string_additional__additional_vehicle_commends = editText_additional_vehicle_commends.getText().toString().trim();
 
                 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> S T R I N G C O N C O D I N A T E  ONE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -322,7 +329,7 @@ public class See_Details_add_Vehicle extends AppCompatActivity {
                 edit.putString("string_additional__year", string_additional__year);
                 edit.putString("string_additional__licensed_plate", string_additional__licensed_plate);
                 edit.putString("string_additional__additional_vehicle_commends", string_additional__additional_vehicle_commends);
-                edit.commit();
+                edit.apply();
 
                 Intent intent = new Intent(getApplicationContext(), Seesomething_PhotoActivity.class);
                 startActivity(intent);
@@ -330,6 +337,22 @@ public class See_Details_add_Vehicle extends AppCompatActivity {
             }
         });
 
+        setStatusBar();
+    }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+    protected void setStatusBar() {
+        if (isTransparent) {
+            StatusBarUtil.setTransparent(this);
+        } else {
+            StatusBarUtil.setTranslucent(this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
+        }
     }
 }

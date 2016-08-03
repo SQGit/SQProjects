@@ -1,6 +1,5 @@
 package com.emergencysavior.emergencysavior;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -28,7 +27,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 /**
  * Created by RSA on 2/23/2016.
  */
-public class Signup extends Activity {
+public class Signup extends DetailActivity {
     public static final String EXTRA_IS_TRANSPARENT = "is_transparent";
     private boolean isTransparent;
     TextView txt_tittle, txt_powerby, txt_policy;
@@ -101,29 +100,35 @@ public class Signup extends Activity {
 
                 if (Util.Operations.isOnline(Signup.this)) {
 
-                    if ((!first_name.isEmpty()) && (!last_name.isEmpty()) &&
-                            (!email.isEmpty()) &&
-                            (!password.isEmpty()) &&
-                            (!confirm_password.isEmpty()) &&
-                            (!mac.isEmpty())) {
-                        if (password.equals(confirm_password)) {
-                            new MyActivityAsync(first_name, last_name, email, password, mac).execute();
+                    if (CONFIG.isEmailValid(email)) {
+                        if ((!first_name.isEmpty()) && (!last_name.isEmpty()) &&
+                                (!email.isEmpty()) &&
+                                (!password.isEmpty()) &&
+                                (!confirm_password.isEmpty()) &&
+                                (!mac.isEmpty())) {
+                            if (password.equals(confirm_password)) {
+                                new MyActivityAsync(first_name, last_name, email, password, mac).execute();
+                            } else {
+                                new SweetAlertDialog(Signup
+                                        .this, SweetAlertDialog.WARNING_TYPE)
+                                        .setTitleText("ALERT")
+                                        .setContentText("Please Check Password Fields")
+                                        .show();
+                            }
+
+
                         } else {
                             new SweetAlertDialog(Signup
                                     .this, SweetAlertDialog.WARNING_TYPE)
                                     .setTitleText("ALERT")
-                                    .setContentText("Please Check Password Fields")
+                                    .setContentText("Please Enter all the Fields")
                                     .show();
                         }
 
-
                     } else {
-                        new SweetAlertDialog(Signup
-                                .this, SweetAlertDialog.WARNING_TYPE)
-                                .setTitleText("ALERT")
-                                .setContentText("Please Enter all the Fields")
-                                .show();
+                        input_Email.setError("Enter Vaild Email");
                     }
+
                 } else {
                     new SweetAlertDialog(Signup
                             .this, SweetAlertDialog.WARNING_TYPE)
@@ -138,7 +143,7 @@ public class Signup extends Activity {
         img_btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                overridePendingTransition(R.anim.enter_right, R.anim.exit_right);
                 Intent intent=new Intent(getApplicationContext(),Login.class);
                 startActivity(intent);
             }
@@ -254,7 +259,7 @@ public class Signup extends Activity {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("activation_code", "12345");
                         editor.putString("mac", mac);
-                        editor.commit();
+                        editor.apply();
                         Intent i = new Intent(getApplicationContext(), Login.class);
                         startActivity(i);
                     } else {
@@ -268,11 +273,8 @@ public class Signup extends Activity {
                                     }
                                 })
                                 .show();
-
                     }
-
-
-                } catch (JSONException e) {
+                     } catch (JSONException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
@@ -284,6 +286,11 @@ public class Signup extends Activity {
     @Override
     public void onBackPressed() {
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 
     @Override

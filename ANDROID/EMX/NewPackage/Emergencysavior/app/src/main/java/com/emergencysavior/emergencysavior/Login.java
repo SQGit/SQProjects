@@ -1,6 +1,5 @@
 package com.emergencysavior.emergencysavior;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -25,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jaeger.library.StatusBarUtil;
+import com.sloop.fonts.FontsManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,8 +38,8 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 /**
  * Created by RSA on 2/25/2016.
  */
-public class Login extends Activity {
-    TextView tv, tv1, forgotPassword, or,txt_forgot;
+public class Login extends DetailActivity {
+    TextView tv, tv1, forgotPassword, or, txt_forgot;
     private EditText inputEmail, inputPassword;
     private Button signup, activate;
     CircleButton login;
@@ -59,7 +59,8 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> A C T I O N B A R >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+        FontsManager.initFormAssets(this, "fonts/ques.otf");       //initialization
+        FontsManager.changeFonts(this);
         tf = Typeface.createFromAsset(getAssets(), "fonts/ques.otf");
 
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
@@ -72,7 +73,7 @@ public class Login extends Activity {
         edit.putString("gpsstatus", "true");
         edit.putString("messagestatus", "true");
         edit.putString("emailstatus", "true");
-        edit.commit();
+        edit.apply();
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Login.this);
         String activation_code = sharedPreferences.getString("activation_code", "");
@@ -89,18 +90,7 @@ public class Login extends Activity {
         signup = (Button) findViewById(R.id.btn_sign_up);
         login = (CircleButton) findViewById(R.id.btn_login);
         back = (ImageButton) findViewById(R.id.img_back);
-
-        txt_forgot=(TextView) findViewById(R.id.forgot);
-
-        tv.setTypeface(tf);
-        tv1.setTypeface(tf1);
-        inputEmail.setTypeface(tf);
-        inputPassword.setTypeface(tf);
-        forgotPassword.setTypeface(tf);
-        or.setTypeface(tf);
-        signup.setTypeface(tf);
-        activate.setTypeface(tf);
-        txt_forgot.setTypeface(tf);
+        txt_forgot = (TextView) findViewById(R.id.forgot);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,6 +128,7 @@ public class Login extends Activity {
                                 i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(i1);
                                 finish();
+                                overridePendingTransition(R.anim.enter_right, R.anim.exit_right);
                             }
                         }).create().show();
 
@@ -157,23 +148,29 @@ public class Login extends Activity {
 
                 email = inputEmail.getText().toString();
                 password = inputPassword.getText().toString();
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(inputPassword.getWindowToken(), 0);
 
 
                 if (Util.Operations.isOnline(Login.this)) {
 
-                    if ((!email.isEmpty()) && (!password.isEmpty())) {
-                        new MyActivityAsync(email, password, mac).execute();
+                    if (CONFIG.isEmailValid(email)) {
+                        if ((!email.isEmpty()) && (!password.isEmpty())) {
+                            new MyActivityAsync(email, password, mac).execute();
+                        } else {
+                            new SweetAlertDialog(Login.this, SweetAlertDialog.WARNING_TYPE)
+                                    .setTitleText("ALERT")
+                                    .setContentText("Please Enter Username and Password")
+                                    .setConfirmText("ok")
+                                    .show();
+
+
+                        }
                     } else {
-                        new SweetAlertDialog(Login.this, SweetAlertDialog.WARNING_TYPE)
-                                .setTitleText("ALERT")
-                                .setContentText("Please Enter Username and Password")
-                                .setConfirmText("ok")
-                                .show();
-
-
+                        inputEmail.setError("Enter Vaild Email");
                     }
+
+
                 } else {
 
                     new SweetAlertDialog(Login.this, SweetAlertDialog.ERROR_TYPE)
@@ -189,6 +186,16 @@ public class Login extends Activity {
         setStatusBar();
 
     }
+
+    @Override
+    protected void onResume() {
+
+        inputEmail.setText("");
+        inputPassword.setText("");
+        super.onResume();
+
+    }
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         if (getCurrentFocus() != null) {
@@ -338,7 +345,7 @@ public class Login extends Activity {
                         }
 
 
-                    }else {
+                    } else {
                         new SweetAlertDialog(Login.this, SweetAlertDialog.WARNING_TYPE)
                                 .setTitleText("ALERT")
                                 .setConfirmText("Try again")
@@ -399,20 +406,20 @@ public class Login extends Activity {
 
             Log.d("tag", "bitmap result start" + result);
 
-                SharedPreferences s_pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                SharedPreferences.Editor edit = s_pref.edit();
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                result.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                byte[] b = baos.toByteArray();
-                String encodedString = Base64.encodeToString(b, Base64.DEFAULT);
-                Log.d("tag", "encodedString_from_image=>" + encodedString);
-                edit.remove("zxc");
-                edit.putString("zxc", encodedString);
-                edit.apply();
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(i);
-                mProgressDialog.dismiss();
-            }
+            SharedPreferences s_pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            SharedPreferences.Editor edit = s_pref.edit();
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            result.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] b = baos.toByteArray();
+            String encodedString = Base64.encodeToString(b, Base64.DEFAULT);
+            Log.d("tag", "encodedString_from_image=>" + encodedString);
+            edit.remove("zxc");
+            edit.putString("zxc", encodedString);
+            edit.apply();
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
+            mProgressDialog.dismiss();
+        }
     }
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

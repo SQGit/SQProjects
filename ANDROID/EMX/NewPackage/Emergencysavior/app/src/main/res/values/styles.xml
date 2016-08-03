@@ -100,5 +100,17 @@
 
 
 
+    <style name="MyTheme" parent="Theme.AppCompat">
+        <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+    </style>
+
+    <style name="MyTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/MyTheme.ActionBar</item>
+    </style>
+
+    <style name="MyTheme.ActionBar" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#3c5899</item>
+    </style>
+
 
 </resources>

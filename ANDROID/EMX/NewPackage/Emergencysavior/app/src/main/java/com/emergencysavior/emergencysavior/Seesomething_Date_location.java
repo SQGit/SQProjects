@@ -10,7 +10,9 @@ import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.jaeger.library.StatusBarUtil;
+import com.sloop.fonts.FontsManager;
 
 import java.util.Arrays;
 
@@ -41,6 +44,9 @@ public class Seesomething_Date_location extends AppCompatActivity {
         isTransparent = getIntent().getBooleanExtra(EXTRA_IS_TRANSPARENT, true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.seesomething_date_location);
+
+        FontsManager.initFormAssets(this, "fonts/ques.otf");
+        FontsManager.changeFonts(this);
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> F O N T S I N T I A L Z A T I O N >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         final Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/ques.otf");
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> A C T I O N B A R >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -61,16 +67,7 @@ public class Seesomething_Date_location extends AppCompatActivity {
         txt_sign = (TextView) findViewById(R.id.dss);
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>T E X T T Y P E F A C E>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         // spinner_type_activity.setTypeface(tf);
-        editext_what_happened.setTypeface(tf);
-        editext_when.setTypeface(tf);
-        editext_location.setTypeface(tf);
-        editext_city.setTypeface(tf);
-        editext_address.setTypeface(tf);
-        btn_back.setTypeface(tf);
-        btn_next.setTypeface(tf);
-        txt_sign.setTypeface(tf);
-
-        //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>T E X T T Y P E F A C E>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+           //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>T E X T T Y P E F A C E>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
         MySpinnerAdapter<CharSequence> adapter = new MySpinnerAdapter<CharSequence>(this,R.layout.spinner_item, Arrays.asList(getResources().getStringArray(R.array.Typeofactivity)));
         adapter.setDropDownViewResource(R.layout.spinner_item);
@@ -146,6 +143,16 @@ public class Seesomething_Date_location extends AppCompatActivity {
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> L I S T E N E R >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         setStatusBar();
     }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
     protected void setStatusBar() {
         if (isTransparent) {
             StatusBarUtil.setTransparent(this);

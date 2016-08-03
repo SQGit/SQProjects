@@ -1381,15 +1381,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             case "call911":
                                 gps_location = (CONFIG.GPS_URL_LOCATION + latitude + "," + longitude);
                                 if (shared_preference_message.equals("true")) {
-                                    message = (json_firstname + "has called 911,send police to:" + addressLine + " " + gps_location);
+                                    message = (json_firstname + " has called 911,send police to:" + addressLine + " " + gps_location);
                                     new message(message).execute();
                                 }
                                 if (shared_preference_audio.equals("true")) {
-                                    message = (json_firstname + "has called 911,send police to:" + addressLine);
+                                    message = (json_firstname + " has called 911,send police to:" + addressLine);
                                     new message_from_audio(message).execute();
                                 }
                                 if (shared_preference_email.equals("true")) {
-                                    message = (json_firstname + "has called 911,send police to:" + addressLine + " " + gps_location);
+                                    message = (json_firstname + " has called 911,send police to:" + addressLine + " " + gps_location);
                                     new message_from_email(message, latitude, longitude).execute();
                                 }
                                 if (shared_preference_call_911.equals("true")) {
@@ -1405,13 +1405,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 }
 
                                 if (shared_preference_gps.equals("true")) {
-                                    message = (json_firstname + "has called 911,send police to:" + addressLine + " " + gps_location);
+                                    message = (json_firstname + " has called 911,send police to:" + addressLine + " " + gps_location);
                                 }
                                 break;
                             case "need_help":
                                 gps_location = (CONFIG.GPS_URL_LOCATION + latitude + "," + longitude);
                                 if (shared_preference_message.equals("true")) {
-                                    message = (json_firstname + "needs help at: " + addressLine + " " + gps_location);
+                                    message = (json_firstname + " needs help at: " + addressLine + " " + gps_location);
                                     new message(message).execute();
                                 }
                                 if (shared_preference_audio.equals("true")) {
@@ -1421,11 +1421,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     Toast.makeText(getApplicationContext(), "Recording starting", Toast.LENGTH_LONG).show();
                                 }
                                 if (shared_preference_email.equals("true")) {
-                                    message = (json_firstname + "needs help at: " + addressLine + " " + gps_location);
+                                    message = (json_firstname + " needs help at: " + addressLine + " " + gps_location);
                                     new message_from_email(message, latitude, longitude).execute();
                                 }
                                 if (shared_preference_gps.equals("true")) {
-                                    message = (json_firstname + "needs help at: " + addressLine + " " + gps_location);
+                                    message = (json_firstname + " needs help at: " + addressLine + " " + gps_location);
 
                                 }
                                 break;
@@ -1452,19 +1452,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             case "iamok":
                                 gps_location = (CONFIG.GPS_URL_LOCATION + latitude + "," + longitude);
                                 if (shared_preference_message.equals("true")) {
-                                    message = (json_firstname + "is Ok .. No Help Needed at:" + addressLine + " " + gps_location);
+                                    message = (json_firstname + " is Ok .. No Help Needed at:" + addressLine + " " + gps_location);
                                     new message(message).execute();
                                 }
                                 if (shared_preference_audio.equals("true")) {
-                                    message = (json_firstname + "is Ok .. No Help Needed at:" + addressLine + " " + gps_location);
+                                    message = (json_firstname + " is Ok .. No Help Needed at:" + addressLine + " " + gps_location);
                                     new message_from_audio(message).execute();
                                 }
                                 if (shared_preference_email.equals("true")) {
-                                    message = (json_firstname + "is Ok .. No Help Needed at:" + addressLine + " " + gps_location);
+                                    message = (json_firstname + " is Ok .. No Help Needed at:" + addressLine + " " + gps_location);
                                     new message_from_email(message, latitude, longitude).execute();
                                 }
                                 if (shared_preference_gps.equals("true")) {
-                                    message = (json_firstname + "is Ok .. No Help Needed at:" + addressLine + " " + gps_location);
+                                    message = (json_firstname + " is Ok .. No Help Needed at:" + addressLine + " " + gps_location);
                                 }
                                 break;
                             case "alarm":
@@ -1578,11 +1578,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
                                             if (shared_preference_message.equals("true")) {
-                                                message = (json_firstname + "has pressed  Policeman send  police to:" + addressLine + " " + gps_location);
+                                                message = (json_firstname + " has pressed  Policeman send  police to:" + addressLine + " " + gps_location);
                                                 new message(message).execute();
                                             }
                                             if (shared_preference_email.equals("true")) {
-                                                message = (json_firstname + "has pressed  Policeman send  police to:" + addressLine + " " + gps_location);
+                                                message = (json_firstname + " has pressed  Policeman send  police to:" + addressLine + " " + gps_location);
                                                 new message_from_email(message, latitude, longitude).execute();
                                             }
 
@@ -1684,12 +1684,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 gps_location = (CONFIG.GPS_URL_LOCATION + latitude + "," + longitude);
 
                                 if (shared_preference_email.equals("true")) {
-                                    message = ("This is " + json_firstname + "There is an Earthquake in my area … send help immediately " + str_address + " " + gps_location);
+                                    message = ("This is " + json_firstname + " There is an Earthquake in my area … send help immediately " + str_address + " " + gps_location);
                                     new message_from_email(message, latitude, longitude).execute();
                                 }
 
                                 if (shared_preference_message.equals("true")) {
-                                    message = ("”This is " + json_firstname + "There is an Earthquake in my area … send help immediately " + str_address /*+ " " + gps_location*/);
+                                    message = ("This is " + json_firstname + " There is an Earthquake in my area … send help immediately " + str_address /*+ " " + gps_location*/);
                                     Log.d("tag", "message E  = " + message);
                                     new message_rescue_me(message).execute();
                                 }
@@ -1698,7 +1698,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             case "Emergency Flood":
                                 gps_location = (CONFIG.GPS_URL_LOCATION + latitude + "," + longitude);
                                 if (shared_preference_email.equals("true")) {
-                                    message = ("This is " + json_firstname + "There is an Flood in my area … send help immediately " + str_address + " " + gps_location);
+                                    message = ("This is " + json_firstname + " There is an Flood in my area … send help immediately " + str_address + " " + gps_location);
                                     new message_from_email(message, latitude, longitude).execute();
                                 }
                                 if (shared_preference_message.equals("true")) {
@@ -1712,7 +1712,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             case "Emergency Storms":
                                 gps_location = (CONFIG.GPS_URL_LOCATION + latitude + "," + longitude);
                                 if (shared_preference_email.equals("true")) {
-                                    message = ("This is " + json_firstname + "There is an Major Storm in my area … send help immediately " + str_address + " " + gps_location);
+                                    message = ("This is " + json_firstname + " There is an Major Storm in my area … send help immediately " + str_address + " " + gps_location);
                                     new message_from_email(message, latitude, longitude).execute();
                                 }
 
@@ -1755,13 +1755,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             case "Emergency I am ok":
                                 gps_location = (CONFIG.GPS_URL_LOCATION + latitude + "," + longitude);
                                 if (shared_preference_email.equals("true")) {
-                                    message = ("This is " + json_firstname + "is Ok .. No Help Needed at: " + str_address + " " + gps_location);
+                                    message = ("This is " + json_firstname + " is Ok .. No Help Needed at: " + str_address + " " + gps_location);
                                     new message_from_email(message, latitude, longitude).execute();
                                 }
 
 
                                 if (shared_preference_message.equals("true")) {
-                                    message = (json_firstname + "is Ok .. No Help Needed at:" + str_address /*+ " " + gps_location*/);
+                                    message = (json_firstname + " is Ok .. No Help Needed at:" + str_address /*+ " " + gps_location*/);
                                     Log.d("tag", "message I  = " + message);
                                     new message_rescue_me(message).execute();
                                 }

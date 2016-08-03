@@ -144,7 +144,7 @@ public class Profileupdate extends AppCompatActivity implements CalendarDatePick
         //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Profileupdate.this);
         sh_vale_session_token = sharedPreferences.getString("Session_token", "");
-        token = sh_vale_session_token.toString();
+        token = sh_vale_session_token;
         localimageencoder = sharedPreferences.getString("zxc", "");
         sh_vale_email = sharedPreferences.getString("Email", "");
         sh_vale_firstname = sharedPreferences.getString("Firstname", "");

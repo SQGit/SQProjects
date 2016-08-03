@@ -272,7 +272,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="nl.changer.polypicker.ImagePickerActivity" />
+        <activity
+            android:name="nl.changer.polypicker.ImagePickerActivity"
+            android:theme="@style/MyTheme"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustPan">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Seesomething_dashboard" />
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -322,7 +330,7 @@
             android:exported="true" />
 
         <activity android:name=".Safewalking">
-         <meta-data
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
