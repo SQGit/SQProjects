@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Darmok</string>
+
+
+
+    <string name="First_Name">First Name</string>
+    <string name="Last_Name">Last Name</string>
+    <string name="Middle_Name">Middle Name</string>
+    <string name="Phone_number">Phone Number</string>
+    <string name="Address">Address</string>
+    <string name="Favorite_Restaturant">Favorite Restaurant</string>
+    <string name="Spouse_first_name">Spouse First Name</string>
+    <string name="Favorite_friend">Favorite Friend</string>
+    <string name="Number_of_children">Number of children</string>
+    <string name="Child_name">Child Name</string>
+    <string name="Workplace">Workplace</string>
+    <string name="Work_location">Work location</string>
+    <string name="Favorite_sport">Favorite sport</string>
+    <string name="Favorite_pastime">Favorite pastime</string>
+    <string name="Birthday">Birthday</string>
+    <string name="Authorization_code">Authorization code</string>
+
+    <string name="Content">Please check Internet Connection</string>
+    <string name="Welcome">welcome</string>
+    <string name="admin_mode">Admin Mode</string>
+</resources>

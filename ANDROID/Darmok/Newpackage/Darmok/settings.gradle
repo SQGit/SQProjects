@@ -1,0 +1,1 @@
+include ':app', ':speechkit-2.1.3'
