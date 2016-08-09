@@ -37,19 +37,28 @@ public class MainActivity extends DetailActivity implements AudioPlayer.Listener
     Set<String> positive = new HashSet<String>();
     Set<String> Nagative = new HashSet<String>();
 
+    Button btn_start;
+    boolean flag = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/Suissnord.otf");
-        FontsManager.initFormAssets(this, "fonts/MONTSERRAT-REGULAR.OTF");       //initialization
+        FontsManager.initFormAssets(this, "fonts/ques.otf");       //initialization
         FontsManager.changeFonts(this);
+        customtittle = (TextView) findViewById(R.id.custom_tittle);
+        customtittle.setTypeface(tf);
+
 
         ///////////////////////////////////
         positive.add("Yes");
         positive.add("yes");
         positive.add("yes yes yes");
         positive.add("Yes Yes Yes");
+        positive.add("Yes yes yes");
+        positive.add("Yes yes");
+
         ///////////////////////////////////
         Nagative.add("NO");
         Nagative.add("no");
@@ -58,18 +67,48 @@ public class MainActivity extends DetailActivity implements AudioPlayer.Listener
         Nagative.add("No No No");
         Nagative.add("no no no");
         ///////////////////////////////////
-        speechSession = Session.Factory.session(this, Configuration.SERVER_URI, Configuration.APP_KEY);
+
+        btn_start = (Button) findViewById(R.id.custom_btn_start);
+        btn_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (flag) {
+
+                    Log.d("ins", "called");
+                    flag = false;
+                    btn_start.setText("Listening..");
+                    speechSession = Session.Factory.session(getApplicationContext(), Configuration.SERVER_URI, Configuration.APP_KEY);
+                    synthesizetts("Welcome My name is Darmok. Do you want to create a profile? Yes or No");
+                    s_pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    SharedPreferences.Editor edit = s_pref.edit();
+                    edit.putString("ttsvalue", "0");
+                    edit.apply();
+
+                } else {
+                    flag = true;
+                    btn_start.setText("Start");
+                    ttsTransaction.stopRecording();
+                    ttsTransaction.cancel();
+
+
+                }
+
+            }
+        });
+
+
+       /* speechSession = Session.Factory.session(this, Configuration.SERVER_URI, Configuration.APP_KEY);
         synthesizetts("Welcome My name is Darmok. Do you want to create a profile? Yes or No");
         s_pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor edit = s_pref.edit();
         edit.putString("ttsvalue", "0");
-        edit.apply();
+        edit.apply();*/
     }
 
     private void synthesizetts(String tts) {
         speechSession.getAudioPlayer().setListener(this);
         Transaction.Options options = new Transaction.Options();
-        options.setLanguage(new Language("eng-IND"));
+        options.setLanguage(new Language("eng-USA"));
         ttsTransaction = speechSession.speakString(tts, options, new Transaction.Listener() {
             @Override
             public void onAudio(Transaction transaction, Audio audio) {
@@ -89,6 +128,11 @@ public class MainActivity extends DetailActivity implements AudioPlayer.Listener
             public void onError(Transaction transaction, String s, TransactionException e) {
 
                 Log.d("tag", "onError" + s);
+
+                Log.d("tag", "onError" + e.getMessage() + "" + s);
+                String exception = e.getMessage();
+
+                Errordialog(exception, s);
             }
         });
     }
@@ -112,7 +156,7 @@ public class MainActivity extends DetailActivity implements AudioPlayer.Listener
         Transaction.Options options = new Transaction.Options();
         options.setRecognitionType(RecognitionType.DICTATION);
         options.setDetection(DetectionType.Short);
-        options.setLanguage(new Language("eng-IND"));
+        options.setLanguage(new Language("eng-USA"));
         Transaction recoTransaction = speechSession.recognize(options, recoListener);
     }
 
@@ -130,7 +174,7 @@ public class MainActivity extends DetailActivity implements AudioPlayer.Listener
 
         @Override
         public void onRecognition(Transaction transaction, Recognition recognition) {
-
+            Log.d("tag", "onRecognition"+recognition.getText());
 
             if (positive.contains(recognition.getText())) {
                 intent = new Intent(getBaseContext(), CreateProfile.class);
@@ -206,4 +250,10 @@ public class MainActivity extends DetailActivity implements AudioPlayer.Listener
 
     }
 
+    @Override
+    public void onBackPressed() {
+
+        finish();
+        onDestroy();
+    }
 }
