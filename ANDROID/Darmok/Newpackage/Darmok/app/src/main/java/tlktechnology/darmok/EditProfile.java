@@ -128,7 +128,6 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
         edt_Authorization_code.setText(str_Authorization_code);
 
 
-
         speechSession = Session.Factory.session(this, Configuration.SERVER_URI, Configuration.APP_KEY);
         synthesizetts("Please Say Which one edit");
         s_pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -155,7 +154,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
         last_name.add("Lastname");
         last_name.add("lastName");
         last_name.add("lastname");
-
+        last_name.add("last name");
 
 
         middle_name.add("Middle Name");
@@ -176,6 +175,8 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
         phone_number.add("Phonenumber");
         phone_number.add("phonenumber");
         phone_number.add("phoneNumber");
+        phone_number.add("Phone number");
+
 
         address.add("Address");
         address.add("address");
@@ -307,10 +308,44 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
             public void onError(Transaction transaction, String s, TransactionException e) {
 
                 Log.d("tag", "onError" + s);
+                Log.d("tag", "onError" + e.getMessage() + "" + s);
+                String exception = e.getMessage();
+
+                Errordialog(exception, s);
             }
         });
     }
 
+    private void onEdit_synthesizetts(String tts) {
+        speechSession.getAudioPlayer().setListener(this);
+        Transaction.Options options = new Transaction.Options();
+        options.setLanguage(new Language("eng-USA"));
+        ttsTransaction = speechSession.speakString(tts, options, new Transaction.Listener() {
+            @Override
+            public void onAudio(Transaction transaction, Audio audio) {
+
+                Log.d("tag", "onAudio");
+
+            }
+
+            @Override
+            public void onSuccess(Transaction transaction, String s) {
+
+                Log.d("tag", "onSuccess");
+
+            }
+
+            @Override
+            public void onError(Transaction transaction, String s, TransactionException e) {
+
+                Log.d("tag", "onError" + s);
+                Log.d("tag", "onError" + e.getMessage() + "" + s);
+                String exception = e.getMessage();
+
+                Errordialog(exception, s);
+            }
+        });
+    }
 
     @Override
     public void onBeginPlaying(AudioPlayer audioPlayer, Audio audio) {
@@ -321,12 +356,60 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
     public void onFinishedPlaying(AudioPlayer audioPlayer, Audio audio) {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        String value = sharedPreferences.getString("ttsvalue", "0");
+        String value = sharedPreferences.getString("ttsvalue", "");
 
 
         switch (value) {
             case "0":
                 recognize();
+                break;
+            case "1":
+                recognize_onEdit();
+                break;
+            case "2":
+                recognize_onEdit();
+                break;
+            case "3":
+                recognize_onEdit();
+                break;
+            case "4":
+                recognize_onEdit();
+                break;
+            case "5":
+                recognize_onEdit();
+                break;
+            case "6":
+                recognize_onEdit();
+                break;
+            case "7":
+                recognize_onEdit();
+                break;
+            case "8":
+                recognize_onEdit();
+                break;
+            case "9":
+                recognize_onEdit();
+                break;
+            case "10":
+                recognize_onEdit();
+                break;
+            case "11":
+                recognize_onEdit();
+                break;
+            case "12":
+                recognize_onEdit();
+                break;
+            case "13":
+                recognize_onEdit();
+                break;
+            case "14":
+                recognize_onEdit();
+                break;
+            case "15":
+                recognize_onEdit();
+                break;
+            case "16":
+                recognize_onEdit();
                 break;
 
         }
@@ -355,6 +438,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
 
         @Override
         public void onRecognition(Transaction transaction, Recognition recognition) {
+            Log.d("tag", "onRecognition" + recognition.getText());
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             String value = sharedPreferences.getString("ttsvalue", "");
             Log.d("tag", "value" + value);
@@ -363,139 +447,160 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
 
             switch (value) {
                 case "0":
+                    if (first_name.contains(recognition.getText()) || last_name.contains(recognition.getText()) ||
+                            middle_name.contains(recognition.getText()) || phone_number.contains(recognition.getText()) ||
+                            address.contains(recognition.getText()) || favorite_restaturant.contains(recognition.getText()) ||
+                            spouse_first_name.contains(recognition.getText()) || favorite_friend.contains(recognition.getText()) ||
+                            number_of_children.contains(recognition.getText()) || child_name.contains(recognition.getText()) ||
+                            workplace.contains(recognition.getText()) || work_location.contains(recognition.getText()) ||
+                            favorite_sport.contains(recognition.getText()) || favorite_pastime.contains(recognition.getText()) ||
+                            bithday.contains(recognition.getText()) || authorization_Code.contains(recognition.getText())
+                            ) {
 
-                    if (first_name.contains(recognition.getText())) {
-                        edt_First_Name.setText("");
+                        if (first_name.contains(recognition.getText())) {
+                            edt_First_Name.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "1");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your First Name");
+
+
+                        }
+                        if (last_name.contains(recognition.getText())) {
+                            edt_Last_Name.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "2");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Last Name");
+                        }
+                        if (middle_name.contains(recognition.getText())) {
+                            edt_Middle_Name.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "3");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Middle Name");
+                        }
+                        if (phone_number.contains(recognition.getText())) {
+                            edt_Phone_number.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "4");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Phone Number");
+                        }
+                        if (address.contains(recognition.getText())) {
+                            edt_Address.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "5");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Address");
+
+                        }
+                        if (favorite_restaturant.contains(recognition.getText())) {
+                            edt_Favorite_Restaturant.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "6");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Favorite Restaturant");
+                        }
+                        if (spouse_first_name.contains(recognition.getText())) {
+                            edt_Spouse_first_name.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "7");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Spouse First Name");
+                        }
+                        if (favorite_friend.contains(recognition.getText())) {
+                            edt_Favorite_friend.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "8");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Friend Name");
+                        }
+                        if (number_of_children.contains(recognition.getText())) {
+                            edt_Number_of_children.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "9");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say Number of Children");
+                        }
+                        if (child_name.contains(recognition.getText())) {
+                            edt_Child_name.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "10");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Child Name");
+                        }
+                        if (workplace.contains(recognition.getText())) {
+                            edt_Workplace.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "11");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your WorkPlace");
+                        }
+                        if (work_location.contains(recognition.getText())) {
+                            edt_Work_location.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "12");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your WorkLocation");
+                        }
+                        if (favorite_sport.contains(recognition.getText())) {
+                            edt_Favorite_sport.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "13");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Favorite Sport");
+                        }
+                        if (favorite_pastime.contains(recognition.getText())) {
+                            edt_Favorite_pastime.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "14");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Favorite Passtime");
+                        }
+                        if (bithday.contains(recognition.getText())) {
+                            edt_Birthday.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "15");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your BirthDay");
+                        }
+                        if (authorization_Code.contains(recognition.getText())) {
+                            edt_Authorization_code.setText(" ");
+                            edit.remove("ttsvalue");
+                            edit.putString("ttsvalue", "16");
+                            edit.apply();
+                            onEdit_synthesizetts("Please Say your Authorization Code");
+                        }
+                    } else {
+                        synthesizetts("Not matching any credential.Please say which one edit?");
                         edit.remove("ttsvalue");
                         edit.putString("ttsvalue", "0");
                         edit.apply();
-                        recognize_onEdit();
-
-
-                    }
-                    if (last_name.contains(recognition.getText())) {
-                        edt_Last_Name.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "1");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (middle_name.contains(recognition.getText())) {
-                        edt_Middle_Name.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "2");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (phone_number.contains(recognition.getText())) {
-                        edt_Phone_number.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "3");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (address.contains(recognition.getText())) {
-                        edt_Address.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "4");
-                        edit.apply();
-                        recognize_onEdit();
-
-                    }
-                    if (favorite_restaturant.contains(recognition.getText())) {
-                        edt_Favorite_Restaturant.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "5");
-                        edit.apply();
-                        recognize_onEdit();
-
-
-                    }
-                    if (spouse_first_name.contains(recognition.getText())) {
-                        edt_Spouse_first_name.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "6");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (favorite_friend.contains(recognition.getText())) {
-                        edt_Favorite_friend.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "7");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (number_of_children.contains(recognition.getText())) {
-                        edt_Number_of_children.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "8");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (child_name.contains(recognition.getText())) {
-                        edt_Child_name.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "9");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (workplace.contains(recognition.getText())) {
-                        edt_Workplace.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "10");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (work_location.contains(recognition.getText())) {
-                        edt_Work_location.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "11");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (favorite_sport.contains(recognition.getText())) {
-
-                        edt_Favorite_sport.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "12");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (favorite_pastime.contains(recognition.getText())) {
-
-                        edt_Favorite_pastime.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "12");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (bithday.contains(recognition.getText())) {
-
-                        edt_Birthday.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "13");
-                        edit.apply();
-                        recognize_onEdit();
-                    }
-                    if (authorization_Code.contains(recognition.getText())) {
-
-                        edt_Authorization_code.setText("");
-                        edit.remove("ttsvalue");
-                        edit.putString("ttsvalue", "13");
-                        edit.apply();
-                        recognize_onEdit();
                     }
                     break;
                 default:
                     messagedialog();
-                    break;
+
             }
 
         }
 
         @Override
         public void onSuccess(Transaction transaction, String s) {
-            Log.d("tag", "onSuccess" + s);
+
+            if (s != null && !s.isEmpty() && !s.equals("null")) {
+
+              /*  synthesizetts("Not matching any credtional.Please say which one edit?");
+                s_pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor edit = s_pref.edit();
+                edit.putString("ttsvalue", "0");
+                edit.apply();*/
+            } else {
+
+            }
+
+
         }
 
         @Override
@@ -539,7 +644,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
 
 
             switch (value) {
-                case "0":
+                case "1":
 
                     edt_First_Name.setText(recognition.getText());
                     str_First_Name = edt_First_Name.getText().toString();
@@ -548,7 +653,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "1":
+                case "2":
 
                     edt_Last_Name.setText(recognition.getText());
 
@@ -558,7 +663,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "2":
+                case "3":
 
                     edt_Middle_Name.setText(recognition.getText());
                     str_Middle_Name = edt_Middle_Name.getText().toString();
@@ -567,7 +672,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "3":
+                case "4":
 
                     edt_Phone_number.setText(recognition.getText());
                     str_Phone_number = edt_Phone_number.getText().toString();
@@ -576,7 +681,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "4":
+                case "5":
 
                     edt_Address.setText(recognition.getText());
                     str_Address = edt_Address.getText().toString();
@@ -585,7 +690,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "5":
+                case "6":
 
                     edt_Favorite_Restaturant.setText(recognition.getText());
                     str_Favorite_Restaturant = edt_Favorite_Restaturant.getText().toString();
@@ -594,7 +699,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "6":
+                case "7":
 
                     edt_Spouse_first_name.setText(recognition.getText());
                     str_Spouse_first_name = edt_Spouse_first_name.getText().toString();
@@ -603,7 +708,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "7":
+                case "8":
 
                     edt_Favorite_friend.setText(recognition.getText());
                     str_Favorite_friend = edt_Favorite_friend.getText().toString();
@@ -612,7 +717,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "8":
+                case "9":
 
                     edt_Number_of_children.setText(recognition.getText());
                     str_Number_of_children = edt_Number_of_children.getText().toString();
@@ -621,7 +726,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "9":
+                case "10":
 
                     edt_Child_name.setText(recognition.getText());
                     str_Child_name = edt_Child_name.getText().toString();
@@ -630,7 +735,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "10":
+                case "11":
 
                     edt_Workplace.setText(recognition.getText());
                     str_Workplace = edt_Workplace.getText().toString();
@@ -639,7 +744,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "11":
+                case "12":
 
                     edt_Work_location.setText(recognition.getText());
                     str_Work_location = edt_Work_location.getText().toString();
@@ -648,7 +753,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "12":
+                case "13":
 
                     edt_Favorite_sport.setText(recognition.getText());
                     str_Favorite_sport = edt_Favorite_sport.getText().toString();
@@ -657,7 +762,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "13":
+                case "14":
 
                     edt_Favorite_pastime.setText(recognition.getText());
                     str_Favorite_pastime = edt_Favorite_pastime.getText().toString();
@@ -666,7 +771,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "14":
+                case "15":
 
                     edt_Birthday.setText(recognition.getText());
                     str_Birthday = edt_Birthday.getText().toString();
@@ -675,7 +780,7 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     edit.apply();
                     messagedialog();
                     break;
-                case "15":
+                case "16":
 
                     edt_Authorization_code.setText(recognition.getText());
                     str_Authorization_code = edt_Authorization_code.getText().toString();
@@ -685,6 +790,8 @@ public class EditProfile extends DetailActivity implements AudioPlayer.Listener 
                     messagedialog();
                     break;
                 default:
+
+                    messagedialog();
             }
         }
 

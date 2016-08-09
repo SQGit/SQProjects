@@ -23,10 +23,7 @@
         <activity
             android:name=".Splashscreen"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <activity
@@ -37,16 +34,28 @@
         <activity
             android:name=".EditProfile"
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Dashboard"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+
 
         </activity>
-        <activity android:name=".Dashboard">
 
+        <activity
+            android:name=".AdminMode"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
 
         </activity>
 
-        <activity android:name=".AdminMode"></activity>
+        <activity android:name=".Query_Mode"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
 
-        <activity android:name=".Query_Mode"></activity>
+        </activity>
 
     </application>
 
