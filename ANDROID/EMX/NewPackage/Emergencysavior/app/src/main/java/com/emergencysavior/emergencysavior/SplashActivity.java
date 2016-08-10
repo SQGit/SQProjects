@@ -30,7 +30,26 @@ public class SplashActivity extends DetailActivity {
         tf = Typeface.createFromAsset(getAssets(), "fonts/ques.otf");
         tv = (TextView) findViewById(R.id.dss);
         tv.setTypeface(tf);
+
+    /* PackageManager manager = this.getPackageManager();
+        PackageInfo info = null;
+        try {
+            info = manager.getPackageInfo(this.getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        Toast.makeText(this,
+                "PackageName = " + info.packageName + "\nVersionCode = "
+                        + info.versionCode + "\nVersionName = "
+                        + info.versionName + "\nPermissions = " + info.permissions, Toast.LENGTH_SHORT).show();
+
+        Log.d("tag",""+ info.packageName + "\nVersionCode = "
+                + info.versionCode + "\nVersionName = "
+                + info.versionName + "\nPermissions = " + info.permissions);
+*/
         StartAnimations();
+
+
     }
 
     private void StartAnimations() {

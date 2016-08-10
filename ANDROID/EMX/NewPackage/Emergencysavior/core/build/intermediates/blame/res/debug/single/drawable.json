@@ -68,12 +68,12 @@
         "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
-        "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
-        "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\drawable\\abc_edit_text_material.xml"
-    },
-    {
         "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
         "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",

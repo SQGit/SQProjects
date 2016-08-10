@@ -11,13 +11,13 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\zbar\\build\\intermediates\\exploded-aar\\me.dm7.barcodescanner\\core\\1.8.3\\res\\values-hdpi-v4\\values.xml",
+                    "file": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\zbar\\build\\intermediates\\exploded-aar\\me.dm7.barcodescanner\\core\\1.8.4\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 197,
+                        "startOffset": 55,
                         "endColumn": 57,
-                        "endOffset": 250
+                        "endOffset": 108
                     }
                 }
             },
@@ -30,13 +30,13 @@
                     "endOffset": 164
                 },
                 "from": {
-                    "file": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\zbar\\build\\intermediates\\exploded-aar\\me.dm7.barcodescanner\\core\\1.8.3\\res\\values-hdpi-v4\\values.xml",
+                    "file": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\zbar\\build\\intermediates\\exploded-aar\\me.dm7.barcodescanner\\core\\1.8.4\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "position": {
-                        "startLine": 5,
+                        "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 255,
+                        "startOffset": 113,
                         "endColumn": 55,
-                        "endOffset": 306
+                        "endOffset": 164
                     }
                 }
             }

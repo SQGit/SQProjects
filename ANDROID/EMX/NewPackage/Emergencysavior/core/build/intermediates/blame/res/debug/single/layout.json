@@ -92,12 +92,12 @@
         "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\layout\\abc_screen_simple.xml"
-    },
-    {
         "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\layout\\abc_screen_simple.xml"
     },
     {
         "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",

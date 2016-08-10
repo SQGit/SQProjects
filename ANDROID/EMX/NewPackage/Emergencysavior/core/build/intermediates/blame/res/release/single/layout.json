@@ -28,12 +28,12 @@
         "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_lines.xml",
-        "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\layout\\notification_template_lines.xml"
-    },
-    {
         "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\release\\layout\\abc_select_dialog_material.xml",
         "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\release\\layout\\notification_template_lines.xml",
+        "source": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.0\\res\\layout\\notification_template_lines.xml"
     },
     {
         "merged": "F:\\ANDROID\\EMX\\NewPackage\\Emergencysavior\\core\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_bar_up_container.xml",
