@@ -1,6 +1,7 @@
 package tlktechnology.darmok;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -8,12 +9,15 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jaeger.library.StatusBarUtil;
 import com.nuance.speechkit.Audio;
 import com.nuance.speechkit.AudioPlayer;
 import com.nuance.speechkit.DetectionType;
@@ -29,6 +33,10 @@ import com.sloop.fonts.FontsManager;
  * Created by RSA on 06-08-2016.
  */
 public class Dashboard extends DetailActivity implements AudioPlayer.Listener {
+
+    public static final String EXTRA_IS_TRANSPARENT = "is_transparent";
+    private boolean isTransparent;
+
     TextView customtittle;
     private Session speechSession;
     private Transaction ttsTransaction;
@@ -39,6 +47,7 @@ public class Dashboard extends DetailActivity implements AudioPlayer.Listener {
     Button btn_query_darmok, btn_admin_mode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        isTransparent = getIntent().getBooleanExtra(EXTRA_IS_TRANSPARENT, true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/Suissnord.otf");
@@ -70,6 +79,7 @@ public class Dashboard extends DetailActivity implements AudioPlayer.Listener {
                     edit.putString("ttsvalue", "1");
                     edit.apply();
                     btn_admin_mode.setEnabled(false);
+                    Toast.makeText(getApplicationContext(),"Under Progress",Toast.LENGTH_LONG).show();
                 } else {
                     flag = true;
                     s_pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -95,6 +105,25 @@ public class Dashboard extends DetailActivity implements AudioPlayer.Listener {
             }
         });
 
+        setStatusBar();
+
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    protected void setStatusBar() {
+        if (isTransparent) {
+            StatusBarUtil.setTransparent(this);
+        } else {
+            StatusBarUtil.setTranslucent(this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
+        }
     }
     private void synthesizetts(String tts) {
         speechSession.getAudioPlayer().setListener(this);
@@ -186,7 +215,7 @@ public class Dashboard extends DetailActivity implements AudioPlayer.Listener {
 
 
                     }else {
-                        String s="Please say correct Darmok Admin Fountion?Please try again";
+                        String s="Please say correct Darmok Admin FUNCTION ?Please try again";
                         String tittle="Alert";
                         Errordialog(tittle, s);
                     }

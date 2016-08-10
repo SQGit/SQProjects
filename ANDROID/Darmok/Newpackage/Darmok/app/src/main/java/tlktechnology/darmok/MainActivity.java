@@ -1,6 +1,7 @@
 package tlktechnology.darmok;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -8,11 +9,14 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.jaeger.library.StatusBarUtil;
 import com.nuance.speechkit.Audio;
 import com.nuance.speechkit.AudioPlayer;
 import com.nuance.speechkit.DetectionType;
@@ -28,6 +32,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MainActivity extends DetailActivity implements AudioPlayer.Listener {
+
+    public static final String EXTRA_IS_TRANSPARENT = "is_transparent";
+    private boolean isTransparent;
     TextView customtittle;
     private Session speechSession;
     private Transaction ttsTransaction;
@@ -42,6 +49,7 @@ public class MainActivity extends DetailActivity implements AudioPlayer.Listener
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        isTransparent = getIntent().getBooleanExtra(EXTRA_IS_TRANSPARENT, true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/Suissnord.otf");
@@ -103,8 +111,25 @@ public class MainActivity extends DetailActivity implements AudioPlayer.Listener
         SharedPreferences.Editor edit = s_pref.edit();
         edit.putString("ttsvalue", "0");
         edit.apply();*/
+
+        setStatusBar();
+    }
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
     }
 
+    protected void setStatusBar() {
+        if (isTransparent) {
+            StatusBarUtil.setTransparent(this);
+        } else {
+            StatusBarUtil.setTranslucent(this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
+        }
+    }
     private void synthesizetts(String tts) {
         speechSession.getAudioPlayer().setListener(this);
         Transaction.Options options = new Transaction.Options();

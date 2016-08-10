@@ -14,12 +14,11 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="center|top"
-
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:text="Edit Profile"
+            android:text="@string/Edit_Profile"
             android:textAlignment="0"
             android:textColor="@android:color/background_light"
             android:textSize="20sp" />
@@ -29,224 +28,259 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-
         android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:orientation="vertical">
+            android:paddingTop="@dimen/activity_vertical_margin">
 
 
             <EditText
                 android:id="@+id/edt_first_name"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/First_Name"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/First_Name"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_last_name"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Last_Name"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Last_Name"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_middle_name"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Middle_Name"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Middle_Name"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_phone_number"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Phone_number"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Phone_number"
+                android:inputType="phone"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_address"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Address"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Address"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_favorite_restaturant"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
+                android:backgroundTint="@android:color/white"
                 android:focusable="false"
                 android:hint="@string/Favorite_Restaturant"
-                android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_spouse_first_name"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:hint="@string/Spouse_first_name"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Spouse_first_name"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_favorite_friend"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Favorite_friend"
                 android:backgroundTint="@android:color/white"
-                android:singleLine="true"
                 android:focusable="false"
-
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:hint="@string/Favorite_friend"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_number_of_children"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Number_of_children"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Number_of_children"
+                android:inputType="numberSigned"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
 
             <EditText
                 android:id="@+id/edt_child_name"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Child_name"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Child_name"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_Workplace"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Workplace"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Workplace"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
 
             <EditText
                 android:id="@+id/edt_Work_location"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Work_location"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Work_location"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
 
 
             <EditText
                 android:id="@+id/edt_favorite_sport"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Favorite_sport"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Favorite_sport"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
 
             <EditText
                 android:id="@+id/edt_favorite_pastime"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Favorite_pastime"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Favorite_pastime"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_birthday"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Birthday"
-                android:focusable="false"
-                android:singleLine="true"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Birthday"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
+
             <EditText
                 android:id="@+id/edt_Authorization_code"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/Authorization_code"
-                android:singleLine="true"
-                android:focusable="false"
                 android:backgroundTint="@android:color/white"
-                android:textColorHint="@android:color/background_light"
-                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:focusable="false"
+                android:hint="@string/Authorization_code"
+                android:onClick="onClick"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                />
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:singleLine="true"
+                android:textColorHint="@android:color/background_light" />
         </LinearLayout>
 
     </ScrollView>
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="50dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+
+        <Button
+            android:id="@+id/btn_update"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/mybutton"
+            android:ems="7"
+            android:onClick="onClick"
+            android:gravity="center"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:text="@string/btn_done"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
 
 
     </LinearLayout>

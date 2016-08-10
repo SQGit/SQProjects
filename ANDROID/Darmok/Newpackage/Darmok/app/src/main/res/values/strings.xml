@@ -23,4 +23,8 @@
     <string name="Content">Please check Internet Connection</string>
     <string name="Welcome">welcome</string>
     <string name="admin_mode">Admin Mode</string>
+    <string name="Edit_Profile">Edit Profile</string>
+
+    <string name="btn_done">Done</string>
+    <string name="txt_confirmation">Confirmation</string>
 </resources>

@@ -1,6 +1,7 @@
 package tlktechnology.darmok;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -8,11 +9,14 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.jaeger.library.StatusBarUtil;
 import com.nuance.speechkit.Audio;
 import com.nuance.speechkit.AudioPlayer;
 import com.nuance.speechkit.DetectionType;
@@ -29,33 +33,52 @@ import com.sloop.fonts.FontsManager;
  */
 public class AdminMode extends DetailActivity implements AudioPlayer.Listener {
 
+    public static final String EXTRA_IS_TRANSPARENT = "is_transparent";
+    private boolean isTransparent;
+
     TextView customtittle;
     private Session speechSession;
     private Transaction ttsTransaction;
     SharedPreferences sharedPreferences;
     SharedPreferences s_pref;
     Intent intent;
-
     String str_Authorization_code;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        isTransparent = getIntent().getBooleanExtra(EXTRA_IS_TRANSPARENT, true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_mode);
-
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/Suissnord.otf");
         FontsManager.initFormAssets(this, "fonts/MONTSERRAT-REGULAR.OTF");       //initialization
         FontsManager.changeFonts(this);
         customtittle = (TextView) findViewById(R.id.custom_tittle);
         customtittle.setTypeface(tf);
-
         speechSession = Session.Factory.session(this, Configuration.SERVER_URI, Configuration.APP_KEY);
         synthesizetts("Please provide authorization code");
         s_pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor edit = s_pref.edit();
         edit.putString("ttsvalue", "0");
         edit.apply();
+
+        setStatusBar();
+    }
+
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
+    protected void setStatusBar() {
+        if (isTransparent) {
+            StatusBarUtil.setTransparent(this);
+        } else {
+            StatusBarUtil.setTranslucent(this, StatusBarUtil.DEFAULT_STATUS_BAR_ALPHA);
+        }
     }
 
     private void synthesizetts(String tts) {
@@ -67,41 +90,34 @@ public class AdminMode extends DetailActivity implements AudioPlayer.Listener {
             public void onAudio(Transaction transaction, Audio audio) {
 
                 Log.d("tag", "onAudio");
-
             }
 
             @Override
             public void onSuccess(Transaction transaction, String s) {
 
                 Log.d("tag", "onSuccess");
-
             }
 
             @Override
             public void onError(Transaction transaction, String s, TransactionException e) {
-
-                Log.d("tag", "onError" + s);
+                Log.d("tag", "onError" + e.getMessage() + "" + s);
+                String exception = e.getMessage();
+                Errordialog(exception, s);
             }
         });
     }
 
     @Override
     public void onBeginPlaying(AudioPlayer audioPlayer, Audio audio) {
-
     }
-
     @Override
     public void onFinishedPlaying(AudioPlayer audioPlayer, Audio audio) {
-
-
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String value = sharedPreferences.getString("ttsvalue", "0");
         switch (value) {
             case "0":
                 recognize();
                 break;
-
-
         }
     }
     private void recognize() {
@@ -132,7 +148,7 @@ public class AdminMode extends DetailActivity implements AudioPlayer.Listener {
 
             if (str_Authorization_code.equals(recognition.getText())) {
 
-                intent = new Intent(getApplicationContext(), EditProfile.class);
+                intent = new Intent(getApplicationContext(), Edit_Profile.class);
                 startActivity(intent);
 
             } else {
@@ -152,7 +168,7 @@ public class AdminMode extends DetailActivity implements AudioPlayer.Listener {
             Log.d("tag", "onError" + e.getMessage() + "" + s);
             String exception = e.getMessage();
 
-            //   Errordialog(exception, s);
+               Errordialog(exception, s);
         }
     };
     private void Errordialog(String tittle, String s) {
