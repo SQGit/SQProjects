@@ -196,8 +196,10 @@ public class CreateProfile extends DetailActivity implements AudioPlayer.Listene
                 recognize();
                 break;
             case "16":
+                intent = new Intent(getBaseContext(), EditProfile.class);
+                startActivity(intent);
 
-                messagedialog();
+               // messagedialog();
                 break;
         }
     }
@@ -396,8 +398,6 @@ public class CreateProfile extends DetailActivity implements AudioPlayer.Listene
                     str_Birthday = edt_Birthday.getText().toString();
                     edit.remove("str_Birthday");
                     edit.putString("str_Birthday", str_Birthday);
-
-
                     edt_Authorization_code.requestFocus();
                     synthesizetts("Please Say Authorization Code");
                     edit.remove("ttsvalue");
@@ -406,13 +406,11 @@ public class CreateProfile extends DetailActivity implements AudioPlayer.Listene
                     break;
                 case "15":
                     edt_Authorization_code.setText(recognition.getText());
-
                     str_Authorization_code = edt_Authorization_code.getText().toString();
                     edit.remove("str_Authorization_code");
                     edit.putString("str_Authorization_code", str_Authorization_code);
-
                     edt_Authorization_code.setImeOptions(EditorInfo.IME_ACTION_DONE);
-                    synthesizetts("Here is the information I think I received from you. If you are not satisfied, go ahead and edit the form.Please press Edit or Done Button");
+                    synthesizetts("Here is the information I think I received from you. If you are not satisfied, go ahead and edit the form");
                     edit.remove("ttsvalue");
                     edit.putString("ttsvalue", "16");
                     edit.apply();
@@ -467,7 +465,7 @@ public class CreateProfile extends DetailActivity implements AudioPlayer.Listene
                 edit.apply();
                 ttsTransaction.cancel();
                 ttsTransaction.stopRecording();
-                intent = new Intent(getApplicationContext(), Edit_Profile.class);
+                intent = new Intent(getApplicationContext(), EditProfile.class);
                 startActivity(intent);
 
             }

@@ -86,7 +86,7 @@ public class Dashboard extends DetailActivity implements AudioPlayer.Listener {
                     SharedPreferences.Editor edit = s_pref.edit();
                     edit.remove("ttsvalue");
                     edit.apply();
-                    btn_query_darmok.setText("Query Darmok");
+                    btn_query_darmok.setText(R.string.Query_Darmok);
                     btn_admin_mode.setEnabled(true);
                 }
             }

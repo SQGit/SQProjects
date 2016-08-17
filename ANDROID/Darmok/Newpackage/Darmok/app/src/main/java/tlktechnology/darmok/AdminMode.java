@@ -148,7 +148,7 @@ public class AdminMode extends DetailActivity implements AudioPlayer.Listener {
 
             if (str_Authorization_code.equals(recognition.getText())) {
 
-                intent = new Intent(getApplicationContext(), Edit_Profile.class);
+                intent = new Intent(getApplicationContext(), EditProfile.class);
                 startActivity(intent);
 
             } else {
