@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_id": "vyuspot",
+    "project_number": "214917117237",
+    "name": "vyuspot"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214917117237:android:048cfeb289d58dd8",
+        "client_id": "android:net.sqindia.waterla",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "net.sqindia.waterla"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214917117237:android:78db5ab5d229f7d8",
+        "client_id": "android:com.startemplan.vyuspot",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.startemplan.vyuspot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

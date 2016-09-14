@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/admin_grp"
+    android:orientation="vertical">
+
+
+
+
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/ripple"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff">
+
+            <ImageButton
+                android:id="@+id/bckbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:background="@mipmap/back"
+
+                />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+
+    <ImageView
+        android:id="@+id/button_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@mipmap/menu_ico" />
+
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/ripple"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF"
+        android:weightSum="3">
+
+        <com.rey.material.widget.Button
+            android:id="@+id/button_emg"
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:background="@color/tab_br"
+            android:drawableTop="@mipmap/emg_ico"
+            android:paddingLeft="2dp"
+            android:paddingRight="10dp"
+            android:paddingTop="12dp"
+            android:text="Emergency"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+        <com.rey.material.widget.Button
+            android:id="@+id/button_acci"
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/tab_or"
+            android:drawableTop="@mipmap/accident_ico"
+            android:paddingLeft="5dp"
+            android:paddingTop="12dp"
+            android:text="Accident"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+        <com.rey.material.widget.Button
+            android:id="@+id/button_reco"
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="@color/tab_or"
+            android:drawableTop="@mipmap/rec_ico"
+            android:paddingLeft="5dp"
+            android:paddingTop="12dp"
+            android:text="Recovery"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/ll2"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="3dp">
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <com.rey.material.widget.Button
+            android:id="@+id/button_delete"
+            style="@style/Material.Drawable.Ripple.Touch"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#212121"
+            android:drawableLeft="@mipmap/del_ico"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Delete"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+
+        <com.rey.material.widget.Button
+            android:id="@+id/button_given"
+            style="@style/Material.Drawable.Ripple.Touch"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#212121"
+            android:drawableLeft="@mipmap/recovery_ico"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Given"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+
+        <com.rey.material.widget.Button
+            android:id="@+id/button_send"
+            style="@style/Material.Drawable.Ripple.Touch"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#212121"
+            android:drawableLeft="@mipmap/arrow"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Send"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,118 @@
+<resources>
+
+    <style name="AppTheme" parent="Base.V7.Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated
+             which is used to tint widgets -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:panelBackground">@color/sad</item>
+
+        <!-- You can also set colorControlNormal, colorControlActivated
+             colorControlHighlight & colorSwitchThumbNormal. -->
+
+
+    </style>
+
+    <style name="CustomTheme" parent="android:Theme">
+        <!-- Panel attributes -->
+        <!-- <item name="android:panelBackground">@drawable/menu_bg</item> -->
+        <item name="android:panelFullBackground">@drawable/menu_full_bg</item>
+        <!--    <item name="android:panelColorBackground">#FF0000</item> -->
+    </style>
+
+    <!-- <drawable name="menu_bg">#DDDAAA</drawable> -->
+    <drawable name="menu_full_bg">#000FFF</drawable>
+
+    <style name="YourRippleDrawableStyle"
+        parent="Material.Drawable.Ripple.Touch.MatchView"/>
+
+
+    <style name="spin2" parent="Material.Widget.Spinner.Light">
+        <item name="rd_style">@style/wave1</item>
+        <item name="spn_labelEnable">true</item>
+        <item name="spn_arrowSwitchMode">true</item>
+        <item name="spn_labelTextColor">@color/ras</item>
+        <item name="spn_arrowSize">0dp</item>
+        <item name="spn_labelTextSize">14sp</item>
+        <item name="spn_dividerHeight">0dp</item>
+        <item name="spn_arrowAnimDuration">@android:integer/config_shortAnimTime</item>
+        <item name="spn_arrowInterpolator">@android:anim/decelerate_interpolator</item>
+        <item name="spn_arrowColor">@color/colorPrimaryDark</item>
+        <item name="spn_popupItemAnimation">@anim/abc_slide_in_bottom</item>
+        <item name="spn_popupItemAnimOffset">120</item>
+        <item name="android:popupBackground">@color/grayy</item>
+    </style>
+
+    <style name="wave1" parent="Material.Drawable.Ripple.Touch">
+        <item name="rd_maxRippleRadius">48dp</item>
+        <item name="rd_rippleColor">#70d6246b</item>
+        <item name="rd_rippleAnimDuration">200</item>
+        <item name="rd_rippleType">wave</item>
+    </style>
+
+    <style name="spin3" parent="Material.Widget.Spinner.Light">
+        <item name="rd_style">@style/wave</item>
+        <item name="spn_popupItemAnimation">@anim/abc_slide_in_bottom</item>
+        <item name="spn_popupItemAnimOffset">120</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="wave" parent="Material.Drawable.Ripple.Wave">
+        <item name="rd_maxRippleRadius">18dp</item>
+        <item name="rd_rippleColor">#b30a92a2</item>
+        <item name="rd_rippleAnimDuration">200</item>
+        <item name="rd_rippleType">wave</item>
+    </style>
+
+    <style  name="TabS"  parent="Material.Widget.TabPageIndicator">
+        <item name="tpi_tabPadding">12dp</item>
+        <item name="tpi_tabRipple">@style/TabRipple</item>
+        <item name="tpi_indicatorHeight">3dp</item>
+        <item name="tpi_indicatorColor">@color/colorAccent</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="tpi_mode">scroll</item>
+    </style>
+
+    <style name="torr">
+        <item name="tpi_tabPadding">12dp</item>
+        <item name="tpi_tabRipple">@style/Material.Drawable.Ripple.Wave</item>
+        <item name="tpi_indicatorHeight">2dp</item>
+        <item name="tpi_tabSingleLine">true</item>
+        <item name="android:textAppearance">?attr/textAppearanceListItem</item>
+        <item name="tpi_mode">scroll</item>
+    </style>
+
+    <style name="TabRipple" parent="Material.Drawable.Ripple.Wave">
+        <item name="android:background">@null</item>
+        <item name="rd_rippleColor">@color/colorAccent</item>
+        <item name="rd_rippleAnimDuration">300</item>
+        <item name="rd_maskType">rectangle</item>
+        <item name="rd_cornerRadius">0dp</item>
+        <item name="rd_padding">0dp</item>
+    </style>
+
+
+
+    <style name="GPlusProgressBar" parent="SmoothProgressBar">
+        <item name="spb_stroke_separator_length">12dp</item>
+        <item name="spb_sections_count">4</item>
+        <item name="spb_speed">0.7</item>
+        <item name="spb_interpolator">spb_interpolator_linear</item>
+        <item name="spb_colors">@array/gplus_colors</item>
+
+
+
+
+    </style>
+
+
+
+
+</resources>

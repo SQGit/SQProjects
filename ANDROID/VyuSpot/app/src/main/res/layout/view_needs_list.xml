@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll"
+    android:paddingTop="20dp"
+    android:paddingBottom="15dp">
+
+    <!--
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+       >-->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:paddingRight="15dp"
+        android:layout_gravity="right">
+
+        <View
+            android:id="@+id/statusview"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/sts" />
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/statustext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Taken Cared"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:paddingRight="10dp">
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="Name:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Large Text"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp">
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="Location:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tloc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Large Text"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp">
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="Landmark:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tland"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Large Text"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp">
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="Contact:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Large Text"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp">
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="Needs:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tneeds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Large Text"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp">
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="Cared By:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+        <com.devspark.robototextview.widget.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tcare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:fontFamily="roboto"
+            app:textWeight="light" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
