@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lin1"
+        android:background="@color/green"
+        android:orientation="horizontal">
+        <com.rey.material.widget.LinearLayout
+            android:id="@+id/layout_gpsback"
+            style="@style/Material.Drawable.Ripple.Touch"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/back1"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:background="@mipmap/back"/>
+        </com.rey.material.widget.LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/db_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GPS Tracker"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/spectro"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_18sdp" />
+        </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:id="@+id/back"
+                android:layout_gravity="center"/>
+
+    </LinearLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/lin1">
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="@dimen/_20sdp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/bt_source"
+        android:layout_gravity="center"
+        android:padding="@dimen/_10sdp"/>
+    </LinearLayout>
+</FrameLayout>
+</RelativeLayout>

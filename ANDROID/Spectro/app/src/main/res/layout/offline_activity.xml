@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/main_bg">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll1"
+        android:background="@color/green"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:gravity="center">
+        <com.rey.material.widget.LinearLayout
+            android:id="@+id/layout_offback"
+            style="@style/Material.Drawable.Ripple.Touch"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/back1"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:background="@mipmap/back"/>
+        </com.rey.material.widget.LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/db_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spectrometer"
+                android:layout_gravity="center"
+                android:id="@+id/spectro"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_18sdp" />
+        </LinearLayout>
+        <com.rey.material.widget.LinearLayout
+            android:id="@+id/layout_refresh"
+            style="@style/Material.Drawable.Ripple.Touch"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/refresh1"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:background="@mipmap/refre"/>
+        </com.rey.material.widget.LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_25sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_5sdp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Select date"
+                android:textSize="@dimen/_14sdp"
+                android:padding="@dimen/_1sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:drawableStart="@mipmap/calender"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:id="@+id/txt_offdate" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:background="@drawable/dash_blue"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_25sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_5sdp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="View All"
+                android:textSize="@dimen/_14sdp"
+                android:paddingEnd="@dimen/_17sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:drawableStart="@mipmap/locate"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:id="@+id/txt_viewall" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:background="#079EAF">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TIME"
+                android:id="@+id/txt_offtime"
+                android:textColor="#fff"
+                android:singleLine="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:padding="@dimen/_1sdp"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15sdp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="REG:136"
+                android:textColor="#fff"
+                android:id="@+id/txt_offregvalue"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:padding="@dimen/_1sdp"
+                android:textSize="@dimen/_15sdp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LATITUDE &amp; LONGITUDE"
+                android:layout_weight="1"
+                android:textColor="#fff"
+                android:id="@+id/txt_offlatlong"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:padding="@dimen/_1sdp"
+                android:layout_gravity="center"
+                android:textSize="@dimen/_15sdp"/>
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/offlist1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_10sdp" />
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <TextView
+                android:id="@+id/text_webtime"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="1"
+                android:background="@drawable/box"
+                android:padding="@dimen/activity_padding"
+                android:singleLine="true"
+                android:textColor="@android:color/background_dark"
+                android:textSize="@dimen/_17sdp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/text_regvalue1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="1"
+                android:background="@drawable/box"
+                android:padding="@dimen/activity_padding"
+                android:singleLine="true"
+                android:textAllCaps="true"
+                android:textColor="@android:color/background_dark"
+                android:textSize="@dimen/_17sdp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/text_regvalue2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="1"
+                android:background="@drawable/box"
+                android:padding="@dimen/activity_padding"
+                android:singleLine="true"
+                android:textAllCaps="true"
+                android:textColor="@android:color/background_dark"
+                android:textSize="@dimen/_17sdp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/text_regvalue3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="1"
+                android:background="@drawable/box"
+                android:padding="@dimen/activity_padding"
+                android:singleLine="true"
+                android:textAllCaps="true"
+                android:textColor="@android:color/background_dark"
+                android:textSize="@dimen/_17sdp"
+                android:textStyle="normal" />
+            <TextView
+                android:id="@+id/text_regvalue4"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="1"
+                android:drawableLeft="@mipmap/locate"
+                android:drawableTint="@android:color/background_dark"
+                android:background="@drawable/box"
+                android:padding="@dimen/activity_padding"
+                android:singleLine="true"
+                android:text="View"
+                android:textColor="@android:color/background_dark"
+                android:textSize="@dimen/_17sdp"
+                android:textStyle="normal"/>
+<!--
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:singleLine="true"
+                android:layout_weight="1"
+                android:background="@drawable/box">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/locate"
+                    android:drawableTint="@android:color/background_dark"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_regvalue4"
+                    android:textSize="@dimen/_17sdp"
+                    android:padding="@dimen/activity_padding"
+                    android:text="View"
+                    android:textColor="@android:color/background_dark"
+                    android:textStyle="normal"/>
+                &lt;!&ndash; <TextView
+                     android:id="@+id/text_regvalue4"
+                     android:layout_width="0dp"
+                     android:layout_height="43dp"
+                     android:layout_weight="1"
+                     android:drawableLeft="@mipmap/pin"
+                     android:drawableTint="@android:color/background_dark"
+                     android:background="@drawable/box"
+                     android:padding="@dimen/activity_padding"
+                     android:singleLine="true"
+                     android:text="View"
+                     android:textColor="@android:color/background_dark"
+                     android:textSize="@dimen/_17sdp"
+                     android:textStyle="normal" />&ndash;&gt;
+            </LinearLayout>
+-->
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

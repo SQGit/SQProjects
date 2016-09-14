@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="@dimen/_3sdp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_webtime"
+            android:text="20:23:00"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:padding="@dimen/_1sdp"
+            android:textSize="@dimen/_14sdp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0000"
+            android:textColor="#000"
+            android:id="@+id/text_regval"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:layout_weight="1"
+            android:padding="@dimen/_1sdp"
+            android:textSize="@dimen/_14sdp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12.8413° N"
+            android:layout_weight="0.5"
+            android:id="@+id/latitu"
+            android:textColor="#000"
+            android:padding="@dimen/_1sdp"
+            android:singleLine="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="@dimen/_14sdp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=","
+            android:singleLine="true"
+            android:textColor="#000"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="@dimen/_14sdp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="80.0703° E"
+            android:layout_weight="0.5"
+            android:id="@+id/longitu"
+            android:textColor="#000"
+            android:padding="@dimen/_1sdp"
+            android:singleLine="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="@dimen/_14sdp"/>
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:id="@+id/locate"
+            android:background="@mipmap/locat"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
