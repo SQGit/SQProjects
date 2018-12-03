@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/back_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/back_arrow"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Chargable Damage"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8sdp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cellshape"
+
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cellshape1"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Panel/Issue\n"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_7sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cellshape1"
+                    android:ems="7"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Ramp $$ \nAmount"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_7sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cellshape1"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Repair Yes \nor No"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_7sdp" />
+
+                <TextView
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cellshape1"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="ABG Cost of\n Repair"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_7sdp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fadeScrollbars="false">
+
+                </ListView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/footer_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+
+                <EditText
+                    android:id="@+id/panalissue_tv"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:ems="15"
+                    android:enabled="false"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_6sdp" />
+
+                <EditText
+                    android:id="@+id/moneyEditText"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:ems="15"
+                    android:enabled="false"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_6sdp" />
+
+
+                <EditText
+                    android:id="@+id/moneyEditText"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:ems="15"
+                    android:enabled="false"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_6sdp" />
+
+                <EditText
+                    android:id="@+id/moneyEditText"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:ems="15"
+                    android:enabled="false"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_6sdp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/panalissue_tv"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:ems="15"
+                    android:enabled="false"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_6sdp" />
+
+                <EditText
+                    android:id="@+id/moneyEditText"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:ems="15"
+                    android:enabled="false"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:text="Total Ramp Cost"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5sdp" />
+
+
+                <EditText
+                    android:id="@+id/moneyEditText"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:ems="15"
+                    android:enabled="false"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:text="Less Smart Repairs"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5sdp" />
+
+                <EditText
+                    android:id="@+id/moneyEditText"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:ems="15"
+                    android:enabled="false"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:text="New Ramp Cost"
+
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_5sdp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/panalissue_tv"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/cellshape"
+                    android:ems="15"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:text="Total"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_6sdp" />
+
+                <EditText
+                    android:id="@+id/ramp_et"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:editable="false"
+                    android:hint="$ 0"
+                    android:inputType="numberDecimal"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/_7sdp" />
+
+
+                <EditText
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:inputType="number"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/_7sdp" />
+
+                <EditText
+                    android:id="@+id/abgrepair"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:editable="false"
+                    android:hint="$ 0"
+                    android:inputType="numberDecimal"
+                    android:padding="@dimen/_5sdp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/_7sdp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MFG"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_7sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="GM"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FORD"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chrysler"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="KIA"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Subaru"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hyundai"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Toyota"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Toyota"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ded."
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_7sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="$ 450"
+                            android:textColor="@color/black"
+
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 500"
+                            android:textColor="@color/black"
+
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 400"
+                            android:textColor="@color/black"
+
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 450"
+                            android:textColor="@color/black"
+
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 375"
+                            android:textColor="@color/black"
+
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 450"
+                            android:textColor="@color/black"
+
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 400"
+                            android:textColor="@color/black"
+
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 650"
+                            android:textColor="@color/black"
+
+                            android:textSize="@dimen/_6sdp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Max Allowance"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_7sdp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="Total CR"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cumulative"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cumulative"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cumulative"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cumulative"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cumulative"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0-12 mos. Old"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12 mos. Plus"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_6sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/sticker" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

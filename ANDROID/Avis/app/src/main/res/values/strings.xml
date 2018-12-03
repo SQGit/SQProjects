@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Avis</string>
+    <string name="action_settings">Settings</string>
+    <string name="sNo">S no.</string>
+    <string name="product">1st-UnderCarriage Front</string>
+    <string name="category">Category</string>
+    <string name="price">Price</string>
+    <string name="img_capture_cancelled">cancel</string>
+    <string name="img_capture_failed">fail</string>
+    <string name="img_too_small">small</string>
+
+</resources>

@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView02"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Wholesale Prep Standards"
+            android:textColor="@color/colorCell"
+            android:textSize="@dimen/_4sdp" />
+    </LinearLayout>
+
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_shape_red"
+        android:padding="@dimen/_2sdp"
+
+        >
+
+        <TextView
+            android:id="@+id/TextView"
+            android:text="STEP"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_4sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TextView11"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="ACTION"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_4sdp"
+            android:textStyle="bold" />
+
+
+    </TableRow>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/colorCell">
+
+    </View>
+
+    <TableRow
+
+        >
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:background="@drawable/cell_shape_r"
+            android:gravity="start"
+            android:paddingBottom="@dimen/_3sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:text="1"
+            android:textColor="#000000"
+            android:textSize="@dimen/_4sdp" />
+
+        <TextView
+            android:id="@+id/TextView12"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="No Existing Collision Demage"
+            android:textColor="#000000"
+            android:textSize="@dimen/_4sdp" />
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorCell">
+
+    </View>
+
+
+    <TableRow>
+
+
+        <TextView
+            android:id="@+id/TextView3"
+            android:background="@drawable/cell_shape_lr"
+            android:gravity="start"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:paddingTop="@dimen/_7sdp"
+            android:text="2"
+            android:textColor="#000000"
+
+            android:textSize="@dimen/_4sdp" />
+
+
+        <TableLayout
+            android:id="@+id/TextView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TableRow android:gravity="center">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/_4sdp"
+                    android:text="All PDR done if more than 2 panels"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_4sdp" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCell">
+
+            </View>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/cell_shape_lr"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="If"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_4sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:text="Then"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_4sdp" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorCell">
+
+            </View>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cell_shape_r"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:text="Singles"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_4sdp" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:text="Can do roof,deck lid,hood or driver's door"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_4sdp" />
+
+
+            </LinearLayout>
+
+
+        </TableLayout>
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorCell">
+
+    </View>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:background="@drawable/cell_shape_r"
+            android:gravity="center"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:paddingTop="@dimen/_1sdp"
+            android:text="3"
+            android:textColor="#000000"
+            android:textSize="@dimen/_4sdp" />
+
+        <TextView
+            android:id="@+id/TextView12"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="All Safety items-including warning lights,Jack,\nGlass but not exclusive of other Safety items"
+            android:textColor="#000000"
+            android:textSize="@dimen/_4sdp" />
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorCell">
+
+    </View>
+
+    <TableLayout
+        android:id="@+id/TextView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.3"
+        android:orientation="vertical">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/TextView3"
+                android:background="@drawable/cell_shape_lr"
+                android:paddingBottom="@dimen/_25sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:text="4"
+                android:textColor="#000000"
+                android:textSize="@dimen/_4sdp" />
+
+
+            <TableLayout
+                android:id="@+id/TextView13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TableRow android:gravity="center">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingRight="@dimen/_4sdp"
+                        android:text="Review car for Previous Repair"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/_4sdp" />
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorCell">
+
+                </View>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cell_shape_lr"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_26sdp"
+                        android:text="If"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/_4sdp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:text="Then"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/_4sdp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorCell">
+
+                </View>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape_r"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_1sdp"
+                        android:text="Customer repaired"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/_4sdp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:text="Notify WHSI.MGR of receiving auction"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/_4sdp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorCell">
+
+                </View>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/cell_shape_r"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_3sdp"
+
+                        android:text="Poor ABG repair  "
+                        android:textColor="#000000"
+
+                        android:textSize="@dimen/_4sdp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:text="Send back to original body or repair and bill back \n owning city."
+                        android:textColor="#000000"
+                        android:textSize="@dimen/_4sdp" />
+
+
+                </LinearLayout>
+            </TableLayout>
+        </TableRow>
+    </TableLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorCell">
+
+    </View>
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:background="@drawable/cell_shape_r"
+            android:gravity="start"
+            android:paddingTop="@dimen/_1sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:text="5"
+            android:textColor="#000000"
+            android:textSize="@dimen/_4sdp" />
+
+        <TextView
+            android:id="@+id/TextView12"
+            android:layout_weight="2"
+            android:gravity="start"
+            android:text="All Premium venue vehicles must be prepped within $250 deductible.All Auction vehicles must be prepped within $400 deductible."
+            android:textColor="#000000"
+            android:textSize="@dimen/_4sdp" />
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorCell">
+
+    </View>
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:background="@drawable/cell_shape_r"
+            android:gravity="start"
+            android:text="6"
+            android:paddingTop="@dimen/_1sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:textColor="#000000"
+            android:textSize="@dimen/_4sdp" />
+
+        <TextView
+            android:id="@+id/TextView12"
+            android:layout_weight="2"
+            android:text="All Highline vehicles must be prepped to a $ to a deductible."
+            android:textColor="#000000"
+            android:textSize="@dimen/_4sdp" />
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorCell">
+
+    </View>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/TextView1"
+            android:background="@drawable/cell_shape_r"
+            android:gravity="start"
+            android:paddingBottom="@dimen/_20sdp"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:text="7"
+            android:textColor="#000000"
+            android:textSize="@dimen/_4sdp" />
+
+        <TextView
+            android:id="@+id/TextView12"
+            android:layout_weight="2"
+            android:gravity="center|start"
+            android:text="WS repair authorization up to $300 - Pertform samrt repairs up to the authorized amount.Any grade improvement improves the residual value If $300 contact City SC Mgr for additional authorization to repair."
+            android:textColor="#000000"
+            android:textSize="@dimen/_4sdp" />
+    </TableRow>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorCell">
+
+    </View>
+</TableLayout>
+
+

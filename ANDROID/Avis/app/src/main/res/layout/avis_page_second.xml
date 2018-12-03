@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/panalissue_tv"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="match_parent"
+            android:background="@drawable/cellshape"
+            android:ems="15"
+            android:enabled="false"
+            android:padding="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text="Panel Issue"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_6sdp"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/_50sdp"
+            android:gravity="center"
+            android:background="@drawable/cellshape"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:text="$"/>
+
+
+        <EditText
+            android:id="@+id/ramp_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="@dimen/_5sdp"
+            android:singleLine="true"
+            android:background="@null"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+
+            android:textSize="@dimen/_7sdp" />
+        </LinearLayout>
+      <!--  <com.wajahatkarim3.easymoneywidgets.EasyMoneyEditText
+                    android:id="@+id/ramp_et"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/cellshape"
+                    android:inputType="numberDecimal"
+                    app:show_currency="true"
+                    android:padding="@dimen/_5sdp"
+                    app:show_commas="true"
+                    android:maxEms="4"
+                    android:maxLength="6"
+                    android:ems="4"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/_7sdp"
+                    app:currency_symbol="$"
+                    />-->
+
+        <FrameLayout
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="wrap_content">
+
+
+            <Spinner
+                android:id="@+id/spn1"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="match_parent"
+                android:background="@drawable/cellshape"
+                android:fadeScrollbars="false"
+                android:hint="Yes or No"
+                android:padding="@dimen/_5sdp"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/_7sdp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:paddingRight="@dimen/_3sdp"
+                android:src="@drawable/ic_arrow_drop_down" />
+
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="@dimen/_70sdp"
+            android:background="@drawable/cellshape"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:text="$"/>
+
+
+        <EditText
+            android:id="@+id/abget"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:ems="4"
+            android:hint="0"
+            android:inputType="number"
+            android:maxEms="4"
+            android:maxLength="6"
+            android:padding="@dimen/_5sdp"
+            android:background="@null"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="@dimen/_7sdp" />
+            </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

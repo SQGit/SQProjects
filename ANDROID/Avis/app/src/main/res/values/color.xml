@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorCell">#000000</color>
+    <color name="gray">#eeeeee</color>
+    <color name="blue">#00285F</color>
+    <color name="red">#D3002A</color>
+    <color name="black">#333333</color>
+    <color name="dark_black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="navy_blue">#1C315F</color>
+
+    <color name="seven_page">#004D40</color>
+    <color name="eight_page">#1B5E20</color>
+    <color name="nine_page">#4E342E</color>
+    <color name="list_background">#CCCCCC</color>
+    <color name="highligh_color">#f9fcd0</color>
+
+</resources>

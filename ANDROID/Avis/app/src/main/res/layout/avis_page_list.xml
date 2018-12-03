@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/lnr_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/back_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/back_arrow"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Chargable Damage"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:textStyle="bold" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="right">
+
+            <Button
+                android:id="@+id/btn_turnback"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_15sdp"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_6sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:background="@drawable/turnback_bg"
+                android:text="Turnback Allowance" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/head_cat"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/lnr_head"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cellshape1"
+            android:ems="10"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="@dimen/_5sdp"
+            android:text="Panel/Issue\n"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_7sdp" />
+
+        <TextView
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cellshape1"
+            android:ems="7"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="@dimen/_5sdp"
+            android:text="Ramp $$ \nAmount"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_7sdp" />
+
+        <TextView
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cellshape1"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Repair Yes \nor No"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_7sdp" />
+
+        <TextView
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cellshape1"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="ABG Cost of\n Repair"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_7sdp" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_above="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/head_cat"
+        android:scrollbarThumbVertical="@drawable/scroll_bg"
+        android:scrollbarSize="7dip"
+        android:layout_height="match_parent">
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+
+
+
+                    <!-- <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="0dp"
+                         android:layout_weight="2.1"
+                         android:orientation="vertical">-->
+
+
+                    <ListView
+                        android:id="@+id/listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fadeScrollbars="false"/>
+
+
+                    <!--</LinearLayout>-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/listview"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+
+                            <EditText
+                                android:id="@+id/panalissue_tv"
+                                android:layout_width="@dimen/_120sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:ems="15"
+                                android:enabled="false"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_6sdp" />
+
+                            <EditText
+                                android:id="@+id/moneyEditText6"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:ems="15"
+                                android:enabled="false"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_6sdp" />
+
+
+                            <EditText
+                                android:id="@+id/moneyEditText5"
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:ems="15"
+                                android:enabled="false"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_6sdp" />
+
+                            <EditText
+                                android:id="@+id/moneyEditText4"
+                                android:layout_width="@dimen/_70sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:ems="15"
+                                android:enabled="false"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_6sdp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/panalissue_tv1"
+                                android:layout_width="@dimen/_120sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:ems="15"
+                                android:enabled="false"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_6sdp" />
+
+                            <EditText
+                                android:id="@+id/moneyEditText0"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:ems="15"
+                                android:enabled="false"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:text="Total Ramp Cost"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_5sdp" />
+
+
+                            <EditText
+                                android:id="@+id/moneyEditText1"
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:ems="15"
+                                android:enabled="false"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:text="Less Smart Repairs"
+
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_5sdp" />
+
+                            <EditText
+                                android:id="@+id/moneyEditText2"
+                                android:layout_width="@dimen/_70sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:ems="15"
+                                android:enabled="false"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:text="New Ramp Cost"
+
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_5sdp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <EditText
+                                android:id="@+id/panalissue_tv3"
+                                android:layout_width="@dimen/_120sdp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:background="@drawable/cellshape"
+                                android:ems="15"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:text="Total"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_6sdp" />
+
+                            <EditText
+                                android:id="@+id/ramp_et"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:editable="false"
+                                android:hint="$ 0"
+                                android:inputType="numberDecimal"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/black"
+                                android:textSize="@dimen/_7sdp" />
+
+
+                            <EditText
+                                android:layout_width="@dimen/_60sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:inputType="number"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/black"
+                                android:textSize="@dimen/_7sdp" />
+
+                            <EditText
+                                android:id="@+id/abgrepair"
+                                android:layout_width="@dimen/_70sdp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cellshape"
+                                android:editable="false"
+                                android:hint="$ 0"
+                                android:inputType="numberDecimal"
+                                android:padding="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/black"
+                                android:textSize="@dimen/_7sdp" />
+
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="5">
+
+
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/lnr_final_inspection"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="@dimen/_3sdp"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_weight="1.5"
+                                    android:background="@drawable/border_shape"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/textView6"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_20sdp"
+                                        android:layout_gravity="center"
+                                        android:background="#000000"
+                                        android:gravity="center"
+                                        android:paddingBottom="@dimen/_2sdp"
+                                        android:paddingLeft="@dimen/_5sdp"
+                                        android:paddingRight="@dimen/_5sdp"
+                                        android:paddingTop="@dimen/_2sdp"
+                                        android:text="Final Inspection"
+                                        android:textColor="#FFEB3B"
+                                        android:textSize="@dimen/_8sdp" />
+
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:paddingBottom="@dimen/_2sdp"
+                                        android:paddingLeft="@dimen/_5sdp"
+                                        android:paddingRight="@dimen/_5sdp"
+                                        android:paddingTop="@dimen/_2sdp"
+                                        android:layout_marginLeft="@dimen/_15sdp"
+                                        android:text="Circle yes or explain in Box"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/_4sdp" />
+
+
+                                    <ListView
+                                        android:id="@+id/listview10"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_60sdp"
+                                        android:divider="@null">
+                                    </ListView>
+
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:background="@color/colorCell"/>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:background="@drawable/border_shape"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:id="@+id/ll4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_52sdp"
+                                    android:orientation="vertical">
+
+                                    <FrameLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center">
+
+                                        <TextView
+                                            android:id="@+id/tv_sign_hint"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="left|top"
+                                            android:hint="Final Inspection Approver(Sign)"
+                                            android:paddingBottom="@dimen/_15sdp"
+                                            android:paddingLeft="@dimen/_5sdp"
+                                            android:layout_marginTop="@dimen/_5sdp"
+                                            android:textColor="@color/black"
+                                            android:textColorHint="@color/black"
+                                            android:textSize="@dimen/_6sdp" />
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="right|center"
+                                            android:paddingRight="@dimen/_5sdp"
+                                            android:paddingTop="@dimen/_4sdp"
+                                            android:src="@drawable/sign_hand_icon" />
+
+                                        <com.github.gcacace.signaturepad.views.SignaturePad
+                                            android:id="@+id/signature_pad"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:ems="9"
+                                            android:textColor="@color/black"
+                                            app:penColor="@color/black" />
+
+                                        <TextView
+                                            android:id="@+id/tv_sign_clear"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="bottom|right"
+                                            android:padding="@dimen/_5sdp"
+                                            android:paddingBottom="@dimen/_5sdp"
+                                            android:paddingRight="@dimen/_20sdp"
+                                            android:paddingTop="@dimen/_5sdp"
+                                            android:text="Reset"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/_7sdp" />
+
+                                    </FrameLayout>
+
+
+
+
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/cellshape1"
+                                    android:textSize="@dimen/_6sdp"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:paddingBottom="@dimen/_3sdp"
+                                    android:paddingTop="@dimen/_3sdp"
+                                    android:text="Signoff Details:"/>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/cellshape_tot"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="@dimen/_5sdp"
+                                        android:paddingBottom="@dimen/_3sdp"
+                                        android:paddingTop="@dimen/_3sdp"
+                                        android:textSize="@dimen/_6sdp"
+                                        android:background="@drawable/cell_shape1"
+                                        android:text="Employee ID#"/>
+
+
+                                    <View
+                                        android:layout_width="0.5dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:background="#000000"/>
+
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:textSize="@dimen/_6sdp"
+                                        android:paddingLeft="@dimen/_3sdp"
+                                        android:background="@android:color/transparent"
+                                        />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/img_sticker"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_100sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:src="@drawable/sticker" />
+
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:gravity="center"
+                                android:textSize="@dimen/_10sdp"
+                                android:text="Affix Intermediate Sticker here"/>
+
+
+                        </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_22sdp"
+            android:background="@drawable/btnbg"
+            android:text="Submit"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_15sdp"
+            android:textSize="@dimen/_8sdp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+</RelativeLayout>
