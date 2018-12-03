@@ -54,7 +54,7 @@ public class Filter_Adapter extends BaseAdapter {
         LayoutInflater inflat = (LayoutInflater) c1.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         v2 = inflat.inflate(R.layout.filter_adapter,null);
 
-        Typeface tf = Typeface.createFromAsset(c1.getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(c1.getAssets(), "ROBOTO-LIGHT.TTF");
         unitno=(TextView) v2.findViewById(R.id.txt_Unit_no);
         rentno=(TextView) v2.findViewById(R.id.txt_agrreement_no);
         date=(TextView) v2.findViewById(R.id.txt_date);

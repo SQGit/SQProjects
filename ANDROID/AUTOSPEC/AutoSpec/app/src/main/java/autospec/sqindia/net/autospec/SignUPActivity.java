@@ -2,13 +2,17 @@ package autospec.sqindia.net.autospec;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -41,13 +45,15 @@ public class SignUPActivity extends Activity {
         btn_back = (Button) findViewById(R.id.btn_back);
 
         //*****************change font using Typeface**************
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         editTextUserName.setTypeface(tf);
         editTextEmail.setTypeface(tf);
         editTextPassword.setTypeface(tf);
         editTextConfirmPassword.setTypeface(tf);
         textView_head.setTypeface(tf);
         btn_back.setTypeface(tf);
+
+
 
 
         //*******************Login onclicklistener***************
@@ -81,6 +87,13 @@ public class SignUPActivity extends Activity {
                 String password = editTextPassword.getText().toString();
                 String confirmPassword = editTextConfirmPassword.getText().toString();
 
+                boolean b = loginDataBaseAdapter.checkAccount(userName, email, password);
+                Log.e("tag", "boolean" + b);
+                if(b == true)
+                {
+                    message4();
+                    return;
+                }
 
                 // check if any of the fields are vaccant
                 if (userName.equals("") || email.equals("") || password.equals("") || confirmPassword.equals("")) {
@@ -99,7 +112,7 @@ public class SignUPActivity extends Activity {
                 } else {
                     // Save the Data in Database
                     loginDataBaseAdapter.insertEntry(userName, email, password);
-                    Toast.makeText(getApplicationContext(), "Account Successfully Created ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Account Created Successfully...", Toast.LENGTH_LONG).show();
                     Intent i = new Intent(getApplicationContext(), SignInActivity.class);
                     startActivity(i);
                     editTextUserName.setText("");
@@ -107,12 +120,37 @@ public class SignUPActivity extends Activity {
                     editTextPassword.setText("");
                     editTextConfirmPassword.setText("");
                     finish();
-
                 }
             }
         });
     }
 
+    private void message4() {
+
+        final Dialog dialog = new Dialog(SignUPActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.custom_dialog);
+        //adding text dynamically
+        TextView txt_head2 = (TextView) dialog.findViewById(R.id.txt_head2);
+        TextView txt_msg = (TextView) dialog.findViewById(R.id.txt_msg);
+        txt_head2.setText("Message Received");
+        txt_msg.setText("User Already exits...Please Create Another Account...");
+        Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
+
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
+        txt_head2.setTypeface(tt);
+        txt_msg.setTypeface(tt);
+
+
+        btn_ok2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+
+            }
+        });
+        dialog.show();
+    }
 
 
     private void message3() {
@@ -127,7 +165,7 @@ public class SignUPActivity extends Activity {
         txt_msg.setText("Invalid Email Address. Please enter Valid Email Address...");
         Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
 
-        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         txt_head2.setTypeface(tt);
         txt_msg.setTypeface(tt);
 
@@ -153,7 +191,7 @@ public class SignUPActivity extends Activity {
         txt_msg.setText("Password does not match...");
         Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
 
-        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         txt_head2.setTypeface(tt);
         txt_msg.setTypeface(tt);
 
@@ -180,7 +218,7 @@ public class SignUPActivity extends Activity {
         txt_msg.setText("Fields Are Vacant...");
         Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
 
-        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         txt_head2.setTypeface(tt);
         txt_msg.setTypeface(tt);
 
@@ -195,6 +233,15 @@ public class SignUPActivity extends Activity {
         dialog.show();
     }
 
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
 
     @Override
     public void onBackPressed() {

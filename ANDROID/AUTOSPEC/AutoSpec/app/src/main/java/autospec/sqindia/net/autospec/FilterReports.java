@@ -42,6 +42,7 @@ package autospec.sqindia.net.autospec;
         ArrayAdapter<String> dataAdapter;
         ArrayAdapter<String> dataAdapter1;
         Typeface tf;
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -49,7 +50,7 @@ package autospec.sqindia.net.autospec;
             setContentView(R.layout.filter_reports);
 
             //******************using font manager******
-            FontsManager.initFormAssets(this, "_SENINE.TTF");       //initialization
+            FontsManager.initFormAssets(this, "ROBOTO-LIGHT.TTF");       //initialization
             FontsManager.changeFonts(this);
 
             // get Instance of Database Adapter
@@ -63,7 +64,7 @@ package autospec.sqindia.net.autospec;
             spin1 = (Spinner) findViewById(R.id.spinner_agreementno);
             spin2 = (Spinner) findViewById(R.id.spinner_unitno);
             rental = (TextView) findViewById(R.id.rental);
-            tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+            tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
 
 
             getAggrementNo(filter_aggrementno);
@@ -184,8 +185,6 @@ package autospec.sqindia.net.autospec;
                 @Override
                 public boolean isEnabled(int position) {
                     if (position == 0) {
-                        // Disable the first item from Spinner
-                        // First item will be use for hint
                         return false;
                     } else {
                         return true;

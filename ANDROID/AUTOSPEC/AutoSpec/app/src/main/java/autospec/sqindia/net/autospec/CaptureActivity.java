@@ -1,16 +1,26 @@
 package autospec.sqindia.net.autospec;
 
+    import android.Manifest;
     import android.app.Activity;
+    import android.app.AlertDialog;
     import android.content.Intent;
     import android.content.SharedPreferences;
+    import android.content.pm.PackageManager;
     import android.graphics.Color;
+    import android.graphics.Typeface;
+    import android.os.Build;
     import android.os.Bundle;
     import android.preference.PreferenceManager;
+    import android.support.annotation.NonNull;
+    import android.support.v4.app.ActivityCompat;
     import android.text.Spannable;
     import android.text.SpannableString;
     import android.text.style.ForegroundColorSpan;
     import android.util.Log;
+    import android.view.LayoutInflater;
     import android.view.View;
+    import android.view.ViewGroup;
+    import android.view.Window;
     import android.widget.Button;
     import android.widget.ImageView;
     import android.widget.TextView;
@@ -53,7 +63,7 @@ package autospec.sqindia.net.autospec;
         setContentView(R.layout.capture_activity);
 
         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ using font mananger for whole class @@@@@@@@@@@@@@@@@@@
-        FontsManager.initFormAssets(this, "_SENINE.TTF");
+        FontsManager.initFormAssets(this, "ROBOTO-LIGHT.TTF");
         FontsManager.changeFonts(this);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(CaptureActivity.this);
@@ -75,7 +85,6 @@ package autospec.sqindia.net.autospec;
         camera5 = (TextView) findViewById(R.id.camera5);
         camera6 = (TextView) findViewById(R.id.camera6);
         camera7 = (TextView) findViewById(R.id.camera7);
-
         textView_ic= (TextView) findViewById(R.id.textView_ic);
         textView_dsf= (TextView) findViewById(R.id.textView_dsf);
         textView_psf= (TextView) findViewById(R.id.textView_psf);
@@ -84,6 +93,8 @@ package autospec.sqindia.net.autospec;
         textView_dsf= (TextView) findViewById(R.id.textView_dsf);
         textView_psr= (TextView) findViewById(R.id.textView_psr);
         textView_rv= (TextView) findViewById(R.id.textView_rv);
+
+
         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  onclicklistener @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         btn_instrument_cluster.setOnClickListener(this);
         btn_driver_side_front.setOnClickListener(this);
@@ -97,6 +108,7 @@ package autospec.sqindia.net.autospec;
         //@@@@@@@@@@@@@@@@@@@@@@@ create a instance of SQLite Database
         loginDataBaseAdapter = new LoginDataBaseAdapter(this);
         loginDataBaseAdapter = loginDataBaseAdapter.open();
+
 
         //@@@@@@@@@@@@@@@@@@@@@@ set & get value using shared
         editor.putString("finished", finished_value);
@@ -118,16 +130,20 @@ package autospec.sqindia.net.autospec;
                 s6=camera6.getText().toString();
                 s7=camera7.getText().toString();
 
-
-                if (s1.equals("3") && s2.equals("3")&& s3.equals("3") && s4.equals("3")
+                if (s1.equals("3") && s2.equals("3") && s3.equals("3") && s4.equals("3")
                         && s5.equals("3") && s6.equals("3") && s7.equals("3")) {
+
                     Intent intent_back = new Intent(getApplicationContext(), Display_Inspection_details.class);
                     startActivity(intent_back);
                     finish();
+                } else {
+                    dialog();
                 }
-                else {
-                    Toast.makeText(getApplicationContext(), "Please Take Pending Images", Toast.LENGTH_LONG).show();
-                }
+
+
+
+
+
             }
         });
 
@@ -137,7 +153,51 @@ package autospec.sqindia.net.autospec;
     }
 
 
-    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ camera activity @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        private void dialog() {
+
+
+            LayoutInflater layoutInflater = LayoutInflater.from(CaptureActivity.this);
+            View promptView = layoutInflater.inflate(R.layout.image_dialog, null);
+            final AlertDialog alertD = new AlertDialog.Builder(CaptureActivity.this).create();
+            alertD.setCancelable(false);
+            Window window = alertD.getWindow();
+            window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            final TextView head1 = (TextView) promptView.findViewById(R.id.textView);
+            final Button no = (Button) promptView.findViewById(R.id.btn_no);
+            final Button yes = (Button) promptView.findViewById(R.id.btn_yes);
+
+            Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
+            head1.setTypeface(tf);
+            no.setTypeface(tf);
+            yes.setTypeface(tf);
+
+            yes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    sharedPreferences = PreferenceManager.getDefaultSharedPreferences(CaptureActivity.this);
+                    editor = sharedPreferences.edit();
+                    editor.putString("activation", "failure");
+                    editor.commit();
+                    Intent intent_backs = new Intent(getApplicationContext(), Display_Inspection_details.class);
+                    startActivity(intent_backs);
+                    finish();
+                }
+            });
+
+            no.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertD.dismiss();
+                }
+            });
+
+            alertD.setView(promptView);
+            alertD.show();
+        }
+
+
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ camera activity @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     private void getImages() {
 
         //############ button1
@@ -146,20 +206,24 @@ package autospec.sqindia.net.autospec;
             cont = Integer.valueOf(camera1.getText().toString());
             if(cont ==0) {
                 img_count =3;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if(cont ==1){
                 img_count =2;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if (cont ==2){
                 img_count =1;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else{
-               //btn_instrument_cluster.setImageResource(R.drawable.check);
-            }
-            Log.e("tag",""+cont +img_count);
+                }
         }
 
 
@@ -168,15 +232,21 @@ package autospec.sqindia.net.autospec;
             cont = Integer.valueOf(camera2.getText().toString());
             if(cont ==0) {
                 img_count =3;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if(cont ==1){
                 img_count =2;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if (cont ==2){
                 img_count =1;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else{
                 btn_driver_side_front.setImageResource(R.drawable.check);
@@ -190,15 +260,21 @@ package autospec.sqindia.net.autospec;
             cont = Integer.valueOf(camera3.getText().toString());
             if(cont ==0) {
                 img_count =3;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if(cont ==1){
                 img_count =2;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if (cont ==2){
                 img_count =1;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else{
                 btn_passenger_side_front.setImageResource(R.drawable.check);
@@ -211,15 +287,21 @@ package autospec.sqindia.net.autospec;
             cont = Integer.valueOf(camera4.getText().toString());
             if(cont ==0) {
                 img_count =3;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if(cont ==1){
                 img_count =2;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if (cont ==2){
                 img_count =1;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else{
                 btn_front_view.setImageResource(R.drawable.check);
@@ -232,15 +314,21 @@ package autospec.sqindia.net.autospec;
             cont = Integer.valueOf(camera5.getText().toString());
             if(cont ==0) {
                 img_count =3;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if(cont ==1){
                 img_count =2;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if (cont ==2){
                 img_count =1;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else{
                 btn_driver_side_rear.setImageResource(R.drawable.check);
@@ -253,15 +341,21 @@ package autospec.sqindia.net.autospec;
             cont = Integer.valueOf(camera6.getText().toString());
             if(cont ==0) {
                 img_count =3;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if(cont ==1){
                 img_count =2;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if (cont ==2){
                 img_count =1;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else{
                 btn_passenger_side_rear.setImageResource(R.drawable.check);
@@ -274,32 +368,39 @@ package autospec.sqindia.net.autospec;
             cont = Integer.valueOf(camera7.getText().toString());
             if(cont ==0) {
                 img_count =3;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if(cont ==1){
                 img_count =2;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else if (cont ==2){
                 img_count =1;
-                photo();
+                if(isStoragePermissionGranted()) {
+                    photo();
+                }
             }
             else{
                 btn_rear_view.setImageResource(R.drawable.check);
             }
             Log.e("tag",""+cont +img_count);
         }
-
-
         else {
             Toast.makeText(getApplicationContext(), "Click any Capture Image Button", Toast.LENGTH_LONG).show();
-        }
+             }
     }
 
 
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ camera get image path @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+
+
         super.onActivityResult(requestCode, resultCode, data);
         List<String> photos = null;
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
@@ -316,19 +417,13 @@ package autospec.sqindia.net.autospec;
                 String sa = selectedPhotos.get(position);
                 Log.e("tag", "size_value" + sa);
                 index = position;
-
-
                 image_path = selectedPhotos.get(position);
-
                 inc_index = String.valueOf(selectedPhotos.size()+ cont);
-
                 int path_id = position+cont;
-
-                Log.e("tag", "counts" + position+"\n"+cont+"\n"+img_count+"\n"+path_id);
+                Log.e("tag","storedid"+storedid);
                 loginDataBaseAdapter.insertImage(storedid, autoparts_id, String.valueOf(path_id), image_path, inc_index);
                 method();
             }
-
 
             imageval = imageval + 1;
             autoimgval = String.valueOf(imageval);
@@ -342,12 +437,14 @@ package autospec.sqindia.net.autospec;
     }
 
     public void photo(){
+        /*Intent i=new Intent(android.provider.MediaStore. ACTION_IMAGE_CAPTURE);
+        i.putExtra(android.provider.MediaStore.EXTRA_SCREEN_ORIENTATION, ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);*/
         PhotoPickerIntent intent = new PhotoPickerIntent(CaptureActivity.this);
         intent.setPhotoCount(img_count);
         intent.setColumn(4);
         intent.setShowCamera(true);
         startActivityForResult(intent, REQUEST_CODE);
-    }
+        }
 
     private void method() {
         //camera 1 activity
@@ -477,15 +574,70 @@ package autospec.sqindia.net.autospec;
         s6=camera6.getText().toString();
         s7=camera7.getText().toString();
 
-        if (s1.equals("3") && s2.equals("3")&& s3.equals("3") && s4.equals("3")
+        if (s1.equals("3") && s2.equals("3") && s3.equals("3") && s4.equals("3")
                 && s5.equals("3") && s6.equals("3") && s7.equals("3")) {
+
             Intent intent_back = new Intent(getApplicationContext(), Display_Inspection_details.class);
             startActivity(intent_back);
             finish();
-        }
-        else {
-            Toast.makeText(getApplicationContext(), "Please Take Pending Images", Toast.LENGTH_LONG).show();
+        } else {
+            dialog();
         }
     }
+
+
+
+        public boolean isStoragePermissionGranted() {
+            if (Build.VERSION.SDK_INT >= 23) {
+                if (CaptureActivity.this.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    Log.e("tag0", "Permission is granted for storage");
+                    if (CaptureActivity.this.checkSelfPermission(Manifest.permission.CAMERA)
+                            == PackageManager.PERMISSION_GRANTED) {
+                        Log.e("tag0", "Permission is granted for camera");
+                        return true;
+                    } else {
+                        Log.e("tag0f", "Permission is revoked camera");
+                        ActivityCompat.requestPermissions(CaptureActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1);
+                        return false;
+                    }
+                } else {
+                    Log.e("tag0f", "Permission is revoked all");
+                    ActivityCompat.requestPermissions(CaptureActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA}, 1);
+                    return false;
+                }
+            } else { //permission is automatically granted on sdk<23 upon installation
+                Log.e("tag1", "Permission is granted");
+                return true;
+            }
+
+
+        }
+
+
+
+
+        @Override
+        public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+
+            switch (requestCode) {
+
+                case 1:
+                    if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                        Log.e("tag11", "permissionGranted");
+
+
+                    } else {
+                        Log.e("tag00", "Denied");
+                    }
+                    break;
+                default:
+                    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+                    Log.e("tag00", "default");
+
+            }
+
+        }
 }
 

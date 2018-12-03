@@ -15,7 +15,7 @@
             android:id="@+id/textView_head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-120dp"
+            android:layout_marginLeft="-140dp"
             android:background="@drawable/all_text_head"
             android:paddingBottom="15dp"
             android:paddingLeft="50dp"

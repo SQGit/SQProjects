@@ -9,17 +9,20 @@ package autospec.sqindia.net.autospec;
         import android.preference.PreferenceManager;
         import android.util.Log;
         import android.view.LayoutInflater;
+        import android.view.MotionEvent;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.view.inputmethod.InputMethodManager;
         import android.widget.BaseAdapter;
         import android.widget.Button;
         import android.widget.TextView;
         import java.text.SimpleDateFormat;
         import java.util.ArrayList;
         import java.util.Calendar;
+        import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-        public class View_Inspection_Adapter extends BaseAdapter {
+public class View_Inspection_Adapter extends BaseAdapter {
 
         Context c1;
         ArrayList<Modify_Inspection> arrayList;
@@ -57,7 +60,7 @@ package autospec.sqindia.net.autospec;
                 LayoutInflater inflat = (LayoutInflater) c1.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 v2 = inflat.inflate(R.layout.modify_inspection_list,null);
 
-                Typeface tf = Typeface.createFromAsset(c1.getAssets(), "_SENINE.TTF");
+                Typeface tf = Typeface.createFromAsset(c1.getAssets(), "ROBOTO-LIGHT.TTF");
                 unitno=(TextView) v2.findViewById(R.id.txt_Unit_no);
                 rentno=(TextView) v2.findViewById(R.id.txt_agrreement_no);
                 modify=(Button) v2.findViewById(R.id.btn_modify);
@@ -84,24 +87,31 @@ package autospec.sqindia.net.autospec;
                 rentno.setText(data.get_RENTAL_NO());
                 Log.e("tag","c"+rentno);
 
+
+
                 //***********modify onclick listener*****************
                   modify.setOnClickListener(new View.OnClickListener() {
                           @Override
                           public void onClick(View v) {
 
 
-                                  user_id=arrayList.get(position).get_ID();
-                                  edit_unit_no = arrayList.get(position).get_UNIT_NO();
-                                  edit_rental_no=arrayList.get(position).get_RENTAL_NO();
-                                  inspection_date=arrayList.get(position).get_DATE();
 
-                                  Intent intent = new Intent(c1, Edit_Inspection.class);
-                                  intent.putExtra("user_id#",user_id);
-                                  intent.putExtra("unit_no#",edit_unit_no);
-                                  intent.putExtra("agreement_no#",edit_rental_no);
-                                  intent.putExtra("inspection_date#",inspection_date);
-                                  c1.startActivity(intent);
-                                  ((Activity)c1).finish();
+
+                                          user_id=arrayList.get(position).get_ID();
+                                          edit_unit_no = arrayList.get(position).get_UNIT_NO();
+                                          edit_rental_no=arrayList.get(position).get_RENTAL_NO();
+                                          inspection_date=arrayList.get(position).get_DATE();
+
+                                          Intent intent = new Intent(c1, Edit_Inspection.class);
+                                          intent.putExtra("user_id#",user_id);
+                                          intent.putExtra("unit_no#",edit_unit_no);
+                                          intent.putExtra("agreement_no#",edit_rental_no);
+                                          intent.putExtra("inspection_date#",inspection_date);
+                                          c1.startActivity(intent);
+                                          ((Activity)c1).finish();
+
+
+
                           }
                   });
 
@@ -110,26 +120,38 @@ package autospec.sqindia.net.autospec;
                         @Override
                         public void onClick(View v) {
 
-                                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(c1);
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                sendemailaddress = sharedPreferences.getString("useremail", "");
+                                if (Util.Operations.isOnline(c1.getApplicationContext())) {
 
-                                user_id=arrayList.get(position).get_ID();
-                                edit_unit_no = arrayList.get(position).get_UNIT_NO();
-                                edit_rental_no=arrayList.get(position).get_RENTAL_NO();
-                                inspection_date=arrayList.get(position).get_DATE();
+                                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(c1);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        sendemailaddress = sharedPreferences.getString("useremail", "");
 
-                                storeval = "AUTOSPEC DETAILS:" + "\n\n\nInspection Date:" + "\t" + inspection_date + "\nUser Id:\t" + user_id + "\nUnit No:\t" + edit_unit_no + "\nRental No:\t" +
-                                        edit_rental_no;
-                                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                                        "mailto", sendemailaddress, null));
+                                        user_id = arrayList.get(position).get_ID();
+                                        edit_unit_no = arrayList.get(position).get_UNIT_NO();
+                                        edit_rental_no = arrayList.get(position).get_RENTAL_NO();
+                                        inspection_date = arrayList.get(position).get_DATE();
 
-                                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
-                                emailIntent.putExtra(Intent.EXTRA_TEXT, storeval);
-                                c1.startActivity(emailIntent);
+                                        storeval = "AUTOSPEC DETAILS:" + "\n\n\nInspection Date:" + "\t" + inspection_date + "\nUser Id:\t" + user_id + "\nUnit No:\t" + edit_unit_no + "\nRental No:\t" +
+                                                edit_rental_no;
+                                        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                                                "mailto", sendemailaddress, null));
 
+                                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+                                        emailIntent.putExtra(Intent.EXTRA_TEXT, storeval);
+                                        c1.startActivity(emailIntent);
+
+
+                                } else {
+                                        new SweetAlertDialog(c1, SweetAlertDialog.WARNING_TYPE)
+                                                .setTitleText("ALERT")
+                                                .setContentText("No Internet Connectivity")
+                                                .show();
+
+                                }
                         }
+
                 });
+
 
                 return v2;
 

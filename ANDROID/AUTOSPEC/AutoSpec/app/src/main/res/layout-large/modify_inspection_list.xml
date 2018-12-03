@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="60dp"
             android:background="@drawable/modify_background"
             android:elevation="10dp"
             android:ems="3"

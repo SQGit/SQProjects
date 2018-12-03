@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.github.chaossss.widget.view.CircleBadgedView;
@@ -45,10 +46,10 @@ public class ViewImage extends Activity {
     ArrayList<String> aaas = new ArrayList<>();
     ArrayList<String> imagelist = new ArrayList<>();
     HashMap<String, String> datas = new HashMap<>();
-    String imagepath, imageid,image;
+    String imagepath, imageid,image,image_load;
     PhotoViewAttacher attacher;
     String getimage,image_id,img,i_Path,s_path,sig,signature,signaturepath,sigimagepath;
-
+    SharedPreferences sharedPreferences;
     ArrayList<String> bbbb = new ArrayList<>();
     ArrayList<String> cccc = new ArrayList<>();
     Context context = this;
@@ -60,7 +61,7 @@ public class ViewImage extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.view_all_images);
 
-        FontsManager.initFormAssets(this, "_SENINE.TTF");       //initialization
+        FontsManager.initFormAssets(this, "ROBOTO-LIGHT.TTF");       //initialization
         FontsManager.changeFonts(this);
 
 
@@ -91,11 +92,28 @@ public class ViewImage extends Activity {
         rear_view = (ImageView) findViewById(R.id.rear_views);
         sign = (ImageView) findViewById(R.id.sign);
 
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ViewImage.this);
+        image_load = sharedPreferences.getString("loading_image", "");
+
+        if(image_load.equals("no_toast"))
+        {
+            //
+        }
+        else
+        {
+            //Toast.makeText(getApplicationContext(),"No iamges are Captured above ID",Toast.LENGTH_LONG).show();
+        }
+
 
         //*******************Login onclicklistener***************
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(ViewImage.this);
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putString("loading_image","");
+                editor.apply();
                 Intent intent_back = new Intent(getApplicationContext(), FilterReports.class);
                 startActivity(intent_back);
                 finish();
@@ -184,6 +202,7 @@ public class ViewImage extends Activity {
                             .into(passenger_side_rear);
                     Log.e("tag", "REPORT 6" + aaas.get(image));
                 }
+
                 if (image == 18) {
                     Picasso.with(ViewImage.this)
                             .load(new File(aaas.get(image)))
@@ -196,16 +215,6 @@ public class ViewImage extends Activity {
         } catch (Exception IllegalArgumentException) {
 
         }
-
-
-
-
-
-
-
-
-
-
 
 
         getSignature(signature_query);
@@ -279,30 +288,22 @@ public class ViewImage extends Activity {
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // operation2();
-                zoom();
+               zoom();
             }
         });
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ViewImage.this);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ViewImage.this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("imageID",image_id);
     }
 
-    private void operation2() {
-   /* s_path="SELECT SIGNATURE FROM SIGNATUREPAD WHERE USERID=" +storedid;
-        Data2(s_path);
-*/
 
 
-
-    }
 
     private void zoom() {
-
         zoom_sign="SELECT SIGNATURE FROM SIGNATUREPAD WHERE USERID=" +storedid;
-
         String imgs = getFilterData10(zoom_sign);
+        Log.e("tag","bbbb"+imgs);
         LayoutInflater layoutInflater = LayoutInflater.from(ViewImage.this);
         View promptView = layoutInflater.inflate(R.layout.zoom_layout1, null);
         final AlertDialog alertD = new AlertDialog.Builder(ViewImage.this).create();
@@ -344,31 +345,10 @@ public class ViewImage extends Activity {
         return ssig;
     }
 
-    private String Data2(String s_path) {
-        ArrayList<ImageGetterSetter> listvalg = new ArrayList<ImageGetterSetter>();
-
-        bbbb.clear();
-
-        Cursor c1 = loginDataBaseAdapter.getSignatureImage(s_path);
-        Log.e("tag", "<---lv1111********---->" + c1);
-        c1.moveToFirst();
-        if (c1 != null) {
-            if (c1.moveToFirst()) {
-                do {
-                    sig = c1.getString(c1.getColumnIndex("SIGNATURE"));
-                    // Log.e("tag", "5555" + image);
-                    cccc.add(sig);
-                    Log.e("tag", "image_paths" + cccc);
-                } while (c1.moveToNext());
-            }
-        }
-        return sig;
-
-    }
-
 
     private void operation() {
         i_Path="SELECT IMAGE FROM IMAGEUPLOAD WHERE IMAGE_ID="+image_id+ " and USERID="+storedid;
+        Log.e("tag","i_path"+ i_Path);
         Data1(i_Path);
 
         zoomImage1(0);
@@ -376,7 +356,6 @@ public class ViewImage extends Activity {
 
     private String Data1(String i_path) {
         ArrayList<ImageGetterSetter> listvalg = new ArrayList<ImageGetterSetter>();
-
         bbbb.clear();
 
         Cursor c1 = loginDataBaseAdapter.getFilterData1(i_path);
@@ -386,9 +365,8 @@ public class ViewImage extends Activity {
             if (c1.moveToFirst()) {
                 do {
                     image = c1.getString(c1.getColumnIndex("IMAGE"));
-                    // Log.e("tag", "5555" + image);
                     bbbb.add(image);
-                    Log.e("tag", "image_paths" + bbbb);
+                    Log.e("tag", "img---paths" + bbbb);
                 } while (c1.moveToNext());
             }
         }
@@ -398,7 +376,6 @@ public class ViewImage extends Activity {
 
 
     private String getFilterData1(String query) {
-
         ArrayList<ImageGetterSetter> listvalg = new ArrayList<ImageGetterSetter>();
         Cursor c1 = loginDataBaseAdapter.getFilterData1(query);
         Log.e("tag", "<---lv1111********---->" + c1);
@@ -407,46 +384,11 @@ public class ViewImage extends Activity {
             if (c1.moveToFirst()) {
                 do {
                     img = c1.getString(c1.getColumnIndex("IMAGE"));
-                    Log.e("tag", "1111111" + imagepath);
-
+                    Log.e("tag", "111---111" + imagepath);
                 } while (c1.moveToNext());
             }
         }
-
         return img;
-    }
-
-
-    //***********Zoom image
-    private void zoomImage(int i) {
-
-        imapgePath="SELECT IMAGE FROM IMAGEUPLOAD WHERE IMAGE_ID="+image_id+ " and USERID="+storedid;
-
-
-        getFilterData1(imapgePath);
-
-
-        LayoutInflater layoutInflater = LayoutInflater.from(ViewImage.this);
-        View promptView = layoutInflater.inflate(R.layout.zoom_layout, null);
-        final AlertDialog alertD = new AlertDialog.Builder(ViewImage.this).create();
-        Window window = alertD.getWindow();
-        alertD.setCancelable(true);
-        window.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        PhotoView iv_photo;
-        iv_photo = (PhotoView) promptView.findViewById(R.id.iv_photo);
-
-
-        Picasso.with(context)
-                .load(new File(img))
-                .fit()
-                .into(iv_photo);
-
-        attacher = new PhotoViewAttacher(iv_photo);
-
-        attacher.update();
-
-        alertD.setView(promptView);
-        alertD.show();
     }
 
 
@@ -454,8 +396,8 @@ public class ViewImage extends Activity {
     private void zoomImage1(int i) {
 
         imapgePath="SELECT IMAGE FROM IMAGEUPLOAD WHERE IMAGE_ID="+image_id+ " and USERID="+storedid;
+        Log.e("tag","aaaa"+imagepath);
         getFilterData1(imapgePath);
-
 
         LayoutInflater layoutInflater = LayoutInflater.from(ViewImage.this);
         View promptView = layoutInflater.inflate(R.layout.zoom_layout, null);
@@ -464,19 +406,17 @@ public class ViewImage extends Activity {
         alertD.setCancelable(true);
         window.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-
-        // PhotoView iv_photo;
-        //  iv_photo = (PhotoView) promptView.findViewById(R.id.iv_photo);
-
         ViewPager mViewPager;
-
         CustomPagerAdapter mCustomPagerAdapter = new CustomPagerAdapter(this,bbbb);
         mViewPager = (ViewPager) promptView.findViewById(R.id.pager);
         mViewPager.setAdapter(mCustomPagerAdapter);
         mCustomPagerAdapter.notifyDataSetChanged();
         alertD.setView(promptView);
         alertD.show();
+
     }
+
+
 
 
     private void getFilterData(String query) {
@@ -484,9 +424,7 @@ public class ViewImage extends Activity {
         ArrayList<ImageGetterSetter> listvalg = new ArrayList<ImageGetterSetter>();
         Cursor c1 = loginDataBaseAdapter.getFilterData1(query);
         Log.e("tag", "<---lv1111********---->" + c1);
-
         aaas.clear();
-
         c1.moveToFirst();
         if (c1 != null) {
             if (c1.moveToFirst()) {
@@ -498,7 +436,6 @@ public class ViewImage extends Activity {
                     aaas.add(imagepath);
                     imagelist.add(imageid);
                     datas.put(imageid, imagepath);
-
                 } while (c1.moveToNext());
             }
         }
@@ -521,7 +458,6 @@ public class ViewImage extends Activity {
                     SignatureGetterSetter jvs = new SignatureGetterSetter();
                     imageid = c1.getString(c1.getColumnIndex("USERID"));
                     signature = c1.getString(c1.getColumnIndex("SIGNATURE"));
-
                     Log.e("tag", "gg_image_signature" + imageid);
                     Log.e("tag", "gg_path_signature***" + imagepath);
                 }
@@ -533,6 +469,10 @@ public class ViewImage extends Activity {
 
     @Override
     public void onBackPressed() {
+        SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(ViewImage.this);
+        SharedPreferences.Editor editor = shared.edit();
+        editor.putString("loading_image","");
+        editor.apply();
         Intent i = new Intent(ViewImage.this, FilterReports.class);
         startActivity(i);
         finish();

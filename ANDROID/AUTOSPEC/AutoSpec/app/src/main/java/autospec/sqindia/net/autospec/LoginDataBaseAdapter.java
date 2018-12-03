@@ -20,6 +20,9 @@ public class LoginDataBaseAdapter {
     public static final int NAME_COLUMN = 1;
     public static final String UNITNO = "UNITNO";
     public static final String RENTALNO = "RENTALNO";
+    public static final String USERNAME = "USERNAME";
+    public static final String EMAIL = "EMAIL";
+    public static final String PASSWORD = "PASSWORD";
     public static final String ID = "ID";
     public static final String DATE = "DATE";
     public static final String USERID= "USERID";
@@ -125,6 +128,22 @@ public class LoginDataBaseAdapter {
         db.update("INSPECTION", cv, "ID=" + storedId, null);
     }
 
+
+    //****************check account exists are not************
+    public boolean checkAccount(String username, String email,String password)
+    {
+        db=dbHelper.getReadableDatabase();
+        Cursor cursor = db.query("LOGIN",
+                new String[] { USERNAME,EMAIL,PASSWORD },
+                USERNAME + " = ? and "+ EMAIL + " = ?  and "+ PASSWORD + " = ?" ,
+                new String[] {username,email,password},
+                null, null, null, null);
+
+        if(cursor.moveToFirst())
+            return true; //row exists
+        else
+            return false;
+    }
 
     //****************check unitno exists are not************
     public boolean checkEvent(String unitno, String rentalno)
@@ -429,4 +448,25 @@ public class LoginDataBaseAdapter {
     }
 
 
+    public void DeleteImage(String USERID)
+    {
+        Log.e("tag","<---------11111------>"+USERID);
+
+        try
+        {
+            Log.e("tag","<---------2222------>");
+
+            db.delete("INSPECTION", "ID = ?", new String[] { USERID });
+            Log.e("tag","<---------3444444------>");
+
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            db.close();
+        }
+    }
 }

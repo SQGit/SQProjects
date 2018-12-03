@@ -21,6 +21,8 @@ public class DashboardActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_activity);
 
+
+
         //****************findviewbyid***********************
         textView_head=(TextView)findViewById(R.id.textView_head);
         textView_newins=(TextView)findViewById(R.id.textView_newins);
@@ -34,7 +36,7 @@ public class DashboardActivity extends Activity {
         //navigation_right=(Button)findViewById(R.id.navigation_right);
 
         //*****************change font using Typeface**************
-        FontsManager.initFormAssets(this, "_SENINE.TTF");
+        FontsManager.initFormAssets(this, "ROBOTO-LIGHT.TTF");
         FontsManager.changeFonts(this);
 
         //*************new Inspection onclicklistener************

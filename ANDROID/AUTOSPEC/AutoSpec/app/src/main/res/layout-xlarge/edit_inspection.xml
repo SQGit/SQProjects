@@ -36,18 +36,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:rotation="-90"
-            android:layout_marginLeft="-135dp"
+            android:layout_marginLeft="-170dp"
             android:text="Modify Inspection"
             android:paddingLeft="45dp"
             android:paddingRight="45dp"
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
-            android:textAllCaps="false"
             android:textSize="40sp"
+            android:textAllCaps="false"
             android:textColor="#FFF"
             android:background="@drawable/all_text_head"/>
-
-
 
     </LinearLayout>
 

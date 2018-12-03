@@ -1,13 +1,16 @@
 package autospec.sqindia.net.autospec;
 
     import android.app.Activity;
+    import android.content.Context;
     import android.content.Intent;
     import android.database.Cursor;
     import android.graphics.Typeface;
     import android.os.Bundle;
     import android.util.Log;
+    import android.view.MotionEvent;
     import android.view.View;
     import android.view.WindowManager;
+    import android.view.inputmethod.InputMethodManager;
     import android.widget.Button;
     import android.widget.ListView;
     import android.widget.TextView;
@@ -42,7 +45,7 @@ public class ModifyInspectionActivity extends Activity {
         list=(ListView) findViewById(R.id.listView);
 
         //*****************change font using Typeface**************
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         textView_head.setTypeface(tf);
         textView_unitno.setTypeface(tf);
         textView_rentalid.setTypeface(tf);
@@ -87,6 +90,8 @@ public class ModifyInspectionActivity extends Activity {
 
 
     }
+
+
 
     @Override
     public void onBackPressed() {

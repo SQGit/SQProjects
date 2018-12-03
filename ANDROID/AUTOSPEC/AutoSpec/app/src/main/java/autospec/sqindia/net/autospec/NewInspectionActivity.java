@@ -58,7 +58,7 @@ public class NewInspectionActivity extends Activity {
 
 
         //*****************change font using Typeface**************
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         textView_head.setTypeface(tf);
         editText_unitno.setTypeface(tf);
         editText_aggrementno.setTypeface(tf);
@@ -108,29 +108,39 @@ public class NewInspectionActivity extends Activity {
                 Log.e("tag", "boolean" + b);
 
                 if ((!str_unit_no.isEmpty()) && (!str_agreement_no.isEmpty())) {
-                    if (b == true)
+
+                    if (b != true)
+                    {
+                        if((str_unit_no).equals(str_agreement_no))
+                        {
+                            message0();
+                        }
+                        else
+                        {
+                            loginDataBaseAdapter.inspection_details(str_unit_no, str_agreement_no, str_inspection_date);
+                            String storedId = loginDataBaseAdapter.getId(str_unit_no);
+                            //*********************put all value from shared preference***********
+                            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(NewInspectionActivity.this);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("unit_no", str_unit_no);
+                            editor.putString("rental_no", str_agreement_no);
+                            editor.putString("date", str_inspection_date);
+                            editor.putString("id", storedId);
+                            editor.putString("empty_check",dash_enable);
+                            editor.commit();
+                            showInputDialogFooter();
+                        }
+
+                    }
+
+                    else
                     {
                         message1();
                         editText_unitno.setText("");
                         editText_aggrementno.setText("");
-                    } else {
-                        loginDataBaseAdapter.inspection_details(str_unit_no, str_agreement_no, str_inspection_date);
-
-
-                        String storedId = loginDataBaseAdapter.getId(str_unit_no);
-
-
-                        //*********************put all value from shared preference***********
-                        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(NewInspectionActivity.this);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("unit_no", str_unit_no);
-                        editor.putString("rental_no", str_agreement_no);
-                        editor.putString("date", str_inspection_date);
-                        editor.putString("id", storedId);
-                        editor.putString("empty_check",dash_enable);
-                        editor.commit();
-                        showInputDialogFooter();
                     }
+
+
                 } else {
                     message2();
 
@@ -139,6 +149,34 @@ public class NewInspectionActivity extends Activity {
             }
 
         });
+    }
+
+    private void message0() {
+
+        final Dialog dialog = new Dialog(NewInspectionActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.custom_dialog);
+        //adding text dynamically
+        TextView txt_head2 = (TextView) dialog.findViewById(R.id.txt_head2);
+        TextView txt_msg = (TextView) dialog.findViewById(R.id.txt_msg);
+        txt_head2.setText("Alert Message");
+        txt_msg.setText("Unit No and Rental No same... Please change anyone");
+        Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
+
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
+        txt_head2.setTypeface(tt);
+        txt_msg.setTypeface(tt);
+
+
+        btn_ok2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+
+            }
+        });
+        dialog.show();
+
     }
 
     private void message2() {
@@ -153,7 +191,7 @@ public class NewInspectionActivity extends Activity {
         txt_msg.setText("Fields are Vacant....");
         Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
 
-        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         txt_head2.setTypeface(tt);
         txt_msg.setTypeface(tt);
 
@@ -189,7 +227,7 @@ public class NewInspectionActivity extends Activity {
         final TextView head2 = (TextView) promptView.findViewById(R.id.textView1);
         final TextView head3 = (TextView) promptView.findViewById(R.id.txt_agrreement);
         final Button ok = (Button) promptView.findViewById(R.id.button);
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         head1.setTypeface(tf);
         head2.setTypeface(tf);
         head3.setTypeface(tf);
@@ -201,7 +239,6 @@ public class NewInspectionActivity extends Activity {
                 Intent goD = new Intent(getApplicationContext(), Display_Inspection_details.class);
                 startActivity(goD);
                 finish();
-
             }
         });
 
@@ -221,7 +258,7 @@ public class NewInspectionActivity extends Activity {
         txt_msg.setText("Unit No Already Exists...");
         Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
 
-        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         txt_head2.setTypeface(tt);
         txt_msg.setTypeface(tt);
 

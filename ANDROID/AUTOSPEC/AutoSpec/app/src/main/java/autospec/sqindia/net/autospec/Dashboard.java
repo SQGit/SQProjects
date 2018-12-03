@@ -1,12 +1,15 @@
 package autospec.sqindia.net.autospec;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.Camera;
 import android.location.Location;
 import android.location.LocationManager;
@@ -64,6 +67,7 @@ public class Dashboard extends AppCompatActivity {
         setContentView(R.layout.dashboard);
 
 
+
         //**************get shared pref*********
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Dashboard.this);
         name = sharedPreferences.getString("user", "");
@@ -93,19 +97,19 @@ public class Dashboard extends AppCompatActivity {
         flash = (Switch) findViewById(R.id.mySwitchs);
         ok = (Switch) findViewById(R.id.mySwitch);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         nv = (NavigationView) findViewById(R.id.navigation_view1);
 
 
         //******setname for registered user
         textView_username.setText("Hi " + name + " !");
-
-
-        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(null);
+        //toolbar.setTitle(name);
 
 
         //*****************change font using Typeface**************
-        FontsManager.initFormAssets(this, "_SENINE.TTF");
+        FontsManager.initFormAssets(this, "ROBOTO-LIGHT.TTF");
         FontsManager.changeFonts(this);
 
         //*************new Inspection onclicklistener************
@@ -263,7 +267,7 @@ public class Dashboard extends AppCompatActivity {
         final EditText mobile = (EditText) promptView.findViewById(R.id.mobile);
         final Button btn_mobile = (Button) promptView.findViewById(R.id.btn_mobile);
 
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         head1.setTypeface(tf);
         mobile.setTypeface(tf);
         btn_mobile.setTypeface(tf);
@@ -292,7 +296,7 @@ public class Dashboard extends AppCompatActivity {
         TextView txt_msg = (TextView) dialog.findViewById(R.id.txt_msg);
         Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
 
-        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         txt_head2.setTypeface(tt);
         txt_msg.setTypeface(tt);
         btn_ok2.setTypeface(tt);
@@ -326,7 +330,7 @@ public class Dashboard extends AppCompatActivity {
         final TextView mob = (TextView) promptView.findViewById(R.id.mob);
         final Button yes = (Button) promptView.findViewById(R.id.btn_yes);
 
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         head1.setTypeface(tf);
         yes.setTypeface(tf);
         pro_name.setTypeface(tf);
@@ -366,7 +370,7 @@ public class Dashboard extends AppCompatActivity {
         final Button no = (Button) promptView.findViewById(R.id.btn_no);
         final Button yes = (Button) promptView.findViewById(R.id.btn_yes);
 
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         head1.setTypeface(tf);
         no.setTypeface(tf);
         yes.setTypeface(tf);
@@ -374,7 +378,10 @@ public class Dashboard extends AppCompatActivity {
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(Dashboard.this);
+                SharedPreferences.Editor editor = shared.edit();
+                editor.putString("check","");
+                editor.commit();
                 Intent intent_modify = new Intent(getApplicationContext(), SignInActivity.class);
                 startActivity(intent_modify);
                 finish();
@@ -469,7 +476,7 @@ public class Dashboard extends AppCompatActivity {
         final Button no = (Button) promptView.findViewById(R.id.btn_no);
         final Button yes = (Button) promptView.findViewById(R.id.btn_yes);
 
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         head1.setTypeface(tf);
         no.setTypeface(tf);
         yes.setTypeface(tf);

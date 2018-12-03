@@ -45,6 +45,7 @@
             android:text="gunasundari"
             android:textColor="#FFF"
             android:ems="15"
+            android:gravity="left|center"
             android:enabled="false"
             android:layout_gravity="center"
             android:textSize="30dp"
@@ -59,6 +60,7 @@
             android:textColor="#FFF"
             android:layout_marginTop="15dp"
             android:ems="15"
+            android:gravity="left|center"
             android:enabled="false"
             android:layout_gravity="center"
             android:textSize="30dp"
@@ -73,13 +75,27 @@
             android:textColor="#FFF"
             android:layout_marginTop="15dp"
             android:ems="15"
+            android:gravity="left|center"
             android:enabled="false"
             android:layout_gravity="center"
             android:textSize="30dp"
             android:background="@drawable/profilebg"
             android:paddingLeft="30dp"/>
 
-
+        <TextView
+            android:id="@+id/mob"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text=""
+            android:textColor="#FFF"
+            android:layout_marginTop="15dp"
+            android:ems="15"
+            android:gravity="left|center"
+            android:enabled="false"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:background="@drawable/profilebg"
+            android:paddingLeft="30dp"/>
 
         <Button
             android:layout_width="wrap_content"

@@ -3,12 +3,16 @@ package autospec.sqindia.net.autospec;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,10 +36,11 @@ public class Edit_Inspection extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.edit_inspection);
 
         //*********************set Typeface**************
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         edt_unitno = (EditText) findViewById(R.id.edt_unitno);
         edt_agrementno = (EditText) findViewById(R.id.edt_agrementno);
         btn_submit = (Button) findViewById(R.id.btn_submit);
@@ -44,7 +49,7 @@ public class Edit_Inspection extends Activity {
 
 
         //*****************change font using Typeface**************
-        FontsManager.initFormAssets(this, "_SENINE.TTF");
+        FontsManager.initFormAssets(this, "ROBOTO-LIGHT.TTF");
         FontsManager.changeFonts(this);
 
 
@@ -91,20 +96,74 @@ public class Edit_Inspection extends Activity {
             public void onClick(View v) {
                 String e1 = edt_unitno.getText().toString().trim();
                 String e2 = edt_agrementno.getText().toString().trim();
-                if(e1.equals("")||e2.equals(""))
+
+
+
+                if((e1.length()>0&&e2.length()>0))
+                {
+                    if(e1.equals(e2))
+                    {
+                        message();
+                    }
+                    else
+                    {
+                        loginDataBaseAdapter.updateInspection(str_id, e1, e2, str_inspection_date);
+                        Log.e("tag", "val" + str_id + str_unit_no + str_agreement + str_inspection_date);
+                        Intent update = new Intent(getApplicationContext(), ModifyInspectionActivity.class);
+                        startActivity(update);
+                        finish();
+                    }
+
+                }
+
+
+                else
+                {
+                    message2();
+                }
+                /*if(e1.equals("")||e2.equals(""))
                 {
                     message2();
                 }
                 else {
+
 
                     loginDataBaseAdapter.updateInspection(str_id, e1, e2, str_inspection_date);
                     Log.e("tag", "val" + str_id + str_unit_no + str_agreement + str_inspection_date);
                     Intent update = new Intent(getApplicationContext(), ModifyInspectionActivity.class);
                     startActivity(update);
                     finish();
-                    }
+                    }*/
             }
         });
+    }
+
+    private void message() {
+
+        final Dialog dialog = new Dialog(Edit_Inspection.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.custom_dialog);
+        //adding text dynamically
+        TextView txt_head2 = (TextView) dialog.findViewById(R.id.txt_head2);
+        TextView txt_msg = (TextView) dialog.findViewById(R.id.txt_msg);
+        txt_head2.setText("Alert Message");
+        txt_msg.setText("Unit No & Rental No same Please check....");
+        Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
+
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
+        txt_head2.setTypeface(tt);
+        txt_msg.setTypeface(tt);
+
+
+        btn_ok2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+
+            }
+        });
+        dialog.show();
+
     }
 
     private void message2() {
@@ -118,7 +177,7 @@ public class Edit_Inspection extends Activity {
         txt_msg.setText("Fields are Vacant....");
         Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
 
-        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         txt_head2.setTypeface(tt);
         txt_msg.setTypeface(tt);
 
@@ -133,6 +192,15 @@ public class Edit_Inspection extends Activity {
         dialog.show();
     }
 
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
     @Override
     public void onBackPressed() {
 

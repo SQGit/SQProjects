@@ -32,7 +32,7 @@ public class CustomAdapter extends ArrayAdapter<String> {
 
         View view = super.getView(position, convertView, parent);
 
-        Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "ROBOTO-LIGHT.TTF");
 
         TextView suggestion = (TextView) view.findViewById(R.id.text);
 

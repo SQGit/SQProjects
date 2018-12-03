@@ -17,7 +17,7 @@
             android:id="@+id/textView_head"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-120dp"
+            android:layout_marginLeft="-145dp"
             android:background="@drawable/all_text_head"
             android:paddingBottom="15dp"
             android:paddingLeft="40dp"
@@ -124,7 +124,7 @@
                 android:id="@+id/textView_captureimage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
+               android:layout_gravity="center"
                 android:background="@drawable/button_background"
                 android:drawableRight="@drawable/camera_icon"
                 android:ems="8"
@@ -136,18 +136,19 @@
                 android:textSize="35sp" />
 
 
-            <TextView
-                android:id="@+id/textView_finished"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
-                android:text="finished"
-                android:textColor="#35476B"
-                android:textSize="33dp"
-                android:textStyle="bold" />
 
 
         </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/signature_padall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -207,7 +208,13 @@
 
         </FrameLayout>
 
+</LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
         <Button
             android:id="@+id/button_submit"
             android:layout_width="wrap_content"
@@ -224,6 +231,18 @@
             android:textColor="#FFF"
             android:textSize="35sp" />
 
+        <TextView
+            android:id="@+id/textView_finished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="30dp"
+            android:text="finished"
+            android:textColor="#35476B"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+</LinearLayout>
 
     </LinearLayout>
 

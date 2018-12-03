@@ -62,7 +62,7 @@ public class SignInActivity extends Activity {
 
 
         //*****************change font using Typeface**************
-        FontsManager.initFormAssets(this, "_SENINE.TTF");
+        FontsManager.initFormAssets(this, "ROBOTO-LIGHT.TTF");
         FontsManager.changeFonts(this);
 
 
@@ -88,6 +88,7 @@ public class SignInActivity extends Activity {
                 Log.e("tag", "<***>" + storedPass);
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(SignInActivity.this);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("check","login_success");
                 editor.putString("user", storedname);
                 editor.putString("useremail", storedemail);
                 editor.putString("pwd", storedPass);
@@ -139,7 +140,7 @@ public class SignInActivity extends Activity {
         TextView txt_head1 = (TextView) dialog.findViewById(R.id.txt_head1);
         TextView txt_msg1 = (TextView) dialog.findViewById(R.id.txt_msg1);
         Button btn_ok1 = (Button) dialog.findViewById(R.id.btn_ok1);
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         txt_head1.setTypeface(tf);
         txt_msg1.setTypeface(tf);
         btn_ok1.setTypeface(tf);
@@ -163,7 +164,7 @@ public class SignInActivity extends Activity {
         TextView txt_msg = (TextView) dialog.findViewById(R.id.txt_msg);
         Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
 
-        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         txt_head2.setTypeface(tt);
         txt_msg.setTypeface(tt);
         btn_ok2.setTypeface(tt);
@@ -209,7 +210,7 @@ public class SignInActivity extends Activity {
         final Button no = (Button) promptView.findViewById(R.id.btn_no);
         final Button yes = (Button) promptView.findViewById(R.id.btn_yes);
 
-        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
         head1.setTypeface(tf);
         no.setTypeface(tf);
         yes.setTypeface(tf);

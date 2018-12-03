@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:rotation="-90"
-            android:layout_marginLeft="-75dp"
+            android:layout_marginLeft="-85dp"
             android:text="Signup"
             android:paddingLeft="60dp"
             android:paddingRight="60dp"
@@ -25,7 +25,7 @@
             android:textSize="40sp"
             android:textColor="#FFF"
             android:background="@drawable/all_text_head"/>
-</LinearLayout>
+        </LinearLayout>
 
 
     <Button
@@ -62,7 +62,7 @@
             android:id="@+id/editText_name"
             android:hint="Name"
             android:singleLine="true"
-            android:textSize="38sp"
+            android:textSize="35sp"
             android:inputType="textPersonName"
             android:ems="16"
             android:textColorHint="#35476B"
@@ -82,7 +82,7 @@
             android:id="@+id/editText_email"
             android:hint="Email"
             android:singleLine="true"
-            android:textSize="38sp"
+            android:textSize="35sp"
                 android:inputType="textEmailAddress"
             android:ems="16" android:textAllCaps="false"
             android:textColorHint="#35476B"
@@ -102,7 +102,7 @@
             android:id="@+id/editText_pwd"
             android:hint="Password"
             android:singleLine="true"
-            android:textSize="38sp"
+            android:textSize="35sp"
             android:ems="16"
             android:inputType="textPassword"
             android:textColorHint="#35476B"
@@ -122,7 +122,7 @@
             android:id="@+id/editText_repwd"
             android:hint="Retype Password"
             android:singleLine="true"
-            android:textSize="38sp"
+            android:textSize="35sp"
             android:ems="16"
             android:textColorHint="#35476B"
             android:paddingBottom="50dp"

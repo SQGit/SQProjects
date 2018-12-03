@@ -16,16 +16,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="-120dp"
+            android:layout_marginLeft="-140dp"
             android:background="@drawable/all_text_head"
             android:ems="8"
             android:gravity="center"
-            android:padding="15dp"
+            android:padding="12dp"
             android:rotation="-90"
             android:text="Modify Inspection"
             android:textAllCaps="false"
             android:textColor="#FFF"
-            android:textSize="35sp" />
+            android:textSize="30sp" />
 
 
     </LinearLayout>
@@ -68,7 +68,7 @@
                 android:id="@+id/textView_unitno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="250dp"
+                android:layout_marginLeft="265dp"
                 android:gravity="left|center"
                 android:text="UNIT ID"
                 android:textColor="#2054be"
@@ -80,7 +80,7 @@
                 android:id="@+id/textView_rentalid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="145dp"
+                android:layout_marginLeft="150dp"
                 android:gravity="left|center"
                 android:text="RENTAL NO"
                 android:textColor="#2054be"

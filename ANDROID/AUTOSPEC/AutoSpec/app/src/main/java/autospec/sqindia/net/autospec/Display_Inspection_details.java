@@ -1,6 +1,7 @@
 package autospec.sqindia.net.autospec;
 
     import android.app.Activity;
+    import android.app.AlertDialog;
     import android.app.Dialog;
     import android.content.Context;
     import android.content.Intent;
@@ -15,13 +16,17 @@ package autospec.sqindia.net.autospec;
     import android.preference.PreferenceManager;
     import android.support.annotation.Nullable;
     import android.util.Log;
+    import android.view.LayoutInflater;
     import android.view.MotionEvent;
     import android.view.View;
+    import android.view.ViewGroup;
     import android.view.Window;
     import android.view.WindowManager;
     import android.view.inputmethod.InputMethodManager;
     import android.widget.Button;
     import android.widget.EditText;
+    import android.widget.FrameLayout;
+    import android.widget.LinearLayout;
     import android.widget.TextView;
     import android.widget.Toast;
     import com.github.gcacace.signaturepad.views.SignaturePad;
@@ -47,8 +52,11 @@ package autospec.sqindia.net.autospec;
         String str_instrument_cluster, str_driver_side_front, str_passenger_side_front, str_front_view, str_driver_side_rear, str_passenger_side_rear, str_rear_view;
         String imagepath,fin_val,activation;
         File data, sd;
+            LinearLayout signature_padall;
             int gd;
-
+        FrameLayout sig;
+            SharedPreferences sharedPreferences;
+            SharedPreferences.Editor editor;
 
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,6 +71,7 @@ package autospec.sqindia.net.autospec;
             id=sharedPreferences.getString("id","");
 
             //***************findview by id*************
+            signature_padall=(LinearLayout) findViewById(R.id.signature_padall);
             textView_head = (TextView) findViewById(R.id.textView_head);
             editText_unitno = (EditText) findViewById(R.id.editText_unitno);
             editText_aggrementno = (EditText) findViewById(R.id.editText_aggrementno);
@@ -73,9 +82,10 @@ package autospec.sqindia.net.autospec;
             mSignaturePad = (SignaturePad) findViewById(R.id.signature_pad);
             mClearButton = (TextView) findViewById(R.id.clear_button);
             mSaveButton = (TextView) findViewById(R.id.save_button);
+            sig=(FrameLayout)findViewById(R.id.signatureframe) ;
 
             //*****************change font using Typeface**************
-            FontsManager.initFormAssets(this, "_SENINE.TTF");
+            FontsManager.initFormAssets(this, "ROBOTO-LIGHT.TTF");
             FontsManager.changeFonts(this);
 
             // create a instance of SQLite Database
@@ -100,18 +110,32 @@ package autospec.sqindia.net.autospec;
 
             if(activation.equals("success"))
             {
+                Log.e("tag","successs");
 
                 textView_finished.setText("finished");
+                button_captureimage.setVisibility(View.GONE);
+                signature_padall.setVisibility(View.VISIBLE);
+                button_submit.setVisibility(View.VISIBLE);
+
             }
             else
             {
+
+                Log.e("tag","failure");
                 textView_finished.setText("");
+                signature_padall.setVisibility(View.GONE);
+                button_submit.setVisibility(View.GONE);
+
             }
 
             mSaveButton.setVisibility(View.GONE);
 
+
+
             if ((!str_instrument_cluster.equals("")) && (!str_driver_side_front.equals("")) && (!str_passenger_side_front.equals("")) && (!str_front_view.equals("")) && (!str_driver_side_rear.equals("")) && (!str_passenger_side_front.equals("")) && (!str_rear_view.equals(""))) {
                 textView_finished.setEnabled(false);
+               /* sig.setEnabled(false);
+                button_submit.setEnabled(false);*/
                 textView_finished.setTextColor(getResources().getColor(R.color.error_color));
             } else {
 
@@ -126,7 +150,22 @@ package autospec.sqindia.net.autospec;
             btn_back.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(!mSignaturePad.isEmpty()) {
+
+
+                    if(activation.equals("success"))
+                    {
+                        Toast.makeText(getApplicationContext(), "Please Put Signature here", Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        calDialog();
+
+                    }
+
+
+
+
+                  /*  if(!mSignaturePad.isEmpty()) {
                         if (gd >= 7)
                         {
                             Intent intent_back = new Intent(getApplicationContext(), Dashboard.class);
@@ -142,7 +181,7 @@ package autospec.sqindia.net.autospec;
                     {
                         Toast.makeText(getApplicationContext(), "Please Put Signature here", Toast.LENGTH_LONG).show();
 
-                    }
+                    }*/
 
                 }
             });
@@ -176,6 +215,11 @@ package autospec.sqindia.net.autospec;
             button_captureimage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Display_Inspection_details.this);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("loading_image", "no_toast");
+                    editor.commit();
+
                     if(activation.equals("success"))
                     {
                         button_captureimage.setEnabled(false);
@@ -259,6 +303,56 @@ package autospec.sqindia.net.autospec;
 
     }
 
+            private void calDialog() {
+
+
+                LayoutInflater layoutInflater = LayoutInflater.from(Display_Inspection_details.this);
+                View promptView = layoutInflater.inflate(R.layout.deletecustomdialog, null);
+                final AlertDialog alertD = new AlertDialog.Builder(Display_Inspection_details.this).create();
+                alertD.setCancelable(false);
+                Window window = alertD.getWindow();
+                window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                final TextView head1 = (TextView) promptView.findViewById(R.id.textView);
+                final Button no = (Button) promptView.findViewById(R.id.btn_no);
+                final Button yes = (Button) promptView.findViewById(R.id.btn_yes);
+
+                Typeface tf = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
+                head1.setTypeface(tf);
+                no.setTypeface(tf);
+                yes.setTypeface(tf);
+
+                yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Log.e("tag","<---------iddddddddd------>"+id);
+                        loginDataBaseAdapter.DeleteImage(id);
+
+                        Log.e("tag","<---------6666666------>");
+                        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Display_Inspection_details.this);
+                        editor = sharedPreferences.edit();
+                        editor.putString("activation","failure");
+                        editor.commit();
+
+                        Intent intent_back = new Intent(getApplicationContext(), Dashboard.class);
+                        startActivity(intent_back);
+                        finish();
+                    }
+                });
+
+                no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertD.dismiss();
+                    }
+                });
+
+                alertD.setView(promptView);
+                alertD.show();
+
+
+            }
+
             private void message2() {
 
                 final Dialog dialog = new Dialog(Display_Inspection_details.this);
@@ -271,7 +365,7 @@ package autospec.sqindia.net.autospec;
                 txt_msg.setText("Please Capture All the Images....");
                 Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
 
-                Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+                Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
                 txt_head2.setTypeface(tt);
                 txt_msg.setTypeface(tt);
 
@@ -298,7 +392,7 @@ package autospec.sqindia.net.autospec;
                 txt_msg.setText("Please Put Signature here...");
                 Button btn_ok2 = (Button) dialog.findViewById(R.id.btn_ok2);
 
-                Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "_SENINE.TTF");
+                Typeface tt = Typeface.createFromAsset(getApplicationContext().getAssets(), "ROBOTO-LIGHT.TTF");
                 txt_head2.setTypeface(tt);
                 txt_msg.setTypeface(tt);
 
@@ -400,23 +494,19 @@ package autospec.sqindia.net.autospec;
     @Override
     public void onBackPressed() {
 
-        if(!mSignaturePad.isEmpty()) {
-            if (gd >= 7)
-            {
-                Intent intent_back = new Intent(getApplicationContext(), Dashboard.class);
-                startActivity(intent_back);
-                finish();
-            }
-            else
-            {
-                Toast.makeText(getApplicationContext(), "You should Capture All the images", Toast.LENGTH_LONG).show();
-            }
+
+        if(activation.equals("success"))
+        {
+            Toast.makeText(getApplicationContext(), "Please Put Signature here", Toast.LENGTH_LONG).show();
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "Please Put Signature here", Toast.LENGTH_LONG).show();
+            calDialog();
 
         }
+
+
+
 
     }
 

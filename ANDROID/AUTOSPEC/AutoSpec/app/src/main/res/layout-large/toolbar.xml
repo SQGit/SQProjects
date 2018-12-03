@@ -4,5 +4,4 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/abc_action_bar_default_height_material"
     android:foreground="@android:color/transparent"
-    app:theme="@style/Theme.AppCompat.NoActionBar"
     android:background="@android:color/transparent"/>
